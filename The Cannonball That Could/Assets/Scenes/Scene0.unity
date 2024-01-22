@@ -228,6 +228,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7801a2f5b5311041813d730588de9c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraSpeed: 8.5
+  target: {fileID: 1509115443}
+--- !u!4 &1509115443 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1030166840803704284, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+  m_PrefabInstance: {fileID: 1661353375}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1564250472
 GameObject:
   m_ObjectHideFlags: 0
