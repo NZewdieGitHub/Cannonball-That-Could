@@ -31,18 +31,9 @@ public class Player : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        // break options
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // slowdown cannonball
-            accelleration -= 1f;
+        GetComponent<Rigidbody2D>().
+            AddForce(new Vector2(accelleration, 0),
+            0);
 
-        }
-        else
-        {
-            GetComponent<Rigidbody2D>().
-                AddForce(new Vector2(accelleration, 0),
-                0);
-        }
     }
 }
