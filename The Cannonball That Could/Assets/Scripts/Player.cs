@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     // movement fields
     public Rigidbody2D rb2d;
-    public float accelleration = 8f;
+    public float accelleration = 3f;
     Vector2 movement;
 
     // Start is called before the first frame update
@@ -24,21 +24,25 @@ public class Player : MonoBehaviour
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
 
-        // break options
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-
-        }
+        
     }
     /// <summary>
     /// Make player move automatically
     /// </summary>
     private void FixedUpdate()
     {
-        Vector2 pos = transform.position;
+        // break options
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // slowdown cannonball
+            accelleration -= 1f;
 
-        pos = new Vector2(accelleration, 0);
-
-        transform.position = pos;
+        }
+        else
+        {
+            GetComponent<Rigidbody2D>().
+                AddForce(new Vector2(accelleration, 0),
+                0);
+        }
     }
 }

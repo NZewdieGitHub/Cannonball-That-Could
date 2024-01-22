@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1030166840803704284}
   - component: {fileID: 2890473703657718527}
   - component: {fileID: 2853025710734641003}
+  - component: {fileID: 8796383017201632024}
   m_Layer: 0
   m_Name: Cannonball
   m_TagString: Untagged
@@ -112,3 +113,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8796383017201632024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8987264604497825743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f10c4b74e0846408e62a16f70dd26a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2d: {fileID: 2853025710734641003}
+  accelleration: 8
