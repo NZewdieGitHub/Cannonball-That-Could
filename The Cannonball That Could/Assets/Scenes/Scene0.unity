@@ -228,7 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7801a2f5b5311041813d730588de9c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraSpeed: 8.5
+  cameraSpeed: 10
+  yOffset: 1
   target: {fileID: 1509115443}
 --- !u!4 &1509115443 stripped
 Transform:

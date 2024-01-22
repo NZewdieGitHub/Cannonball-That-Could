@@ -24,16 +24,17 @@ public class Player : MonoBehaviour
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
 
-        
+        GetComponent<Rigidbody2D>().
+         AddForce(new Vector2(accelleration, 0),
+         0);
+
+
     }
     /// <summary>
     /// Make player move automatically
     /// </summary>
     private void FixedUpdate()
     {
-        GetComponent<Rigidbody2D>().
-            AddForce(new Vector2(accelleration, 0),
-            0);
-
+     
     }
 }
