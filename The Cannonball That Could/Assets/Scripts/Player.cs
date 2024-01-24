@@ -12,14 +12,15 @@ public class Player : MonoBehaviour
     public string levelName;
 
     // Camera field
-    Camera camera;
-
+    CameraFollower cf;
+    [SerializeField]
+    GameObject camera;
     // Start is called before the first frame update
     void Start()
     {
         // get the rigidbody2D component
         rb2d = GetComponent<Rigidbody2D>();
-        camera = GetComponent<Camera>();
+        cf = GetComponent<CameraFollower>();
 
     }
 
@@ -30,11 +31,17 @@ public class Player : MonoBehaviour
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
 
+        // restart functionality (for testing purposes)
         if (Input.GetKey(KeyCode.Escape))
         {
             RestartLevel();
         }
-            
+
+        // Slowdown funtion
+        if (Input.GetKey(KeyCode.Space)) 
+        {
+            cf.cameraAccelleration -= 2f;
+        }
     }
     /// <summary>
     /// Make player move automatically
