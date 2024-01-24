@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
     {
         // get the rigidbody2D component
         rb2d = GetComponent<Rigidbody2D>();
-        
     }
 
     // Update is called once per frame
