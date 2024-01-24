@@ -24,19 +24,13 @@ public class Player : MonoBehaviour
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
 
-        GetComponent<Rigidbody2D>().
-         AddForce(new Vector2(accelleration, 0),
-         0);
-
-        // move cannon ball freely
-        rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
-
     }
     /// <summary>
     /// Make player move automatically
     /// </summary>
     private void FixedUpdate()
     {
-     
+        // move cannon ball freely
+        rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
     }
 }
