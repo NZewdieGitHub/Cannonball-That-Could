@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Used for camera clamping
+/// </summary>
 public class BoundsCheck : MonoBehaviour
 {
     // Start is called before the first frame update
