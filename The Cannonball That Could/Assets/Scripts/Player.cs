@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
          AddForce(new Vector2(accelleration, 0),
          0);
 
+        // move cannon ball freely
+        rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
 
     }
     /// <summary>
