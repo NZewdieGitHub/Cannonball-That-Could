@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraFollower : MonoBehaviour
 {
-    
+    public float cameraAccelleration = 4;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +15,6 @@ public class CameraFollower : MonoBehaviour
     void Update()
     {
         // move camera along the x-axis
-        transform.Translate(Vector2.right * 2f * Time.deltaTime);
+        transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
     }
 }

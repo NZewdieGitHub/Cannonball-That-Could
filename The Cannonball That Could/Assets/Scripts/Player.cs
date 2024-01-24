@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     // movement fields
     public Rigidbody2D rb2d;
-    public float accelleration = 1.5f;
+    public float accelleration = 4f;
     Vector2 movement;
 
     // Start is called before the first frame update
