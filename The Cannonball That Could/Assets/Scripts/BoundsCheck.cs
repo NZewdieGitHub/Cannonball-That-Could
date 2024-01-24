@@ -6,9 +6,11 @@ using UnityEngine;
 /// </summary>
 public class BoundsCheck : MonoBehaviour
 {
+   
     // Collider fields
     CircleCollider2D collider;
-
+    public float camWidth;
+    public float camHeight;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +23,5 @@ public class BoundsCheck : MonoBehaviour
 
     }
 
-    private
+    
 }

@@ -4,16 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
+
     // movement fields
     public Rigidbody2D rb2d;
     public float accelleration = 4f;
     Vector2 movement;
     public string levelName;
+
+    // Camera field
+    Camera camera;
+
     // Start is called before the first frame update
     void Start()
     {
         // get the rigidbody2D component
         rb2d = GetComponent<Rigidbody2D>();
+        camera = GetComponent<Camera>();
+
     }
 
     // Update is called once per frame
