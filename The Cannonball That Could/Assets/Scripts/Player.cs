@@ -37,7 +37,17 @@ public class Player : MonoBehaviour
             RestartLevel();
         }
 
-       
+        // Slowdown funtion
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            slowDownPressed = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            slowDownPressed = false;
+
+        }
+
     }
     /// <summary>
     /// Make player move automatically
@@ -46,17 +56,6 @@ public class Player : MonoBehaviour
     {
         // move cannon ball freely
         rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
-
-        // Slowdown funtion
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            slowDownPressed = true;
-        }
-        else 
-        {
-            slowDownPressed = false;
-            
-        }
     }
 
     public void RestartLevel()
