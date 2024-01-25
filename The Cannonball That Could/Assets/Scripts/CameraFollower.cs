@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,10 +12,15 @@ public class CameraFollower : MonoBehaviour
     [SerializeField]
     Player player;
 
+    // Text Field
+    [SerializeField]
+    TextMeshProUGUI TimeText;
+    public float exitTime = 3f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Setup initial text
+        TimeText.SetText("Get back in: " + exitTime.ToString());
     }
 
     // Update is called once per frame
