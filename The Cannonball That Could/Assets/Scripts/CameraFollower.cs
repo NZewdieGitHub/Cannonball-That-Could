@@ -36,5 +36,10 @@ public class CameraFollower : MonoBehaviour
         }
         
     }
-   
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        
+    }
+
 }
