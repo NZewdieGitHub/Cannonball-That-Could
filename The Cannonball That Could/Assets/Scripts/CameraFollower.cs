@@ -18,7 +18,7 @@ public class CameraFollower : MonoBehaviour
     [SerializeField]
     GameObject TextObject;
     public float exitTime = 3f;
-
+    public bool timeRunning = false;
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +56,19 @@ public class CameraFollower : MonoBehaviour
         // Make timer visible 
         TextObject.SetActive(true);
 
-        
+        // count down timer
+        timeRunning = true;
     }
+    /// <summary>
+    /// Used to determine if player left camera view
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Make Object invisible 
+        TextObject.SetActive(false);
 
+        // deactivate timer
+        timeRunning = true;
+    }
 }
