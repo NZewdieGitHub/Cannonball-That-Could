@@ -25,6 +25,7 @@ public class CameraFollower : MonoBehaviour
             // move camera along the x-axis at slower speed
             cameraAccelleration = 2f;
             transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
+            Debug.Log("Camera's slowed down");
         }
         else
         {
