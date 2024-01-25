@@ -15,7 +15,11 @@ public class CameraFollower : MonoBehaviour
     // Text Field
     [SerializeField]
     TextMeshProUGUI TimeText;
+    [SerializeField]
+    GameObject TextObject;
     public float exitTime = 3f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +53,9 @@ public class CameraFollower : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerExit2D(Collider2D collision)
     {
+        // Make timer visible 
+        TextObject.SetActive(true);
+
         
     }
 
