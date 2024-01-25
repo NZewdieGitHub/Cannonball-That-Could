@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraFollower : MonoBehaviour
 {
-    public float cameraAccelleration = 4f;
+    public float cameraAccelleration = 8f;
 
     // Player field
     [SerializeField]
@@ -27,7 +27,7 @@ public class CameraFollower : MonoBehaviour
             transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
             Debug.Log("Camera's slowed down");
         }
-        else
+        else 
         {
             // move camera along the x-axis
             transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);

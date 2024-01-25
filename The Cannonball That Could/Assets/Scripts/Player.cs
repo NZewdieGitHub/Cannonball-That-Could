@@ -52,9 +52,10 @@ public class Player : MonoBehaviour
         {
             slowDownPressed = true;
         }
-        else
+        else 
         {
             slowDownPressed = false;
+            
         }
     }
 
