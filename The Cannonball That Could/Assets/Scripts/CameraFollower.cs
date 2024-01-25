@@ -23,7 +23,8 @@ public class CameraFollower : MonoBehaviour
         if (player.slowDownPressed == true)
         {
             // move camera along the x-axis at slower speed
-            transform.Translate(Vector2.right * cameraAccelleration / 2f * Time.deltaTime);
+            cameraAccelleration = 2f;
+            transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
         }
         else
         {
