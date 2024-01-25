@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraFollower : MonoBehaviour
 {
@@ -36,7 +37,10 @@ public class CameraFollower : MonoBehaviour
         }
         
     }
-
+    /// <summary>
+    /// Used to determine if player left camera view
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerExit2D(Collider2D collision)
     {
         
