@@ -13,8 +13,7 @@ public class Player : MonoBehaviour
 
     // Camera field
     CameraFollower cf;
-    [SerializeField]
-    GameObject camera;
+    bool slowDownPressed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +21,7 @@ public class Player : MonoBehaviour
         // get the rigidbody2D component
         rb2d = GetComponent<Rigidbody2D>();
         cf = GetComponent<CameraFollower>();
-
+        
     }
 
     // Update is called once per frame
@@ -39,9 +38,9 @@ public class Player : MonoBehaviour
         }
 
         // Slowdown funtion
-        if (Input.GetKey(KeyCode.Space)) 
+        if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            cf.cameraAccelleration -= 2f;
+            slowDownPressed = true;
         }
     }
     /// <summary>
