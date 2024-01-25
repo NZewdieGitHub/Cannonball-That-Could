@@ -69,6 +69,6 @@ public class CameraFollower : MonoBehaviour
         TextObject.SetActive(false);
 
         // deactivate timer
-        timeRunning = true;
+        timeRunning = false;
     }
 }
