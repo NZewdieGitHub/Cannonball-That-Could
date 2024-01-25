@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     CameraFollower cf;
     [SerializeField]
     GameObject camera;
+
     // Start is called before the first frame update
     void Start()
     {

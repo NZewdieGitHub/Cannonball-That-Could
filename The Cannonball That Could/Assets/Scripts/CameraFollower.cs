@@ -17,4 +17,11 @@ public class CameraFollower : MonoBehaviour
         // move camera along the x-axis
         transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
     }
+    /// <summary>
+    /// Slows Camera Down
+    /// </summary>
+    public void SlowDown()
+    {
+        cameraAccelleration = -2f;
+    }
 }
