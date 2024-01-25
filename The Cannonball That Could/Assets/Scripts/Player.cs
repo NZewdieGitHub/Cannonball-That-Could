@@ -38,14 +38,13 @@ public class Player : MonoBehaviour
         }
 
         // Slowdown funtion
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Slow"))
         {
             slowDownPressed = true;
         }
-        else if (Input.GetKeyUp(KeyCode.Space))
+        else if (Input.GetButtonUp("Slow"))
         {
             slowDownPressed = false;
-
         }
 
     }
