@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     // Camera field
     CameraFollower cf;
-    bool slowDownPressed = false;
+    public bool slowDownPressed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +41,10 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
             slowDownPressed = true;
+        }
+        else
+        {
+            slowDownPressed = false;
         }
     }
     /// <summary>

@@ -5,19 +5,32 @@ using UnityEngine;
 public class CameraFollower : MonoBehaviour
 {
     public float cameraAccelleration = 4f;
+
+    // Player field
     [SerializeField]
-    Camera camera;
+    Player player;
+
     // Start is called before the first frame update
     void Start()
     {
-        camera = GetComponent<Camera>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        // move camera along the x-axis
-        transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
+        // if player presses and holds space
+        if (player.slowDownPressed == true)
+        {
+            // move camera along the x-axis at slower speed
+            transform.Translate(Vector2.right * cameraAccelleration / 2f * Time.deltaTime);
+        }
+        else
+        {
+            // move camera along the x-axis
+            transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
+        }
+        
     }
     /// <summary>
     /// Slows Camera Down

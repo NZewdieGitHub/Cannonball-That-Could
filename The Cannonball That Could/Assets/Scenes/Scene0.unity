@@ -294,6 +294,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1320909926 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+  m_PrefabInstance: {fileID: 1661353375}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f10c4b74e0846408e62a16f70dd26a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1564250472
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,6 +568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraAccelleration: 4
+  player: {fileID: 1320909926}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
