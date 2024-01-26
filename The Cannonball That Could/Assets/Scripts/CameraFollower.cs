@@ -61,8 +61,8 @@ public class CameraFollower : MonoBehaviour
             if (exitTime <= 0)
             {
                 // move cannon ball and camera back to starting position
-                player.transform.position = new Vector2(-8.4989f, 0.37f);
-                transform.position = new Vector2(-8.4989f, 0.37f); 
+                player.transform.position = new Vector3(-8.4989f, 0.37f, 0);
+                transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f); 
             }
         }
     }
