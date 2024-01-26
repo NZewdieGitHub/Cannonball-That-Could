@@ -77,6 +77,9 @@ public class CameraFollower : MonoBehaviour
 
         // deactivate timer
         timeRunning = false;
+
+        // reset timer count
+        exitTime = 3f;
     }
     /// <summary>
     /// Start timer
