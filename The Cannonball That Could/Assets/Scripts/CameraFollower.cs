@@ -62,7 +62,7 @@ public class CameraFollower : MonoBehaviour
             {
                 // move cannon ball and camera back to starting position
                 player.transform.position = cannon.transform.position;
-                //transform.position = cannon.transform.position;
+                transform.position = cannon.transform.position;
             }
         }
     }
