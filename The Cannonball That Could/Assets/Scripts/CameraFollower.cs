@@ -12,6 +12,10 @@ public class CameraFollower : MonoBehaviour
     [SerializeField]
     Player player;
 
+    // Cannon Field
+    [SerializeField]
+    GameObject cannon;
+
     // Text Field
     [SerializeField]
     TextMeshProUGUI TimeText;
@@ -52,6 +56,14 @@ public class CameraFollower : MonoBehaviour
             // have count down match the frame count
             exitTime -= Time.deltaTime;
             StartTimer(exitTime);
+
+            // check if time reaches 0
+            if (exitTime <= 0)
+            {
+                // move cannon ball and camera back to starting position
+                player.transform.position = cannon.transform.position;
+                //transform.position = cannon.transform.position;
+            }
         }
     }
     /// <summary>

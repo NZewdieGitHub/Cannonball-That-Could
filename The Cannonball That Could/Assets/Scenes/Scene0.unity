@@ -880,9 +880,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraAccelleration: 4
   player: {fileID: 1320909926}
+  cannon: {fileID: 1564250472}
   TimeText: {fileID: 1915741221}
   TextObject: {fileID: 1915741219}
   exitTime: 3
+  timeRunning: 0
 --- !u!61 &2137439070
 BoxCollider2D:
   m_ObjectHideFlags: 0
