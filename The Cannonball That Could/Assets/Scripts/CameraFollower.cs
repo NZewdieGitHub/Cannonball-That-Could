@@ -49,7 +49,8 @@ public class CameraFollower : MonoBehaviour
         // Check if time is running
         if (timeRunning == true) 
         {
-            exitTime -= 1;
+            // have count down match the frame count
+            exitTime -= Time.deltaTime;
             StartTimer(exitTime);
         }
     }
@@ -82,6 +83,7 @@ public class CameraFollower : MonoBehaviour
     /// </summary>
     private void StartTimer(float currentTime)
     {
+        // increment the current time by one second
         currentTime += 1;
         // update timer
         TimeText.SetText("Get back in: " + exitTime.ToString("0"));
