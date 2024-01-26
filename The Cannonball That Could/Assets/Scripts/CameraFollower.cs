@@ -46,6 +46,12 @@ public class CameraFollower : MonoBehaviour
             Debug.Log("Camera's sped up");
         }
         
+        // Check if time is running
+        if (timeRunning == true) 
+        {
+            exitTime -= 1;
+            StartTimer(exitTime);
+        }
     }
     /// <summary>
     /// Used to determine if player left camera view
@@ -70,5 +76,14 @@ public class CameraFollower : MonoBehaviour
 
         // deactivate timer
         timeRunning = false;
+    }
+    /// <summary>
+    /// Start timer
+    /// </summary>
+    private void StartTimer(float currentTime)
+    {
+        currentTime += 1;
+        // update timer
+        TimeText.SetText("Get back in: " + exitTime.ToString("0"));
     }
 }
