@@ -72,11 +72,15 @@ public class CameraFollower : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerExit2D(Collider2D collision)
     {
-        // Make timer visible 
-        TextObject.SetActive(true);
+        // make sure only the player exits
+        if (collision == player.collider)
+        {
+            // Make timer visible 
+            TextObject.SetActive(true);
 
-        // count down timer
-        timeRunning = true;
+            // count down timer
+            timeRunning = true;
+        }
     }
     /// <summary>
     /// Used to determine if player left camera view
@@ -84,14 +88,18 @@ public class CameraFollower : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Make Object invisible 
-        TextObject.SetActive(false);
+        // make sure only the player exits
+        if (collision == player.collider)
+        {
+            // Make Object invisible 
+            TextObject.SetActive(false);
 
-        // deactivate timer
-        timeRunning = false;
+            // deactivate timer
+            timeRunning = false;
 
-        // reset timer count
-        exitTime = 3f;
+            // reset timer count
+            exitTime = 3f;
+        }
     }
     /// <summary>
     /// Start timer

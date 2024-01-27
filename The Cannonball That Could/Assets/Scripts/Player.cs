@@ -21,14 +21,17 @@ public class Player : MonoBehaviour
     private float firingPower = 8f;
     private float fireTime = 2f;
 
-
+    // collider fields
+    public CircleCollider2D collider;
     // Start is called before the first frame update
     void Start()
     {
         // get the rigidbody2D component
         rb2d = GetComponent<Rigidbody2D>();
+        // get camera component
         cf = GetComponent<CameraFollower>();
-        
+        // get collider component
+        collider = gameObject.GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
