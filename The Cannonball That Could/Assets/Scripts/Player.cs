@@ -54,19 +54,19 @@ public class Player : MonoBehaviour
 
         // check if the cannon has fired or not
         // Slowdown funtion
-        if (Input.GetKeyDown(KeyCode.Space) && canFire == false)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             slowDownPressed = true;
         }
-        else if (Input.GetKeyUp(KeyCode.Space) && canFire == false)
+        else if (Input.GetKeyUp(KeyCode.Space))
         {
             slowDownPressed = false;
         }
         
         
-        if (isFiring == false)
+        if (isFiring == false && canFire == true)
         {
-            if (Input.GetKeyDown(KeyCode.Space) && canFire == true)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 StartCoroutine(Fire());
             }
@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
         {
             return;
         }
-        if (isFiring == false)
+        if (canFire == false)
         {
             // move cannon ball freely
             rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
@@ -111,6 +111,7 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(fireTime);
         rb2d.gravityScale = orginalGravity;
         isFiring = false;
+        
     }
 
 }
