@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     private bool canFire = true;
     private bool hasFired = false;
     private float firingPower = 6f;
+    private float fireTime = 0.5f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -72,9 +74,17 @@ public class Player : MonoBehaviour
     /// <summary>
     /// Use to shoot cannon ball
     /// </summary>
-    private void Fire()
+    private IEnumerator Fire()
     {
         canFire = false;
+        hasFired = true;
+        float orginalGravity = rb2d.gravityScale;
+        rb2d.gravityScale = 0f;
+        rb2d.velocity = new Vector2(transform.localScale.x * firingPower, 0f);
+
+        // stop dashing for a short amount of time
+        yield return new WaitForSeconds(fireTime);
+        rb2d.gravityScale = orginalGravity;
     }
 
 }
