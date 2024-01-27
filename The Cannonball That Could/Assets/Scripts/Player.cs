@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
 
     // Firing fields
     private bool canFire = true;
-    private bool hasFired = false;
+    private bool isFiring = false;
     private float firingPower = 6f;
     private float fireTime = 0.5f;
 
@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         // check if cannon has fired
-        if (hasFired) 
+        if (isFiring) 
         {
             return;
         }
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
         }
         
         
-        if (hasFired == false)
+        if (isFiring == false)
         {
             if (Input.GetKeyDown(KeyCode.Space) && canFire == true)
             {
@@ -78,11 +78,11 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         // check if cannon has fired
-        if (hasFired)
+        if (isFiring)
         {
             return;
         }
-        if (hasFired == true)
+        if (isFiring == false)
         {
             // move cannon ball freely
             rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
     private IEnumerator Fire()
     {
         canFire = false;
-        hasFired = true;
+        isFiring = true;
         float orginalGravity = rb2d.gravityScale;
         rb2d.gravityScale = 0f;
         rb2d.velocity = new Vector2(transform.localScale.x * firingPower, 0f);
@@ -110,7 +110,7 @@ public class Player : MonoBehaviour
         // stop dashing for a short amount of time
         yield return new WaitForSeconds(fireTime);
         rb2d.gravityScale = orginalGravity;
-        hasFired = false;
+        isFiring = false;
     }
 
 }
