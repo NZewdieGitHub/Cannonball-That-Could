@@ -15,6 +15,11 @@ public class Player : MonoBehaviour
     CameraFollower cf;
     public bool slowDownPressed = false;
 
+    // Firing fields
+    private bool canFire = true;
+    private bool hasFired = false;
+    private float firingPower = 6f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,9 +61,20 @@ public class Player : MonoBehaviour
         // move cannon ball freely
         rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
     }
-
+    /// <summary>
+    /// Give player the ability to restart level
+    /// </summary>
     public void RestartLevel()
     {
         SceneManager.LoadScene(levelName);
     }
+
+    /// <summary>
+    /// Use to shoot cannon ball
+    /// </summary>
+    private void Fire()
+    {
+        canFire = false;
+    }
+
 }
