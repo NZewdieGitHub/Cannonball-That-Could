@@ -44,7 +44,7 @@ public class CameraFollower : MonoBehaviour
         }
         else if (player.slowDownPressed == false) 
         {
-            cameraAccelleration = 4f;
+            cameraAccelleration = 8f;
             // move camera along the x-axis
             transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
             Debug.Log("Camera's sped up");

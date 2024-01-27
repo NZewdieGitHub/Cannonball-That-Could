@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     // Firing fields
     private bool canFire = true;
     private bool isFiring = false;
-    private float firingPower = 6f;
+    private float firingPower = 8f;
     private float fireTime = 2f;
 
 
