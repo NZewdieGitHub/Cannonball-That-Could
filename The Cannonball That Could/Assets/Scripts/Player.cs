@@ -34,6 +34,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // check if cannon has fired
+        if (hasFired) 
+        {
+            return;
+        }
+
         // movement input setup
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
@@ -44,24 +50,43 @@ public class Player : MonoBehaviour
             RestartLevel();
         }
 
+
+
+        // check if the cannon has fired or not
         // Slowdown funtion
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && canFire == false)
         {
             slowDownPressed = true;
         }
-        else if (Input.GetKeyUp(KeyCode.Space))
+        else if (Input.GetKeyUp(KeyCode.Space) && canFire == false)
         {
             slowDownPressed = false;
         }
-
+        
+        
+        if (hasFired == false)
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && canFire == true)
+            {
+                StartCoroutine(Fire());
+            }
+        }
     }
     /// <summary>
     /// Make player move automatically
     /// </summary>
     private void FixedUpdate()
     {
-        // move cannon ball freely
-        rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
+        // check if cannon has fired
+        if (hasFired)
+        {
+            return;
+        }
+        if (hasFired == true)
+        {
+            // move cannon ball freely
+            rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
+        }
     }
     /// <summary>
     /// Give player the ability to restart level
@@ -85,6 +110,7 @@ public class Player : MonoBehaviour
         // stop dashing for a short amount of time
         yield return new WaitForSeconds(fireTime);
         rb2d.gravityScale = orginalGravity;
+        hasFired = false;
     }
 
 }
