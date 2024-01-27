@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     private bool canFire = true;
     private bool isFiring = false;
     private float firingPower = 6f;
-    private float fireTime = 0.5f;
+    private float fireTime = 2f;
 
 
     // Start is called before the first frame update
