@@ -91,6 +91,12 @@ public class Player : MonoBehaviour
                 StartCoroutine(Fire());
             }
         }
+
+        // If player can fire itself
+        if (canFire == true) 
+        {
+            transform.position = Vector3.zero;
+        }
     }
     /// <summary>
     /// Make player move automatically
@@ -150,7 +156,6 @@ public class Player : MonoBehaviour
             // reposition player
             transform.position = cannon.transform.position;
             canFire = true;
-            isFiring = false;
             vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
        }
     }
