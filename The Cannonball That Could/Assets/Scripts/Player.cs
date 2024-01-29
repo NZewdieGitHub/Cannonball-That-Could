@@ -116,5 +116,13 @@ public class Player : MonoBehaviour
         isFiring = false;
         
     }
+    /// <summary>
+    /// Used for colliding with the ship
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+    }
 
 }
