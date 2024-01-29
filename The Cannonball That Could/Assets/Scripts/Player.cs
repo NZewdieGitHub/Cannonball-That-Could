@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
 
     // Camera field
     [SerializeField]
+    GameObject vc;
     CameraFollower cf;
     public bool slowDownPressed = false;
 
@@ -148,9 +149,10 @@ public class Player : MonoBehaviour
             PlayerUI.SetText("Player Health: " + playerScore.ToString());
 
             // reposition player
-            Destroy(gameObject);
-            Instantiate(gameObject, cannon.transform.position, Quaternion.identity); 
-            cf.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
+            transform.position = new Vector3(-8.4989f, 0.37f, 0f);
+            //accelleration = 0f;
+            canFire = true;
+            vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
         }
     }
 

@@ -1821,6 +1821,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+      propertyPath: cf
+      value: 
+      objectReference: {fileID: 2137439069}
+    - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+      propertyPath: vc
+      value: 
+      objectReference: {fileID: 2137439065}
+    - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: enemy
       value: 
       objectReference: {fileID: 1231147572311233294, guid: 1be2261b6c81b7d4799e953dab4fe053, type: 3}
@@ -1828,6 +1836,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+      propertyPath: cannon
+      value: 
+      objectReference: {fileID: 1564250472}
     - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: PlayerUI
       value: 
