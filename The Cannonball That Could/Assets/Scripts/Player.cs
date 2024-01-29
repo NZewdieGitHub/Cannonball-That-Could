@@ -139,10 +139,7 @@ public class Player : MonoBehaviour
     /// <param name="collision"></param>
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // set up an array of texts that don't destroy on
-        // load
-        GameObject[] txts = GameObject.FindGameObjectsWithTag("Text");
-
+     
         // if player collides with enemy
        if (collision.gameObject.CompareTag("Enemy"))
        {
