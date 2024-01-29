@@ -72,8 +72,6 @@ public class Player : MonoBehaviour
             RestartLevel();
         }
 
-
-
         // check if the cannon has fired or not
         // Slowdown funtion
         if (Input.GetKeyDown(KeyCode.Space))
@@ -141,6 +139,10 @@ public class Player : MonoBehaviour
     /// <param name="collision"></param>
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // set up an array of texts that don't destroy on
+        // load
+        GameObject[] txts = GameObject.FindGameObjectsWithTag("Text");
+
         // if player collides with enemy
        if (collision.gameObject.CompareTag("Enemy"))
        {
@@ -149,11 +151,10 @@ public class Player : MonoBehaviour
             PlayerUI.SetText("Player Health: " + playerScore.ToString());
 
             // reposition player
-            transform.position = new Vector3(-8.4989f, 0.37f, 0f);
-            //accelleration = 0f;
+            transform.position = cannon.transform.position;
             canFire = true;
             vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
-        }
+       }
     }
 
 }
