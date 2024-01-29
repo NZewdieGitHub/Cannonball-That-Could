@@ -27,10 +27,7 @@ public class Player : MonoBehaviour
     // collider fields
     public CircleCollider2D collider;
 
-    // Text Updating fields
-    [SerializeField]
-    public TextMeshProUGUI PlayerUI;
-    public int playerScore = 3;
+   
 
     // Enemy Field
     [SerializeField]
@@ -133,25 +130,6 @@ public class Player : MonoBehaviour
         isFiring = false;
         
     }
-    /// <summary>
-    /// Used for colliding with the enemy ship
-    /// </summary>
-    /// <param name="collision"></param>
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-     
-        // if player collides with enemy
-       if (collision.gameObject.CompareTag("Enemy"))
-       {
-            // updated score
-            playerScore -= 1;
-            PlayerUI.SetText("Player Health: " + playerScore.ToString());
-
-            // reposition player
-            transform.position = cannon.transform.position;
-            canFire = true;
-            vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
-       }
-    }
+    
 
 }
