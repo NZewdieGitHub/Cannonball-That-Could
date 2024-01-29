@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public string levelName;
 
     // Camera field
+    [SerializeField]
     CameraFollower cf;
     public bool slowDownPressed = false;
 
@@ -33,6 +34,10 @@ public class Player : MonoBehaviour
     // Enemy Field
     [SerializeField]
     Enemy enemy;
+
+    // Cannon Fields
+    [SerializeField]
+    GameObject cannon;
 
     // Start is called before the first frame update
     void Start()
@@ -143,7 +148,8 @@ public class Player : MonoBehaviour
             PlayerUI.SetText("Player Health: " + playerScore.ToString());
 
             // reposition player
-            transform.position = new Vector3(-8.4989f, 0.37f, 0);
+            Destroy(gameObject);
+            Instantiate(gameObject, cannon.transform.position, Quaternion.identity); 
             cf.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
         }
     }
