@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5267974027490718516}
   m_Layer: 0
   m_Name: Cannonball
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,6 +130,11 @@ MonoBehaviour:
   accelleration: 8
   levelName: 
   slowDownPressed: 0
+  isFiring: 0
+  collider: {fileID: 0}
+  PlayerUI: {fileID: 0}
+  playerScore: 3
+  enemy: {fileID: 0}
 --- !u!58 &5267974027490718516
 CircleCollider2D:
   m_ObjectHideFlags: 0

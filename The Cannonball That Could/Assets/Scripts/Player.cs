@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
@@ -23,6 +24,16 @@ public class Player : MonoBehaviour
 
     // collider fields
     public CircleCollider2D collider;
+
+    // Text Updating fields
+    [SerializeField]
+    public TextMeshProUGUI PlayerUI;
+    public int playerScore = 3;
+
+    // Enemy Field
+    [SerializeField]
+    Enemy enemy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +43,8 @@ public class Player : MonoBehaviour
         cf = GetComponent<CameraFollower>();
         // get collider component
         collider = gameObject.GetComponent<CircleCollider2D>();
+        // score setup
+        PlayerUI.SetText("Player Health: " + playerScore.ToString());
     }
 
     // Update is called once per frame
@@ -117,12 +130,12 @@ public class Player : MonoBehaviour
         
     }
     /// <summary>
-    /// Used for colliding with the ship
+    /// Used for colliding with the enemy ship
     /// </summary>
     /// <param name="collision"></param>
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+       
     }
 
 }
