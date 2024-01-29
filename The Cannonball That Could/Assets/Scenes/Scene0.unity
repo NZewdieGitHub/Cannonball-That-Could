@@ -1698,6 +1698,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1583634491 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5267974027490718516, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+  m_PrefabInstance: {fileID: 1661353375}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1646755866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1816,9 +1821,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 1231147572311233294, guid: 1be2261b6c81b7d4799e953dab4fe053, type: 3}
+    - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+      propertyPath: PlayerUI
+      value: 
+      objectReference: {fileID: 858896102}
+    - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 1583634491}
     - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: levelName
       value: Scene0
@@ -1829,7 +1846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8987264604497825743, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6449010367392373175, guid: c66729cba06a35847a55d5bec5f78119, type: 3}

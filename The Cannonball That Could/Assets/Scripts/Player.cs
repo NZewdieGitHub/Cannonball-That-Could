@@ -135,7 +135,17 @@ public class Player : MonoBehaviour
     /// <param name="collision"></param>
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       
+        // if player collides with enemy
+       if (collision.gameObject.CompareTag("Enemy"))
+       {
+            // updated score
+            playerScore -= 1;
+            PlayerUI.SetText("Player Health: " + playerScore.ToString());
+
+            // reposition player
+            transform.position = new Vector3(-8.4989f, 0.37f, 0);
+            cf.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
+        }
     }
 
 }
