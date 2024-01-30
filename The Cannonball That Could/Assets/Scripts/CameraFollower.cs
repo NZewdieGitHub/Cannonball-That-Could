@@ -24,6 +24,12 @@ public class CameraFollower : MonoBehaviour
     public float exitTime = 3f;
     public bool timeRunning = false;
 
+    // Text Updating fields
+    [SerializeField]
+    public TextMeshProUGUI PlayerUI;
+    public int playerScore = 3;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +66,9 @@ public class CameraFollower : MonoBehaviour
             // check if time reaches 0
             if (exitTime <= 0)
             {
+                // updated score
+                playerScore -= 1;
+                PlayerUI.SetText("Enemy Health: " + playerScore.ToString());
                 // move cannon ball and camera back to starting position
                 player.transform.position = new Vector3(-8.4989f, 0.37f, 0);
                 transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f); 
