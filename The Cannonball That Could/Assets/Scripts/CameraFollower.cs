@@ -36,6 +36,7 @@ public class CameraFollower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         // Setup initial text
         TimeText.SetText("Get back in: " + exitTime.ToString());
     }
@@ -77,12 +78,12 @@ public class CameraFollower : MonoBehaviour
                 transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f); 
             }
 
-            //if (playerScore <= 0)
-            //{
-            //    playerScore = 0;
-            //    PlayerUI.SetText("Player Health: " + playerScore.ToString());
-            //    //SpawnLoseMenu();
-            //}
+            if (playerScore <= 0)
+            {
+                playerScore = 0;
+                PlayerUI.SetText("Player Health: " + playerScore.ToString());
+                SpawnLoseMenu();
+            }
 
         }
     }

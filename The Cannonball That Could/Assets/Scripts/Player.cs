@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
         collider = gameObject.GetComponent<CircleCollider2D>();
         // score setup
         EnemyUI.SetText("Enemy Health: " + enemyScore.ToString());
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
