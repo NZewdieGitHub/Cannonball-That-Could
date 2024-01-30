@@ -668,7 +668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -184, y: 115}
+  m_AnchoredPosition: {x: -183.36, y: 99.399994}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &320002992
@@ -692,7 +692,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Spacebar to fire cannon ball, \nafterwards press and hold space to \nspeed
-    up/slow down\n\nWASD/Arrow Keys to move"
+    up/slow down\n\nWASD/Arrow Keys to move\n\nBackspace to exit"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1455,7 +1455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &721142533
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2393,7 +2393,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 275.34, y: 210.6}
+  m_AnchoredPosition: {x: 275.98, y: 195}
   m_SizeDelta: {x: 48.603, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1131272526
@@ -3362,8 +3362,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 11.067505, y: 54}
-  m_SizeDelta: {x: -1320.7148, y: -628.7936}
+  m_AnchoredPosition: {x: -17.026978, y: -5.1279907}
+  m_SizeDelta: {x: -178.5369, y: -10.256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1649832496
 MonoBehaviour:
@@ -3543,7 +3543,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -199.64, y: 200.6}
+  m_AnchoredPosition: {x: -199, y: 185}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1729891018

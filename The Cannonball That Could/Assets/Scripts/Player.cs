@@ -90,7 +90,13 @@ public class Player : MonoBehaviour
             slowDownPressed = false;
         }
         
-        
+        // Exit Functionality
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            Application.Quit();
+        }
+
+
         if (isFiring == false && canFire == true)
         {
             if (Input.GetKeyDown(KeyCode.Space))
