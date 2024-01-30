@@ -158,6 +158,21 @@ public class Player : MonoBehaviour
             canFire = true;
             vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
        }
+        // if player collides with TNT
+        if (collision.gameObject.CompareTag("TNT"))
+        {
+            // updated score
+            enemyScore -= 2;
+            EnemyUI.SetText("Enemy Health: " + enemyScore.ToString());
+
+            // reposition player
+            transform.position = cannon.transform.position;
+            canFire = true;
+            vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
+
+            Destroy(collision.gameObject);
+        }
+
     }
 
 }
