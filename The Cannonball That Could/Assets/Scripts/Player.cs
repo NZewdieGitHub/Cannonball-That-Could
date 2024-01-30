@@ -161,14 +161,7 @@ public class Player : MonoBehaviour
         // if player collides with enemy
        if (collision.gameObject.CompareTag("Enemy"))
        {
-            // If enemy's defeated
-            if (enemyScore <= 0)
-            {
-                // Display the win screen
-                SpawnWinMenu();
-            }
-            else
-            {
+
                 // updated score
                 enemyScore -= 1;
                 EnemyUI.SetText("Enemy Health: " + enemyScore.ToString());
@@ -177,9 +170,14 @@ public class Player : MonoBehaviour
                 transform.position = cannon.transform.position;
                 canFire = true;
                 vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
-               
-            }
-       }
+                // If enemy's defeated
+                if (enemyScore <= 0)
+                {
+                    // Display the win screen
+                    SpawnWinMenu();
+                }
+
+        }
         // if player collides with TNT
         if (collision.gameObject.CompareTag("TNT"))
         {
@@ -193,7 +191,12 @@ public class Player : MonoBehaviour
             vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
 
             Destroy(collision.gameObject);
-
+            // If enemy's defeated
+            if (enemyScore <= 0)
+            {
+                // Display the win screen
+                SpawnWinMenu();
+            }
         }
 
     }

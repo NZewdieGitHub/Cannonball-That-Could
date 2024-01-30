@@ -3484,6 +3484,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 217446560}
     - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+      propertyPath: WinPanel
+      value: 
+      objectReference: {fileID: 11950385}
+    - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: collider
       value: 
       objectReference: {fileID: 1583634491}
@@ -4240,7 +4244,6 @@ MonoBehaviour:
   PlayerUI: {fileID: 858896102}
   playerScore: 3
   LosePanel: {fileID: 721142532}
-  WinPanel: {fileID: 11950385}
 --- !u!61 &2137439070
 BoxCollider2D:
   m_ObjectHideFlags: 0
