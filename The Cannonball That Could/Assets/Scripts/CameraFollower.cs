@@ -23,6 +23,7 @@ public class CameraFollower : MonoBehaviour
     GameObject TextObject;
     public float exitTime = 3f;
     public bool timeRunning = false;
+    public bool frozenScreen = false;
 
     // Text Updating fields
     [SerializeField]
@@ -70,19 +71,19 @@ public class CameraFollower : MonoBehaviour
             {
                 // updated score
                 playerScore -= 1;
-                PlayerUI.SetText("Enemy Health: " + playerScore.ToString());
+                PlayerUI.SetText("Player Health: " + playerScore.ToString());
                 // move cannon ball and camera back to starting position
                 player.transform.position = new Vector3(-8.4989f, 0.37f, 0);
-                transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
-                // Check if player health is 0
-                if (playerScore <= 0)
-                {
-                    // spawn Lose Panel
-                    Time.timeScale = 0;
-                    LosePanel.SetActive(true);
-                }
+                transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f); 
             }
-           
+
+            if (playerScore <= 0)
+            {
+                playerScore = 0;
+                PlayerUI.SetText("Player Health: " + playerScore.ToString());
+                SpawnLoseMenu();
+            }
+
         }
     }
     /// <summary>
@@ -129,5 +130,15 @@ public class CameraFollower : MonoBehaviour
         currentTime += 1;
         // update timer
         TimeText.SetText("Get back in: " + exitTime.ToString("0"));
+    }
+    /// <summary>
+    /// Instantiate Lose Menu
+    /// </summary>
+    public void SpawnLoseMenu()
+    {
+       
+        LosePanel.SetActive(true);
+        Time.timeScale = 0f;
+        frozenScreen = true;
     }
 }

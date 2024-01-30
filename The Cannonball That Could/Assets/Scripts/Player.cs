@@ -119,8 +119,12 @@ public class Player : MonoBehaviour
     /// </summary>
     public void RestartLevel()
     {
+        if (Time.timeScale == 0f && cf.frozenScreen == true)
+        {
+            Time.timeScale = 1f;
+            cf.frozenScreen = false;
+        }
         SceneManager.LoadScene(levelName);
-        Time.timeScale = 1;
     }
 
     /// <summary>
@@ -172,6 +176,7 @@ public class Player : MonoBehaviour
             vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
 
             Destroy(collision.gameObject);
+
         }
 
     }
