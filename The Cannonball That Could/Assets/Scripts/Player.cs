@@ -120,6 +120,7 @@ public class Player : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(levelName);
+        Time.timeScale = 1;
     }
 
     /// <summary>

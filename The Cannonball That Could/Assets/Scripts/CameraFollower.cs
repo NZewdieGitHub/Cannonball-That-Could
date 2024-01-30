@@ -29,7 +29,9 @@ public class CameraFollower : MonoBehaviour
     public TextMeshProUGUI PlayerUI;
     public int playerScore = 3;
 
-
+    // Panel Setup
+    [SerializeField]
+    GameObject LosePanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -71,8 +73,16 @@ public class CameraFollower : MonoBehaviour
                 PlayerUI.SetText("Enemy Health: " + playerScore.ToString());
                 // move cannon ball and camera back to starting position
                 player.transform.position = new Vector3(-8.4989f, 0.37f, 0);
-                transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f); 
+                transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
+                // Check if player health is 0
+                if (playerScore <= 0)
+                {
+                    // spawn Lose Panel
+                    Time.timeScale = 0;
+                    LosePanel.SetActive(true);
+                }
             }
+           
         }
     }
     /// <summary>
