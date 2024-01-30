@@ -1221,7 +1221,7 @@ GameObject:
   - component: {fileID: 1116881067}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1840,6 +1840,10 @@ PrefabInstance:
       propertyPath: cannon
       value: 
       objectReference: {fileID: 1564250472}
+    - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+      propertyPath: EnemyUI
+      value: 
+      objectReference: {fileID: 217446560}
     - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: PlayerUI
       value: 

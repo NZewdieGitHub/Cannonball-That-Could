@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 {
     // Collider field
     BoxCollider2D collider;
+
     // Start is called before the first frame update
     void Start()
     {

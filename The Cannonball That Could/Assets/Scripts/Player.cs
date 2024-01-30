@@ -29,8 +29,8 @@ public class Player : MonoBehaviour
 
     // Text Updating fields
     [SerializeField]
-    public TextMeshProUGUI PlayerUI;
-    public int playerScore = 3;
+    public TextMeshProUGUI EnemyUI;
+    public int enemyScore = 3;
 
     // Enemy Field
     [SerializeField]
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
         // get collider component
         collider = gameObject.GetComponent<CircleCollider2D>();
         // score setup
-        PlayerUI.SetText("Player Health: " + playerScore.ToString());
+        EnemyUI.SetText("Enemy Health: " + enemyScore.ToString());
     }
 
     // Update is called once per frame
@@ -150,8 +150,8 @@ public class Player : MonoBehaviour
        if (collision.gameObject.CompareTag("Enemy"))
        {
             // updated score
-            playerScore -= 1;
-            PlayerUI.SetText("Player Health: " + playerScore.ToString());
+            enemyScore -= 1;
+            EnemyUI.SetText("Enemy Health: " + enemyScore.ToString());
 
             // reposition player
             transform.position = cannon.transform.position;
