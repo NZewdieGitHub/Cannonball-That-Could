@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField]
-    string SceneName;
+    public string SceneName;
     /// <summary>
     /// Restart Game
     /// </summary>
@@ -21,6 +21,6 @@ public class MenuManager : MonoBehaviour
             // resume game's runtime
             Time.timeScale = 1;
         }
-        SceneManager.LoadScene(levelName);
+        SceneManager.LoadScene(SceneName);
     }
 }

@@ -2667,10 +2667,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 721142532}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1327354910}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: RestartGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2926,6 +2926,7 @@ GameObject:
   - component: {fileID: 1327354908}
   - component: {fileID: 1327354907}
   - component: {fileID: 1327354906}
+  - component: {fileID: 1327354910}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -3022,6 +3023,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1327354910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327354905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c6dfb4f8200da45b660a80c989f5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: Scene0
 --- !u!4 &1388420292 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3604372017880709901, guid: 1be2261b6c81b7d4799e953dab4fe053, type: 3}
@@ -4222,6 +4236,7 @@ MonoBehaviour:
   TextObject: {fileID: 1915741219}
   exitTime: 3
   timeRunning: 0
+  frozenScreen: 0
   PlayerUI: {fileID: 858896102}
   playerScore: 3
   LosePanel: {fileID: 721142532}

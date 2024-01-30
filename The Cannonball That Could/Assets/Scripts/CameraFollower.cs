@@ -77,12 +77,12 @@ public class CameraFollower : MonoBehaviour
                 transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f); 
             }
 
-            if (playerScore <= 0)
-            {
-                playerScore = 0;
-                PlayerUI.SetText("Player Health: " + playerScore.ToString());
-                SpawnLoseMenu();
-            }
+            //if (playerScore <= 0)
+            //{
+            //    playerScore = 0;
+            //    PlayerUI.SetText("Player Health: " + playerScore.ToString());
+            //    //SpawnLoseMenu();
+            //}
 
         }
     }
@@ -138,7 +138,7 @@ public class CameraFollower : MonoBehaviour
     {
        
         LosePanel.SetActive(true);
-        Time.timeScale = 0f;
+        Time.timeScale = 0;
         frozenScreen = true;
     }
 }

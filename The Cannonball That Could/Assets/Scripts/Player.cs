@@ -119,9 +119,9 @@ public class Player : MonoBehaviour
     /// </summary>
     public void RestartLevel()
     {
-        if (Time.timeScale == 0f)
+        if (Time.timeScale == 0)
         {
-            Time.timeScale = 1f;
+            Time.timeScale = 1;
             
         }
         SceneManager.LoadScene(levelName);
