@@ -119,10 +119,10 @@ public class Player : MonoBehaviour
     /// </summary>
     public void RestartLevel()
     {
-        if (Time.timeScale == 0f && cf.frozenScreen == true)
+        if (Time.timeScale == 0f)
         {
             Time.timeScale = 1f;
-            cf.frozenScreen = false;
+            
         }
         SceneManager.LoadScene(levelName);
     }
