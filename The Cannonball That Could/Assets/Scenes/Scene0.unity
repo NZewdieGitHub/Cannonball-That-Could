@@ -4240,6 +4240,7 @@ MonoBehaviour:
   PlayerUI: {fileID: 858896102}
   playerScore: 3
   LosePanel: {fileID: 721142532}
+  WinPanel: {fileID: 11950385}
 --- !u!61 &2137439070
 BoxCollider2D:
   m_ObjectHideFlags: 0

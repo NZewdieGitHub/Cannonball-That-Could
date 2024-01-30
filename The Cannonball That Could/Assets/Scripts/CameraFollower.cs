@@ -33,6 +33,7 @@ public class CameraFollower : MonoBehaviour
     // Panel Setup
     [SerializeField]
     GameObject LosePanel;
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -142,4 +143,5 @@ public class CameraFollower : MonoBehaviour
         Time.timeScale = 0;
         frozenScreen = true;
     }
+    
 }

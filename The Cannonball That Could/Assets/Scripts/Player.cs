@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
+
 public class Player : MonoBehaviour
 {
 
@@ -39,6 +41,10 @@ public class Player : MonoBehaviour
     // Cannon Fields
     [SerializeField]
     GameObject cannon;
+
+    // Panel Field
+    [SerializeField]
+    GameObject WinPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -155,14 +161,24 @@ public class Player : MonoBehaviour
         // if player collides with enemy
        if (collision.gameObject.CompareTag("Enemy"))
        {
-            // updated score
-            enemyScore -= 1;
-            EnemyUI.SetText("Enemy Health: " + enemyScore.ToString());
+            // If enemy's defeated
+            if (enemyScore <= 0)
+            {
+                // Display the win screen
+                SpawnWinMenu();
+            }
+            else
+            {
+                // updated score
+                enemyScore -= 1;
+                EnemyUI.SetText("Enemy Health: " + enemyScore.ToString());
 
-            // reposition player
-            transform.position = cannon.transform.position;
-            canFire = true;
-            vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
+                // reposition player
+                transform.position = cannon.transform.position;
+                canFire = true;
+                vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
+               
+            }
        }
         // if player collides with TNT
         if (collision.gameObject.CompareTag("TNT"))
@@ -181,5 +197,12 @@ public class Player : MonoBehaviour
         }
 
     }
-
+    /// <summary>
+    /// Instantiate Win Menu
+    /// </summary>
+    public void SpawnWinMenu()
+    {
+        WinPanel.SetActive(true);
+        Time.timeScale = 0;
+    }
 }
