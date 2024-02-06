@@ -173,7 +173,10 @@ public class Player : MonoBehaviour
                 EnemyUI.SetText("Enemy Health: " + enemyScore.ToString());
 
                 // reposition player
-                transform.position = cannon.transform.position;
+                // transform.position = cannon.transform.position;
+                Destroy(gameObject);
+                Destroy(collision.gameObject);
+
                 canFire = true;
                 vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
                 // If enemy's defeated
@@ -214,4 +217,5 @@ public class Player : MonoBehaviour
         WinPanel.SetActive(true);
         Time.timeScale = 0;
     }
+    
 }
