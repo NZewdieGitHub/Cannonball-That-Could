@@ -58,6 +58,8 @@ public class Player : MonoBehaviour
         // score setup
         EnemyUI.SetText("Enemy Health: " + enemyScore.ToString());
         Time.timeScale = 1;
+        // Firing setup
+        canFire = true;
     }
 
     // Update is called once per frame
