@@ -3383,6 +3383,10 @@ PrefabInstance:
       propertyPath: WinPanel
       value: 
       objectReference: {fileID: 11950385}
+    - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+      propertyPath: levelName
+      value: Scene0
+      objectReference: {fileID: 0}
     - target: {fileID: 8987264604497825743, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: m_Name
       value: Cannonball
