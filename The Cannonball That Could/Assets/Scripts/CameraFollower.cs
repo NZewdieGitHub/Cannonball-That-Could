@@ -75,7 +75,8 @@ public class CameraFollower : MonoBehaviour
                 playerScore -= 1;
                 PlayerUI.SetText("Player Health: " + playerScore.ToString());
                 // move cannon ball and camera back to starting position
-                player.transform.position = new Vector3(-8.4989f, 0.37f, 0);
+                player.transform.position = cannon.transform.position;
+                player.canFire = true;
                 transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f); 
             }
 

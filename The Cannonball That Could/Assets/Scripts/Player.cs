@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     public bool slowDownPressed = false;
 
     // Firing fields
-    private bool canFire = true;
+    public bool canFire = true;
     public bool isFiring = false;
     private float firingPower = 8f;
     private float fireTime = 2f;
