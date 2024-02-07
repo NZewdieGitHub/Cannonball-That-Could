@@ -82,12 +82,13 @@ public class Player : MonoBehaviour
         }
 
         // check if the cannon has fired or not
+      
         // Slowdown funtion
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             slowDownPressed = true;
         }
-        else if (Input.GetKeyUp(KeyCode.Space))
+        else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             slowDownPressed = false;
         }
