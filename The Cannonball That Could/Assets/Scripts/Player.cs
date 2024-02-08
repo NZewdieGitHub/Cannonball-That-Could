@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
 
     // collider fields
     public CircleCollider2D collider;
+    public bool ballDestroyed = false;
 
     // Text Updating fields
     [SerializeField]
@@ -63,6 +64,8 @@ public class Player : MonoBehaviour
         // Firing setup
         canFire = true;
         hasFired = false;
+        // collision setup
+        ballDestroyed = false;
     }
 
     // Update is called once per frame

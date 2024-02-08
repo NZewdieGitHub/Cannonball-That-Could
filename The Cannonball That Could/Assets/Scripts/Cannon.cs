@@ -20,4 +20,8 @@ public class Cannon : MonoBehaviour
     {
         
     }
+    public void LoadCannon()
+    {
+
+    }
 }
