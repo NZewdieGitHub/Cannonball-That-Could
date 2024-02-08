@@ -73,9 +73,7 @@ public class CameraFollower : MonoBehaviour
             // check if time reaches 0
             if (exitTime <= 0)
             {
-                // updated score
-                playerScore -= 1;
-                PlayerUI.SetText("Player Health: " + playerScore.ToString());
+               TakeAwayPoints();
                 // move cannon ball and camera back to starting position
                 player.transform.position = cannon.transform.position;
                 player.canFire = true;
@@ -146,5 +144,13 @@ public class CameraFollower : MonoBehaviour
         Time.timeScale = 0;
         frozenScreen = true;
     }
-    
+    /// <summary>
+    /// Takes away points from player
+    /// </summary>
+    public void TakeAwayPoints()
+    {
+        // updated score
+        playerScore -= 1;
+        PlayerUI.SetText("Player Health: " + playerScore.ToString());
+    }
 }
