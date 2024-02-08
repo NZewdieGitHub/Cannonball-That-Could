@@ -79,6 +79,7 @@ public class CameraFollower : MonoBehaviour
                 // move cannon ball and camera back to starting position
                 player.transform.position = cannon.transform.position;
                 player.canFire = true;
+                player.hasFired = false;
                 transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f); 
             }
 
@@ -141,7 +142,6 @@ public class CameraFollower : MonoBehaviour
     /// </summary>
     public void SpawnLoseMenu()
     {
-       
         LosePanel.SetActive(true);
         Time.timeScale = 0;
         frozenScreen = true;
