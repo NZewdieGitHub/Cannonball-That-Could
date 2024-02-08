@@ -23,8 +23,10 @@ public class Player : MonoBehaviour
     // Firing fields
     public bool canFire = true;
     public bool isFiring = false;
+    public bool hasFired = false;
     private float firingPower = 8f;
     private float fireTime = 2f;
+    
 
     // collider fields
     public CircleCollider2D collider;
@@ -60,6 +62,7 @@ public class Player : MonoBehaviour
         Time.timeScale = 1;
         // Firing setup
         canFire = true;
+        hasFired = false;
     }
 
     // Update is called once per frame
@@ -82,17 +85,18 @@ public class Player : MonoBehaviour
         }
 
         // check if the cannon has fired or not
-      
-        // Slowdown funtion
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (hasFired == true)
         {
-            slowDownPressed = true;
+            // Slowdown funtion
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                slowDownPressed = true;
+            }
+            else if (Input.GetKeyUp(KeyCode.LeftControl))
+            {
+                slowDownPressed = false;
+            }
         }
-        else if (Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            slowDownPressed = false;
-        }
-        
         // Exit Functionality
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
@@ -150,6 +154,7 @@ public class Player : MonoBehaviour
     {
         canFire = false;
         isFiring = true;
+        hasFired = true;
         float orginalGravity = rb2d.gravityScale;
         rb2d.gravityScale = 0f;
         rb2d.velocity = new Vector2(transform.localScale.x * firingPower, 0f);
@@ -158,7 +163,6 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(fireTime);
         rb2d.gravityScale = orginalGravity;
         isFiring = false;
-        
     }
     /// <summary>
     /// Used for colliding with the enemy ship
@@ -178,6 +182,7 @@ public class Player : MonoBehaviour
                 // reposition player
                 transform.position = cannon.transform.position;
                 canFire = true;
+                hasFired = false;
                 vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
                 // If enemy's defeated
                 if (enemyScore <= 0)

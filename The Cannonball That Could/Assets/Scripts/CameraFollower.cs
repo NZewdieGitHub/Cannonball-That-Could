@@ -46,20 +46,22 @@ public class CameraFollower : MonoBehaviour
     void Update()
     {
         // if player presses and holds space
-        if (player.slowDownPressed == true)
+        if (player.slowDownPressed == true && player.hasFired == true)
         {
             // move camera along the x-axis at slower speed
             cameraAccelleration = 2f;
             transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
             Debug.Log("Camera's slowed down");
+            
         }
-        else if (player.slowDownPressed == false) 
+        else if (player.slowDownPressed == false && player.hasFired == true)
         {
             cameraAccelleration = 8f;
             // move camera along the x-axis
             transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
             Debug.Log("Camera's sped up");
         }
+
         
         // Check if time is running
         if (timeRunning == true) 
