@@ -45,31 +45,22 @@ public class CameraFollower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.ballDestroyed == false)
+        
+        // if player presses and holds space
+        if (player.slowDownPressed == true && player.hasFired == true)
         {
-            // if player presses and holds space
-            if (player.slowDownPressed == true && player.hasFired == true)
-            {
-                // move camera along the x-axis at slower speed
-                cameraAccelleration = 2f;
-                transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
-                Debug.Log("Camera's slowed down");
+            // move camera along the x-axis at slower speed
+            cameraAccelleration = 2f;
+            transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
+            Debug.Log("Camera's slowed down");
 
-            }
-            else if (player.slowDownPressed == false && player.hasFired == true)
-            {
-                cameraAccelleration = 8f;
-                // move camera along the x-axis
-                transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
-                Debug.Log("Camera's sped up");
-            }
         }
-        else if (player.ballDestroyed == true) 
+        else if (player.slowDownPressed == false && player.hasFired == true)
         {
-            cameraAccelleration = 0f;
+            cameraAccelleration = 8f;
             // move camera along the x-axis
             transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
-            Debug.Log("Camera has stopped");
+            Debug.Log("Camera's sped up");
         }
         
         // Check if time is running
@@ -108,15 +99,12 @@ public class CameraFollower : MonoBehaviour
         // make sure only the player exits
         if (collision == player.collider)
         {
-            if (!player.ballDestroyed)
-            {
-                // Make timer visible 
-                TextObject.SetActive(true);
+            // Make timer visible 
+            TextObject.SetActive(true);
 
-                // count down timer
-                timeRunning = true;
-            }
-            
+            // count down timer
+            timeRunning = true;
+
         }
     }
     /// <summary>
@@ -125,6 +113,7 @@ public class CameraFollower : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         // make sure only the player exits
         if (collision == player.collider)
         {
@@ -137,6 +126,7 @@ public class CameraFollower : MonoBehaviour
             // reset timer count
             exitTime = 3f;
         }
+        
     }
     /// <summary>
     /// Start timer
