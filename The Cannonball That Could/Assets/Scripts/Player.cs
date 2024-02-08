@@ -202,6 +202,7 @@ public class Player : MonoBehaviour
             // reposition player
             transform.position = cannon.transform.position;
             canFire = true;
+            hasFired = false;
             vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
 
             Destroy(collision.gameObject);

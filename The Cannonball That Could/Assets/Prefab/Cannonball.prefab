@@ -128,16 +128,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2d: {fileID: 2853025710734641003}
   accelleration: 8
-  levelName: 
-  vc: {fileID: 0}
+  levelName: Scene0
+  vc: {fileID: 3493534095929862505, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
   slowDownPressed: 0
+  canFire: 1
   isFiring: 0
-  collider: {fileID: 0}
+  hasFired: 0
+  collider: {fileID: 5267974027490718516}
   EnemyUI: {fileID: 0}
   enemyScore: 3
   enemy: {fileID: 0}
-  cannon: {fileID: 0}
-  WinPanel: {fileID: 0}
+  cannon: {fileID: 903331600979876304, guid: 0c216d5c7eb6bd24592435e2ded2a18e, type: 3}
+  WinPanel: {fileID: 4887697725419828014, guid: a36c0fc84ecf919449fe570165d3992d, type: 3}
 --- !u!58 &5267974027490718516
 CircleCollider2D:
   m_ObjectHideFlags: 0
