@@ -45,23 +45,32 @@ public class CameraFollower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if player presses and holds space
-        if (player.slowDownPressed == true && player.hasFired == true)
+        if (player.ballDestroyed == false)
         {
-            // move camera along the x-axis at slower speed
-            cameraAccelleration = 2f;
-            transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
-            Debug.Log("Camera's slowed down");
-            
+            // if player presses and holds space
+            if (player.slowDownPressed == true && player.hasFired == true)
+            {
+                // move camera along the x-axis at slower speed
+                cameraAccelleration = 2f;
+                transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
+                Debug.Log("Camera's slowed down");
+
+            }
+            else if (player.slowDownPressed == false && player.hasFired == true)
+            {
+                cameraAccelleration = 8f;
+                // move camera along the x-axis
+                transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
+                Debug.Log("Camera's sped up");
+            }
         }
-        else if (player.slowDownPressed == false && player.hasFired == true)
+        else if (player.ballDestroyed == true) 
         {
-            cameraAccelleration = 8f;
+            cameraAccelleration = 0f;
             // move camera along the x-axis
             transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
-            Debug.Log("Camera's sped up");
+            Debug.Log("Camera has stopped");
         }
-
         
         // Check if time is running
         if (timeRunning == true) 
@@ -73,7 +82,7 @@ public class CameraFollower : MonoBehaviour
             // check if time reaches 0
             if (exitTime <= 0)
             {
-               TakeAwayPoints();
+                TakeAwayPoints();
                 // move cannon ball and camera back to starting position
                 player.transform.position = cannon.transform.position;
                 player.canFire = true;
@@ -99,11 +108,15 @@ public class CameraFollower : MonoBehaviour
         // make sure only the player exits
         if (collision == player.collider)
         {
-            // Make timer visible 
-            TextObject.SetActive(true);
+            if (!player.ballDestroyed)
+            {
+                // Make timer visible 
+                TextObject.SetActive(true);
 
-            // count down timer
-            timeRunning = true;
+                // count down timer
+                timeRunning = true;
+            }
+            
         }
     }
     /// <summary>
