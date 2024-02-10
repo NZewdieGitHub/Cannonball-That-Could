@@ -25,21 +25,22 @@ public class CameraFollower : MonoBehaviour
     public bool timeRunning = false;
     public bool frozenScreen = false;
 
-    // Text Updating fields
-    [SerializeField]
-    public TextMeshProUGUI PlayerUI;
-    public int playerScore = 3;
-
     // Panel Setup
     [SerializeField]
     GameObject LosePanel;
-  
+
+    // HUD fields
+    HUD hud = new HUD();
+
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1;
         // Setup initial text
         TimeText.SetText("Get back in: " + exitTime.ToString());
+
+        // Save reference to HUD Script
+        hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
     }
 
     // Update is called once per frame
@@ -73,18 +74,16 @@ public class CameraFollower : MonoBehaviour
             // check if time reaches 0
             if (exitTime <= 0)
             {
-                TakeAwayPoints();
+                hud.SubtractPlayerPoints(1);
                 // move cannon ball and camera back to starting position
                 player.transform.position = cannon.transform.position;
                 player.canFire = true;
                 player.hasFired = false;
                 transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f); 
             }
-
-            if (playerScore <= 0)
-            {
-                playerScore = 0;
-                PlayerUI.SetText("Player Health: " + playerScore.ToString());
+            // Spawn lose menu
+            if (hud.playerScore <= 0)
+            { 
                 SpawnLoseMenu();
             }
 
@@ -147,13 +146,5 @@ public class CameraFollower : MonoBehaviour
         Time.timeScale = 0;
         frozenScreen = true;
     }
-    /// <summary>
-    /// Takes away points from player
-    /// </summary>
-    public void TakeAwayPoints()
-    {
-        // updated score
-        playerScore -= 1;
-        PlayerUI.SetText("Player Health: " + playerScore.ToString());
-    }
+   
 }
