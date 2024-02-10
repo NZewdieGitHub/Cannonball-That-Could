@@ -26,16 +26,12 @@ public class Player : MonoBehaviour
     public bool hasFired = false;
     private float firingPower = 8f;
     private float fireTime = 2f;
-    
+
+    // HUD fields
+    HUD hud = new HUD();
 
     // collider fields
     public CircleCollider2D collider;
-    
-
-    // Text Updating fields
-    [SerializeField]
-    public TextMeshProUGUI EnemyUI;
-    public int enemyScore = 3;
 
     // Enemy Field
     [SerializeField]
@@ -58,8 +54,10 @@ public class Player : MonoBehaviour
         cf = GetComponent<CameraFollower>();
         // get collider component
         collider = gameObject.GetComponent<CircleCollider2D>();
-        // score setup
-        EnemyUI.SetText("Enemy Health: " + enemyScore.ToString());
+
+        // Save reference to HUD Script
+        hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
+
         Time.timeScale = 1;
         // Firing setup
         canFire = true;
@@ -176,18 +174,14 @@ public class Player : MonoBehaviour
         // if player collides with enemy
        if (collision.gameObject.CompareTag("Enemy"))
        {
-
-                // updated score
-                enemyScore -= 1;
-                EnemyUI.SetText("Enemy Health: " + enemyScore.ToString());
-
+                hud.SubtractEnemyPoints(1);
                 // reposition player
                 transform.position = cannon.transform.position;
                 canFire = true;
                 hasFired = false;
                 vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
                 // If enemy's defeated
-                if (enemyScore <= 0)
+                if (hud.enemyScore <= 0)
                 {
                     // Display the win screen
                     SpawnWinMenu();
@@ -197,9 +191,8 @@ public class Player : MonoBehaviour
         // if player collides with TNT
         if (collision.gameObject.CompareTag("TNT"))
         {
-            // updated score
-            enemyScore -= 2;
-            EnemyUI.SetText("Enemy Health: " + enemyScore.ToString());
+            // update score
+            hud.SubtractEnemyPoints(2);
 
             // reposition player
             transform.position = cannon.transform.position;
@@ -209,7 +202,7 @@ public class Player : MonoBehaviour
 
             Destroy(collision.gameObject);
             // If enemy's defeated
-            if (enemyScore <= 0)
+            if (hud.enemyScore <= 0)
             {
                 // Display the win screen
                 SpawnWinMenu();
