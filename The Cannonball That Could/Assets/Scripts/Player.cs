@@ -7,7 +7,6 @@ using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
-
     // movement fields
     public Rigidbody2D rb2d;
     public float accelleration = 4f;
@@ -44,6 +43,9 @@ public class Player : MonoBehaviour
     // Panel Field
     [SerializeField]
     GameObject WinPanel;
+
+    // Event fields
+    HealthReducedEvent healthReducedEvent = new HealthReducedEvent();
 
     // Start is called before the first frame update
     void Start()
@@ -217,5 +219,12 @@ public class Player : MonoBehaviour
     {
         WinPanel.SetActive(true);
         Time.timeScale = 0;
+    }
+    /// <summary>
+    /// Adds listener to the points added event
+    /// </summary>
+    public void AddHealthReducedEventListener()
+    {
+
     }
 }
