@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ParticleManager : MonoBehaviour
 {
-    [SerializeField]
-    GameObject EnemyRubble;
+    public ParticleSystem particleEffect;
 
     [SerializeField]
     Player player;
@@ -25,6 +24,6 @@ public class ParticleManager : MonoBehaviour
     /// </summary>
     public void SpawnEnemyRubble()
     {
-        Instantiate(EnemyRubble, player.transform.position, Quaternion.identity);
+        Instantiate(particleEffect, player.transform.position, Quaternion.identity);
     }
 }

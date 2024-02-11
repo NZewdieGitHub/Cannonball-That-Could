@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// 
+/// Particle Spawning for Enemy 
 /// </summary>
 public class ParticleSpawningEvent : MonoBehaviour
 {

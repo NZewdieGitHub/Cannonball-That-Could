@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
 
     // collider fields
     public CircleCollider2D collider;
+    public bool ballDestroyed = false;
 
     // Enemy Field
     [SerializeField]
@@ -57,8 +58,10 @@ public class Player : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         // get camera component
         cf = GetComponent<CameraFollower>();
-        // get collider component
+
+        // collision setup
         collider = gameObject.GetComponent<CircleCollider2D>();
+        ballDestroyed = false;
 
         // Save reference to HUD Script
         hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
@@ -138,8 +141,12 @@ public class Player : MonoBehaviour
         }
         if (canFire == false)
         {
-            // move cannon ball freely
-            rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
+            // Check if the ball isn't destroyed
+            if (ballDestroyed == false)
+            {
+                // move cannon ball freely
+                rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
+            }
         }
     }
     /// <summary>
@@ -183,11 +190,13 @@ public class Player : MonoBehaviour
        if (collision.gameObject.CompareTag("Enemy"))
        {
                 healthReducedEvent.Invoke(normalDamage);
+                ballDestroyed = true;
+                //gameObject.SetActive(false);
                 // reposition player
-                transform.position = cannon.transform.position;
-                canFire = true;
-                hasFired = false;
-                vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
+                //transform.position = cannon.transform.position;
+                //canFire = true;
+                //hasFired = false;
+                //vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
                 // If enemy's defeated
                 if (hud.enemyScore <= 0)
                 {
@@ -195,7 +204,7 @@ public class Player : MonoBehaviour
                     SpawnWinMenu();
                 }
 
-        }
+       }
         // if player collides with TNT
         if (collision.gameObject.CompareTag("TNT"))
         {
