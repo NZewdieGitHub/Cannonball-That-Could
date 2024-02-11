@@ -74,6 +74,7 @@ public class CameraFollower : MonoBehaviour
             // check if time reaches 0
             if (exitTime <= 0)
             {
+                timeRunning = false;
                 hud.SubtractPlayerPoints(1);
                 // move cannon ball and camera back to starting position
                 player.transform.position = cannon.transform.position;
