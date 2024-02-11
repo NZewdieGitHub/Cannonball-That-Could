@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
@@ -47,6 +48,8 @@ public class Player : MonoBehaviour
     // Event fields
     HealthReducedEvent healthReducedEvent = new HealthReducedEvent();
 
+    // Damage field
+    public int normalDamage = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +67,9 @@ public class Player : MonoBehaviour
         // Firing setup
         canFire = true;
         hasFired = false;
+
+        // Add self as an event invoker
+        EventManager.AddHealthReducedEventInvoker(this);
        
     }
 
@@ -176,7 +182,7 @@ public class Player : MonoBehaviour
         // if player collides with enemy
        if (collision.gameObject.CompareTag("Enemy"))
        {
-                hud.SubtractEnemyPoints(1);
+                healthReducedEvent.Invoke(normalDamage);
                 // reposition player
                 transform.position = cannon.transform.position;
                 canFire = true;
@@ -223,8 +229,8 @@ public class Player : MonoBehaviour
     /// <summary>
     /// Adds listener to the points added event
     /// </summary>
-    public void AddHealthReducedEventListener()
+    public void AddHealthReducedEventListener(UnityAction<int> listener)
     {
-
+        healthReducedEvent.AddListener(listener);
     }
 }

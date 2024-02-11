@@ -23,6 +23,9 @@ public class HUD : MonoBehaviour
         EnemyUI.SetText("Enemy Health: " + enemyScore.ToString());
         // score setup
         PlayerUI.SetText("Player Health: " + playerScore.ToString());
+
+        // Add self as health reduced event listener
+        EventManager.AddHealthReducedEventListener(SubtractEnemyPoints);
     }
 
     // Update is called once per frame
