@@ -67,20 +67,22 @@ public class CameraFollower : MonoBehaviour
         // Check if time is running
         if (timeRunning == true) 
         {
-            // have count down match the frame count
-            exitTime -= Time.deltaTime;
-            StartTimer(exitTime);
-
-            // check if time reaches 0
-            if (exitTime <= 0)
+            if (exitTime >= 0)
             {
+                // have count down match the frame count
+                exitTime -= Time.deltaTime;
+                StartTimer(exitTime);
+            }
+            else
+            {
+                // check if time reaches 0
                 timeRunning = false;
                 hud.SubtractPlayerPoints(1);
                 // move cannon ball and camera back to starting position
                 player.transform.position = cannon.transform.position;
                 player.canFire = true;
                 player.hasFired = false;
-                transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f); 
+                transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
             }
             // Spawn lose menu
             if (hud.playerScore <= 0)
@@ -135,6 +137,7 @@ public class CameraFollower : MonoBehaviour
     {
         // increment the current time by one second
         currentTime += 1;
+        float seconds = Mathf.FloorToInt(currentTime / 60f);
         // update timer
         TimeText.SetText("Get back in: " + exitTime.ToString("0"));
     }
