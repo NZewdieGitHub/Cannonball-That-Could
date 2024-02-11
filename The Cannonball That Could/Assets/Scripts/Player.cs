@@ -185,13 +185,13 @@ public class Player : MonoBehaviour
     /// <param name="collision"></param>
     private void OnCollisionEnter2D(Collision2D collision)
     {
-     
         // if player collides with enemy
        if (collision.gameObject.CompareTag("Enemy"))
        {
                 healthReducedEvent.Invoke(normalDamage);
                 ballDestroyed = true;
-                //gameObject.SetActive(false);
+                gameObject.SetActive(false);
+                Destroy(collision.gameObject);
                 // reposition player
                 //transform.position = cannon.transform.position;
                 //canFire = true;
