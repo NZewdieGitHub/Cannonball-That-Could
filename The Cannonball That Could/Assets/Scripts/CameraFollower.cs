@@ -25,16 +25,20 @@ public class CameraFollower : MonoBehaviour
     public bool timeRunning = false;
     public bool frozenScreen = false;
 
+    // Respawn timer fields
+    [SerializeField]
+    TextMeshProUGUI RespawnText;
+    [SerializeField]
+    GameObject RespawnTextObject;
+    public float respawnTime = 3f;
+    public bool respawnTimeRunning = false;
+
     // Panel Setup
     [SerializeField]
     GameObject LosePanel;
 
     // HUD fields
     HUD hud = new HUD();
-    [SerializeField]
-    TextMeshProUGUI RespawnText;
-    [SerializeField]
-    GameObject RespawnTextObject;
 
 
     // Start is called before the first frame update
@@ -43,7 +47,7 @@ public class CameraFollower : MonoBehaviour
         Time.timeScale = 1;
         // Setup initial text
         TimeText.SetText("Get back in: " + exitTime.ToString());
-
+        RespawnText.SetText("Respawning in: " + exitTime.ToString());
         // Save reference to HUD Script
         hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
     }
@@ -97,12 +101,35 @@ public class CameraFollower : MonoBehaviour
                 player.hasFired = false;
                 transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
             }
+
             // Spawn lose menu
             if (hud.playerScore <= 0)
-            { 
+            {
                 SpawnLoseMenu();
             }
 
+        }
+        // Check if respawn time is running
+        if (respawnTimeRunning == true)
+        {
+            if (respawnTime >= 0)
+            {
+                RespawnTextObject.SetActive(true);
+                // have count down match the frame count
+                respawnTime -= Time.deltaTime;
+                StartRespawnTimer(respawnTime);
+            }
+            else
+            {
+                // check if time reaches 0
+                respawnTimeRunning = false;
+                // move cannon ball and camera back to starting position
+                player.transform.position = cannon.transform.position;
+                player.canFire = true;
+                player.hasFired = false;
+                transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
+                RespawnTextObject.SetActive(false);
+            }
         }
     }
     /// <summary>
@@ -167,7 +194,7 @@ public class CameraFollower : MonoBehaviour
         currentTime += 1;
         float seconds = Mathf.FloorToInt(currentTime / 60f);
         // update timer
-        TimeText.SetText("Get back in: " + exitTime.ToString("0"));
+        RespawnText.SetText("Respawning in: " + exitTime.ToString("0"));
     }
     /// <summary>
     /// Instantiate Lose Menu

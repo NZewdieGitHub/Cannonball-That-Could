@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     // Camera field
     [SerializeField]
     GameObject vc;
+    [SerializeField]
     CameraFollower cf;
     public bool slowDownPressed = false;
 
@@ -195,11 +196,15 @@ public class Player : MonoBehaviour
         // if player collides with enemy
        if (collision.gameObject.CompareTag("Enemy"))
        {
+                // Do damage to ship
                 healthReducedEvent.Invoke(normalDamage);
+                // Turn invisible
                 ballDestroyed = true;
                 gameObject.SetActive(false);
                 Destroy(collision.gameObject);
                 particleManager.SpawnEnemyRubble();
+                // start respawn timer
+                cf.respawnTimeRunning = true;
                 // reposition player
                 //transform.position = cannon.transform.position;
                 //canFire = true;
