@@ -31,8 +31,11 @@ public class CameraFollower : MonoBehaviour
 
     // HUD fields
     HUD hud = new HUD();
+    [SerializeField]
+    TextMeshProUGUI RespawnText;
+    [SerializeField]
+    GameObject RespawnTextObject;
 
-    
 
     // Start is called before the first frame update
     void Start()
@@ -148,6 +151,17 @@ public class CameraFollower : MonoBehaviour
     /// Start timer
     /// </summary>
     private void StartTimer(float currentTime)
+    {
+        // increment the current time by one second
+        currentTime += 1;
+        float seconds = Mathf.FloorToInt(currentTime / 60f);
+        // update timer
+        TimeText.SetText("Get back in: " + exitTime.ToString("0"));
+    }
+    /// <summary>
+    /// RespawnTimer
+    /// </summary>
+    private void StartRespawnTimer(float currentTime)
     {
         // increment the current time by one second
         currentTime += 1;

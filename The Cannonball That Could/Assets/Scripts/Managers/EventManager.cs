@@ -11,6 +11,10 @@ public static class EventManager
     static Player invoker;
     static UnityAction<int> listener;
 
+    // Lists of listeners and invokers
+    static List<ParticleManager> invokers = new List<ParticleManager>();
+    static List<ParticleManager> listeners = new List<ParticleManager>();
+
     /// <summary>
     /// Add script ass the invoker of the event
     /// </summary>
