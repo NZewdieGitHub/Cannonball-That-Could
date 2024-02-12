@@ -47,7 +47,7 @@ public class CameraFollower : MonoBehaviour
         Time.timeScale = 1;
         // Setup initial text
         TimeText.SetText("Get back in: " + exitTime.ToString());
-        RespawnText.SetText("Respawning in: " + exitTime.ToString());
+        RespawnText.SetText("Respawning in: " + respawnTime.ToString());
         // Save reference to HUD Script
         hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
     }
@@ -109,6 +109,11 @@ public class CameraFollower : MonoBehaviour
             }
 
         }
+        // check if ball is destroyed
+        if (player.ballDestroyed == true)
+        {
+            respawnTimeRunning = true;
+        }
         // Check if respawn time is running
         if (respawnTimeRunning == true)
         {
@@ -129,6 +134,9 @@ public class CameraFollower : MonoBehaviour
                 player.hasFired = false;
                 transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
                 RespawnTextObject.SetActive(false);
+                // Make player visible again
+                player.gameObject.SetActive(true);
+                player.ballDestroyed = false;
             }
         }
     }
@@ -194,7 +202,7 @@ public class CameraFollower : MonoBehaviour
         currentTime += 1;
         float seconds = Mathf.FloorToInt(currentTime / 60f);
         // update timer
-        RespawnText.SetText("Respawning in: " + exitTime.ToString("0"));
+        RespawnText.SetText("Respawning in: " + respawnTime.ToString("0"));
     }
     /// <summary>
     /// Instantiate Lose Menu

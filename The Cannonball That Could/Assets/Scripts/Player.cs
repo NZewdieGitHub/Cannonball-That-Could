@@ -203,8 +203,6 @@ public class Player : MonoBehaviour
                 gameObject.SetActive(false);
                 Destroy(collision.gameObject);
                 particleManager.SpawnEnemyRubble();
-                // start respawn timer
-                cf.respawnTimeRunning = true;
                 // reposition player
                 //transform.position = cannon.transform.position;
                 //canFire = true;
