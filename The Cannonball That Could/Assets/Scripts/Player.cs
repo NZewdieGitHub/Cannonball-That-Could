@@ -51,6 +51,10 @@ public class Player : MonoBehaviour
 
     // Damage field
     public int normalDamage = 1;
+
+    // Particle fields
+    public ParticleManager particleManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +70,9 @@ public class Player : MonoBehaviour
         // Save reference to HUD Script
         hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
 
+        // get particle script component
+        particleManager.GetComponent<ParticleManager>();
+        
         Time.timeScale = 1;
         // Firing setup
         canFire = true;
@@ -192,6 +199,7 @@ public class Player : MonoBehaviour
                 ballDestroyed = true;
                 gameObject.SetActive(false);
                 Destroy(collision.gameObject);
+                particleManager.SpawnEnemyRubble();
                 // reposition player
                 //transform.position = cannon.transform.position;
                 //canFire = true;

@@ -1359,6 +1359,10 @@ PrefabInstance:
       propertyPath: WinPanel
       value: 
       objectReference: {fileID: 11950385}
+    - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+      propertyPath: particleManager
+      value: 
+      objectReference: {fileID: 2132721387}
     - target: {fileID: 8987264604497825743, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: m_Name
       value: Cannonball
@@ -1594,6 +1598,52 @@ MonoBehaviour:
   enemyScore: 3
   PlayerUI: {fileID: 207195460}
   playerScore: 3
+--- !u!1 &2132721386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2132721388}
+  - component: {fileID: 2132721387}
+  m_Layer: 0
+  m_Name: ParticleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2132721387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132721386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f5aea8382b9a443a2f419787b0b76c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleEffect: {fileID: 8006676662661635553, guid: 7cb1ef0d9a4e03346b8ce3df4c9c08db, type: 3}
+  player: {fileID: 1320909926}
+--- !u!4 &2132721388
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132721386}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2137439065 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3493534095929862505, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
@@ -2045,3 +2095,4 @@ SceneRoots:
   - {fileID: 1317679620}
   - {fileID: 7299398974062411441}
   - {fileID: 346572226399845601}
+  - {fileID: 2132721388}

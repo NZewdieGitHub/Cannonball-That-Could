@@ -32,6 +32,8 @@ public class CameraFollower : MonoBehaviour
     // HUD fields
     HUD hud = new HUD();
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -109,11 +111,15 @@ public class CameraFollower : MonoBehaviour
         // make sure only the player exits
         if (collision == player.collider)
         {
-            // Make timer visible 
-            TextObject.SetActive(true);
+            // check if ball hasn't been destroyed or not
+            if (player.ballDestroyed == false)
+            {
+                // Make timer visible 
+                TextObject.SetActive(true);
 
-            // count down timer
-            timeRunning = true;
+                // count down timer
+                timeRunning = true;
+            }
 
         }
     }
