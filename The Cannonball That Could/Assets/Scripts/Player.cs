@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
 
     // Event fields
     HealthReducedEvent healthReducedEvent = new HealthReducedEvent();
+    EnemyRubbleEvent enemyRubbleEvent = new EnemyRubbleEvent();
 
     // Damage field
     public int normalDamage = 1;
@@ -249,5 +250,12 @@ public class Player : MonoBehaviour
     public void AddHealthReducedEventListener(UnityAction<int> listener)
     {
         healthReducedEvent.AddListener(listener);
+    }
+    /// <summary>
+    /// Add listener to the enemy rubble event
+    /// </summary>
+    public void AddEnemyRubbleEventListener()
+    {
+
     }
 }

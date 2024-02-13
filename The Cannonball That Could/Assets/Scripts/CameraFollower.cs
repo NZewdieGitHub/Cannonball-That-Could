@@ -33,11 +33,8 @@ public class CameraFollower : MonoBehaviour
     public float respawnTime = 3f;
     public bool respawnTimeRunning = false;
 
-   
-
     // HUD fields
     HUD hud = new HUD();
-
 
     // Start is called before the first frame update
     void Start()
