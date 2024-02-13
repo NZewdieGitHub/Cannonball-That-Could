@@ -43,8 +43,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     GameObject cannon;
 
-    
-
     // Event fields
     HealthReducedEvent healthReducedEvent = new HealthReducedEvent();
     EnemyRubbleEvent enemyRubbleEvent = new EnemyRubbleEvent();
@@ -205,7 +203,7 @@ public class Player : MonoBehaviour
                 ballDestroyed = true;
                 gameObject.SetActive(false);
                 Destroy(collision.gameObject);
-                particleManager.SpawnEnemyRubble();
+                enemyRubbleEvent.Invoke();
                 // reposition player
                 //transform.position = cannon.transform.position;
                 //canFire = true;
@@ -254,8 +252,8 @@ public class Player : MonoBehaviour
     /// <summary>
     /// Add listener to the enemy rubble event
     /// </summary>
-    public void AddEnemyRubbleEventListener()
+    public void AddEnemyRubbleEventListener(UnityAction listener)
     {
-
+        enemyRubbleEvent.AddListener(listener);
     }
 }

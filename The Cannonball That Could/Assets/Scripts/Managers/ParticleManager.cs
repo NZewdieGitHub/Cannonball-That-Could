@@ -11,7 +11,8 @@ public class ParticleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Player playerScript = GameObject.FindWithTag("Player").GetComponent<Player>();
+        playerScript.AddEnemyRubbleEventListener(SpawnEnemyRubble);
     }
 
     // Update is called once per frame
