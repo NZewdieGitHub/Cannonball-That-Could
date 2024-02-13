@@ -43,9 +43,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     GameObject cannon;
 
-    // Panel Field
-    [SerializeField]
-    GameObject WinPanel;
+    
 
     // Event fields
     HealthReducedEvent healthReducedEvent = new HealthReducedEvent();
@@ -215,8 +213,9 @@ public class Player : MonoBehaviour
                 // If enemy's defeated
                 if (hud.enemyScore <= 0)
                 {
+                    
                     // Display the win screen
-                    SpawnWinMenu();
+                    hud.SpawnWinMenu();
                 }
 
        }
@@ -237,20 +236,13 @@ public class Player : MonoBehaviour
             if (hud.enemyScore <= 0)
             {
                 // Display the win screen
-                SpawnWinMenu();
+                hud.SpawnWinMenu();
 
             }
         }
 
     }
-    /// <summary>
-    /// Instantiate Win Menu
-    /// </summary>
-    public void SpawnWinMenu()
-    {
-        WinPanel.SetActive(true);
-        Time.timeScale = 0;
-    }
+   
     /// <summary>
     /// Adds listener to the points added event
     /// </summary>

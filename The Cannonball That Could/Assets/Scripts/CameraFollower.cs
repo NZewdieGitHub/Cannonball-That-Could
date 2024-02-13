@@ -33,9 +33,7 @@ public class CameraFollower : MonoBehaviour
     public float respawnTime = 3f;
     public bool respawnTimeRunning = false;
 
-    // Panel Setup
-    [SerializeField]
-    GameObject LosePanel;
+   
 
     // HUD fields
     HUD hud = new HUD();
@@ -105,7 +103,7 @@ public class CameraFollower : MonoBehaviour
             // Spawn lose menu
             if (hud.playerScore <= 0)
             {
-                SpawnLoseMenu();
+                hud.SpawnLoseMenu();
             }
 
         }
@@ -206,14 +204,6 @@ public class CameraFollower : MonoBehaviour
         // update timer
         RespawnText.SetText("Respawning in: " + respawnTime.ToString("0"));
     }
-    /// <summary>
-    /// Instantiate Lose Menu
-    /// </summary>
-    public void SpawnLoseMenu()
-    {
-        LosePanel.SetActive(true);
-        Time.timeScale = 0;
-        frozenScreen = true;
-    }
+   
    
 }

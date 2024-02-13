@@ -16,6 +16,14 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI PlayerUI;
     public int playerScore = 3;
 
+    // Panel Field
+    [SerializeField]
+    GameObject WinPanel;
+
+    // Panel Setup
+    [SerializeField]
+    GameObject LosePanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,5 +66,21 @@ public class HUD : MonoBehaviour
             playerScore = 0;
             PlayerUI.SetText("Player Health: " + playerScore.ToString());
         }
+    }
+    /// <summary>
+    /// Instantiate Lose Menu
+    /// </summary>
+    public void SpawnLoseMenu()
+    {
+        LosePanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+    /// <summary>
+    /// Instantiate Win Menu
+    /// </summary>
+    public void SpawnWinMenu()
+    {
+        WinPanel.SetActive(true);
+        Time.timeScale = 0;
     }
 }
