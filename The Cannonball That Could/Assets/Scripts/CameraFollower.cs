@@ -133,7 +133,9 @@ public class CameraFollower : MonoBehaviour
                 player.canFire = true;
                 player.hasFired = false;
                 transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
+                // reset timer
                 RespawnTextObject.SetActive(false);
+                respawnTime = 3f;
                 // Make player visible again
                 player.gameObject.SetActive(true);
                 player.ballDestroyed = false;

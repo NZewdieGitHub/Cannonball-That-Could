@@ -56,6 +56,10 @@ public class Player : MonoBehaviour
     // Particle fields
     public ParticleManager particleManager;
 
+    // Respawn timer fields
+    [SerializeField]
+    GameObject RespawnText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -234,6 +238,7 @@ public class Player : MonoBehaviour
             {
                 // Display the win screen
                 SpawnWinMenu();
+
             }
         }
 

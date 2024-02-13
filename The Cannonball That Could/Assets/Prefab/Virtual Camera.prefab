@@ -123,6 +123,10 @@ MonoBehaviour:
   exitTime: 3
   timeRunning: 0
   frozenScreen: 0
+  RespawnText: {fileID: 3696747600907910863}
+  RespawnTextObject: {fileID: 6865036701960404925}
+  respawnTime: 3
+  respawnTimeRunning: 0
   LosePanel: {fileID: 280719911127657708}
 --- !u!61 &2592251954430001245
 BoxCollider2D:
@@ -511,7 +515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 549870294922319652, guid: 42d93bea2de92b34f9ddbb4691ea4252, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 11.068
+      value: -74.4
       objectReference: {fileID: 0}
     - target: {fileID: 549870294922319652, guid: 42d93bea2de92b34f9ddbb4691ea4252, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -531,7 +535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 738026548207305019, guid: 42d93bea2de92b34f9ddbb4691ea4252, type: 3}
       propertyPath: m_Name
-      value: Respawn Text
+      value: Respawn Timer Text
       objectReference: {fileID: 0}
     - target: {fileID: 7364794849206108233, guid: 42d93bea2de92b34f9ddbb4691ea4252, type: 3}
       propertyPath: m_text
@@ -539,10 +543,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7364794849206108233, guid: 42d93bea2de92b34f9ddbb4691ea4252, type: 3}
       propertyPath: m_fontColor.b
-      value: 0
+      value: 0.020247431
       objectReference: {fileID: 0}
     - target: {fileID: 7364794849206108233, guid: 42d93bea2de92b34f9ddbb4691ea4252, type: 3}
       propertyPath: m_fontColor.g
+      value: 0.5906012
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364794849206108233, guid: 42d93bea2de92b34f9ddbb4691ea4252, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364794849206108233, guid: 42d93bea2de92b34f9ddbb4691ea4252, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278556572
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364794849206108233, guid: 42d93bea2de92b34f9ddbb4691ea4252, type: 3}
+      propertyPath: m_enableWordWrapping
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -550,8 +566,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42d93bea2de92b34f9ddbb4691ea4252, type: 3}
+--- !u!114 &3696747600907910863 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7364794849206108233, guid: 42d93bea2de92b34f9ddbb4691ea4252, type: 3}
+  m_PrefabInstance: {fileID: 6158810746616168070}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6865036701960404925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5970072852752787874 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 549870294922319652, guid: 42d93bea2de92b34f9ddbb4691ea4252, type: 3}
+  m_PrefabInstance: {fileID: 6158810746616168070}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6865036701960404925 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 738026548207305019, guid: 42d93bea2de92b34f9ddbb4691ea4252, type: 3}
   m_PrefabInstance: {fileID: 6158810746616168070}
   m_PrefabAsset: {fileID: 0}
