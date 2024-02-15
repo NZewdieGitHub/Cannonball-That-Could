@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject cannon;
 
+    //Pause Panel Fields 
+    [SerializeField]
+    GameObject PausePanel;
    
     // Start is called before the first frame update
     void Start()
@@ -43,5 +46,21 @@ public class GameManager : MonoBehaviour
         player.canFire = true;
         player.hasFired = false;
         vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
+    }
+    /// <summary>
+    /// Pauses game
+    /// </summary>
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        PausePanel.SetActive(false);
+    }
+    /// <summary>
+    /// Resumes game
+    /// </summary>
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        PausePanel.SetActive(false);
     }
 }

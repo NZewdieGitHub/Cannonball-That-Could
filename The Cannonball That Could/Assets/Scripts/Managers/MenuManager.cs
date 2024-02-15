@@ -7,6 +7,7 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField]
     public string SceneName;
+
     /// <summary>
     /// Restart Game
     /// </summary>
@@ -22,5 +23,27 @@ public class MenuManager : MonoBehaviour
             Time.timeScale = 1;
         }
         SceneManager.LoadScene(SceneName);
+    }
+    /// <summary>
+    /// Starts game through scene 0
+    /// </summary>
+    public void StartGame()
+    {
+        
+        SceneManager.LoadScene(SceneName);
+    }
+    /// <summary>
+    /// Quits application
+    /// </summary>
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    /// <summary>
+    /// Go to title screen
+    /// </summary>
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("TitleScreen");
     }
 }
