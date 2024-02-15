@@ -241,17 +241,7 @@ public class Player : MonoBehaviour
         }
 
     }
-    /// <summary>
-    /// React to trigger events
-    /// </summary>
-    /// <param name="collision"></param>
-    private void OnTriggerEnter2D(Collision collision)
-    {
-       if (collision.gameObject.CompareTag("SpeedRing"))
-       {
-
-       }
-    }
+  
     /// <summary>
     /// Adds listener to the points added event
     /// </summary>
