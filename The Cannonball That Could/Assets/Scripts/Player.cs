@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
 
         // get particle script component
         particleManager.GetComponent<ParticleManager>();
-        
+
         Time.timeScale = 1;
         // Firing setup
         canFire = true;
@@ -82,14 +82,14 @@ public class Player : MonoBehaviour
 
         // Add self as an event invoker
         EventManager.AddHealthReducedEventInvoker(this);
-       
+
     }
 
     // Update is called once per frame
     void Update()
     {
         // check if cannon has fired
-        if (isFiring) 
+        if (isFiring)
         {
             return;
         }
@@ -133,7 +133,7 @@ public class Player : MonoBehaviour
         }
 
         // If player can fire itself
-        if (canFire == true) 
+        if (canFire == true)
         {
             transform.position = Vector3.zero;
         }
@@ -166,7 +166,7 @@ public class Player : MonoBehaviour
         if (Time.timeScale == 0)
         {
             Time.timeScale = 1;
-            
+
         }
         SceneManager.LoadScene(levelName);
     }
@@ -195,29 +195,29 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // if player collides with enemy
-       if (collision.gameObject.CompareTag("Enemy"))
-       {
-                // Do damage to ship
-                healthReducedEvent.Invoke(normalDamage);
-                // Turn invisible
-                ballDestroyed = true;
-                gameObject.SetActive(false);
-                Destroy(collision.gameObject);
-                enemyRubbleEvent.Invoke();
-                // reposition player
-                //transform.position = cannon.transform.position;
-                //canFire = true;
-                //hasFired = false;
-                //vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
-                // If enemy's defeated
-                if (hud.enemyScore <= 0)
-                {
-                    
-                    // Display the win screen
-                    hud.SpawnWinMenu();
-                }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            // Do damage to ship
+            healthReducedEvent.Invoke(normalDamage);
+            // Turn invisible
+            ballDestroyed = true;
+            gameObject.SetActive(false);
+            Destroy(collision.gameObject);
+            enemyRubbleEvent.Invoke();
+            // reposition player
+            //transform.position = cannon.transform.position;
+            //canFire = true;
+            //hasFired = false;
+            //vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
+            // If enemy's defeated
+            if (hud.enemyScore <= 0)
+            {
 
-       }
+                // Display the win screen
+                hud.SpawnWinMenu();
+            }
+
+        }
         // if player collides with TNT
         if (collision.gameObject.CompareTag("TNT"))
         {
@@ -241,7 +241,7 @@ public class Player : MonoBehaviour
         }
 
     }
-   
+    
     /// <summary>
     /// Adds listener to the points added event
     /// </summary>
