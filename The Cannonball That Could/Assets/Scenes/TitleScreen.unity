@@ -1331,6 +1331,11 @@ PrefabInstance:
     m_TransformParent: {fileID: 2080329169}
     m_Modifications:
     - target: {fileID: 286580761927079100, guid: f7bcdcfa91f511044891bedbd6fc9cd4, type: 3}
+      propertyPath: m_text
+      value: "Spacebar to fire cannon ball, \n\nafterwards press and hold left cntrl
+        to \nspeed up/slow down\n\nWASD/Arrow Keys to move\n\nBackspace to exit"
+      objectReference: {fileID: 0}
+    - target: {fileID: 286580761927079100, guid: f7bcdcfa91f511044891bedbd6fc9cd4, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: a9ad874826778af4691d0896e5985566, type: 2}
