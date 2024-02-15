@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.Events;
 public class CameraFollower : MonoBehaviour
 {
     public float cameraAccelleration = 100f;
@@ -39,6 +39,9 @@ public class CameraFollower : MonoBehaviour
 
     // HUD fields
     HUD hud = new HUD();
+
+    // Event Fields 
+    RespawnEvent respawnEvent = new RespawnEvent();
 
     // Start is called before the first frame update
     void Start()
@@ -95,7 +98,7 @@ public class CameraFollower : MonoBehaviour
                 timeRunning = false;
                 hud.SubtractPlayerPoints(1);
                 // move cannon ball and camera back to starting position
-                gameManager.Respawn();
+                respawnEvent.Invoke();
             }
 
             // Spawn lose menu
@@ -125,7 +128,7 @@ public class CameraFollower : MonoBehaviour
                 // check if time reaches 0
                 respawnTimeRunning = false;
                 // move cannon ball and camera back to starting position
-                gameManager.Respawn();
+                respawnEvent.Invoke();
                 // reset timer
                 RespawnTextObject.SetActive(false);
                 respawnTime = 3f;
@@ -199,5 +202,11 @@ public class CameraFollower : MonoBehaviour
         // update timer
         RespawnText.SetText("Respawning in: " + respawnTime.ToString("0"));
     }
-
+    /// <summary>
+    /// Adds listener to the respawn event 
+    /// </summary>
+    public void AddRespawnEventListener(UnityAction listener)
+    {
+        respawnEvent.AddListener(listener);
+    }
 }

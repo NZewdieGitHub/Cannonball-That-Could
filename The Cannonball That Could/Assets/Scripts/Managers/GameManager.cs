@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 /// <summary>
 /// A Game Manager
 /// </summary>
@@ -17,10 +18,13 @@ public class GameManager : MonoBehaviour
     // Cannon Fields
     [SerializeField]
     GameObject cannon;
+
+   
     // Start is called before the first frame update
     void Start()
     {
-        
+        CameraFollower cameraScript = GameObject.FindWithTag("VC").GetComponent<CameraFollower>();
+        cameraScript.AddRespawnEventListener(Respawn);
     }
 
     // Update is called once per frame

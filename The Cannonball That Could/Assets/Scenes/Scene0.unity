@@ -1726,6 +1726,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virtual Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 3493534095929862505, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: m_TagString
+      value: VC
+      objectReference: {fileID: 0}
     - target: {fileID: 4160053597302271003, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: WinPanel
       value: 
