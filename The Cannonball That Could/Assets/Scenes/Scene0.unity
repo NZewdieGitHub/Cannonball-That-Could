@@ -1712,6 +1712,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1373693383931733252, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750237125112452484, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: m_text
+      value: "Spacebar to fire cannon ball, \n\nafterwards press and hold \nleft
+        cntrl key to speed up/slow down\n\nWASD/Arrow Keys to move\n\nBackspace to
+        exit"
+      objectReference: {fileID: 0}
     - target: {fileID: 3493534095929862505, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: m_Name
       value: Virtual Camera
@@ -1732,6 +1742,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1320909926}
+    - target: {fileID: 5477961325400442704, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5547376010469120818, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1788,6 +1802,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 519420035}
+    - target: {fileID: 8290264292071737246, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -199.63968
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1850,67 +1868,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c216d5c7eb6bd24592435e2ded2a18e, type: 3}
---- !u!1001 &6045028109579684439
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2117967240264239922, guid: 608ac7cf458d039488afa4900aff7123, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2117967240264239922, guid: 608ac7cf458d039488afa4900aff7123, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2117967240264239922, guid: 608ac7cf458d039488afa4900aff7123, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2117967240264239922, guid: 608ac7cf458d039488afa4900aff7123, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2117967240264239922, guid: 608ac7cf458d039488afa4900aff7123, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2117967240264239922, guid: 608ac7cf458d039488afa4900aff7123, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2117967240264239922, guid: 608ac7cf458d039488afa4900aff7123, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2117967240264239922, guid: 608ac7cf458d039488afa4900aff7123, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2117967240264239922, guid: 608ac7cf458d039488afa4900aff7123, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2117967240264239922, guid: 608ac7cf458d039488afa4900aff7123, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8379937779265142628, guid: 608ac7cf458d039488afa4900aff7123, type: 3}
-      propertyPath: m_Name
-      value: SpeedCircle
-      objectReference: {fileID: 0}
-    - target: {fileID: 8529290606896856186, guid: 608ac7cf458d039488afa4900aff7123, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 608ac7cf458d039488afa4900aff7123, type: 3}
 --- !u!1001 &6712877001158852640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2116,4 +2073,3 @@ SceneRoots:
   - {fileID: 7299398974062411441}
   - {fileID: 346572226399845601}
   - {fileID: 2132721388}
-  - {fileID: 6045028109579684439}
