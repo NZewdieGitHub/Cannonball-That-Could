@@ -16,6 +16,10 @@ public class CameraFollower : MonoBehaviour
     [SerializeField]
     GameObject cannon;
 
+    // Game Manager Script
+    [SerializeField]
+    GameManager gameManager;
+
     // Text Field
     [SerializeField]
     TextMeshProUGUI TimeText;
@@ -91,7 +95,7 @@ public class CameraFollower : MonoBehaviour
                 timeRunning = false;
                 hud.SubtractPlayerPoints(1);
                 // move cannon ball and camera back to starting position
-                Respawn();
+                gameManager.Respawn();
             }
 
             // Spawn lose menu
@@ -121,7 +125,7 @@ public class CameraFollower : MonoBehaviour
                 // check if time reaches 0
                 respawnTimeRunning = false;
                 // move cannon ball and camera back to starting position
-                Respawn();
+                gameManager.Respawn();
                 // reset timer
                 RespawnTextObject.SetActive(false);
                 respawnTime = 3f;
@@ -196,15 +200,4 @@ public class CameraFollower : MonoBehaviour
         RespawnText.SetText("Respawning in: " + respawnTime.ToString("0"));
     }
 
-    /// <summary>
-    /// Make player respawn after death
-    /// </summary>
-    public void Respawn()
-    {
-        // move cannon ball and camera back to starting position
-        player.transform.position = cannon.transform.position;
-        player.canFire = true;
-        player.hasFired = false;
-        transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
-    }
 }
