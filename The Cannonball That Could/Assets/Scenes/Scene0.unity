@@ -516,11 +516,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: 
---- !u!58 &557319132 stripped
-CircleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 2235927879062979651, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
-  m_PrefabInstance: {fileID: 1661353375}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &646735047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1387,7 +1382,7 @@ PrefabInstance:
     - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: collider
       value: 
-      objectReference: {fileID: 557319132}
+      objectReference: {fileID: 1661353376}
     - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: particleManager
       value: 
@@ -1397,10 +1392,17 @@ PrefabInstance:
       value: Cannonball
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7335454987097095235, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+    - {fileID: 743988778371144944, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+--- !u!58 &1661353376 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5267974027490718516, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+  m_PrefabInstance: {fileID: 1661353375}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1801869645 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2605926951295872996, guid: fcfdd94810e10514aa2a99c234024e54, type: 3}
