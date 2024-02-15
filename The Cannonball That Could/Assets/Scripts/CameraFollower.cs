@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using Unity.VisualScripting;
+
 public class CameraFollower : MonoBehaviour
 {
     public float cameraAccelleration = 100f;
@@ -86,25 +88,29 @@ public class CameraFollower : MonoBehaviour
         // Check if time is running
         if (timeRunning == true) 
         {
-            if (exitTime >= 0)
+            // check if balll isn't destroyed
+            if (player.ballDestroyed == false)
             {
-                // have count down match the frame count
-                exitTime -= Time.deltaTime;
-                StartTimer(exitTime);
-            }
-            else
-            {
-                // check if time reaches 0
-                timeRunning = false;
-                hud.SubtractPlayerPoints(1);
-                // move cannon ball and camera back to starting position
-                respawnEvent.Invoke();
-            }
+                if (exitTime >= 0)
+                {
+                    // have count down match the frame count
+                    exitTime -= Time.deltaTime;
+                    StartTimer(exitTime);
+                }
+                else
+                {
+                    // check if time reaches 0
+                    timeRunning = false;
+                    hud.SubtractPlayerPoints(1);
+                    // move cannon ball and camera back to starting position
+                    respawnEvent.Invoke();
+                }
 
-            // Spawn lose menu
-            if (hud.playerScore <= 0)
-            {
-                hud.SpawnLoseMenu();
+                // Spawn lose menu
+                if (hud.playerScore <= 0)
+                {
+                    hud.SpawnLoseMenu();
+                }
             }
 
         }
@@ -112,6 +118,11 @@ public class CameraFollower : MonoBehaviour
         if (player.ballDestroyed == true)
         {
             respawnTimeRunning = true;
+            // set exit timer to false 
+            if (TextObject.activeInHierarchy)
+            {
+                TextObject.SetActive(false);
+            }
         }
         // Check if respawn time is running
         if (respawnTimeRunning == true)
