@@ -9,7 +9,7 @@ public class HUD : MonoBehaviour
     // Text Updating fields (Enemy)
     [SerializeField]
     public TextMeshProUGUI EnemyUI;
-    public int enemyScore = 5;
+    public int enemyScore = 10;
 
     // Text Updating fields (Player)
     [SerializeField]

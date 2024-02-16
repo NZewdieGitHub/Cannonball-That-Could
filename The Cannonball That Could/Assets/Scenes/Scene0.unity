@@ -3723,6 +3723,10 @@ PrefabInstance:
       propertyPath: LosePanel
       value: 
       objectReference: {fileID: 738694411}
+    - target: {fileID: 4160053597302271003, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: enemyScore
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4555036853870803767, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: m_fontAsset
       value: 
