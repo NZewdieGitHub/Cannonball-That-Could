@@ -633,6 +633,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcfdd94810e10514aa2a99c234024e54, type: 3}
+--- !u!1 &283937879 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8816936092771100930, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+  m_PrefabInstance: {fileID: 4411475041619454372}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &321327672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1922,6 +1927,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1121249471}
   - component: {fileID: 1121249470}
+  - component: {fileID: 1121249472}
   m_Layer: 0
   m_Name: LevelBoundary
   m_TagString: Untagged
@@ -1961,7 +1967,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.4924774, y: -13.429581}
+  m_Offset: {x: 94.806335, y: 77.73169}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1972,7 +1978,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 17.488068, y: 307.47012}
+  m_Size: {x: 210.0857, y: 1024.5015}
   m_EdgeRadius: 0
 --- !u!4 &1121249471
 Transform:
@@ -1983,12 +1989,26 @@ Transform:
   m_GameObject: {fileID: 1121249469}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 447, y: 3, z: -7.154728}
+  m_LocalPosition: {x: 425, y: 3, z: -7.154728}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1121249472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121249469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae5e34a4aa30f841896e6e50aea3f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cf: {fileID: 2137439067}
+  TextObject: {fileID: 283937879}
 --- !u!4 &1170652637 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2605926951295872996, guid: fcfdd94810e10514aa2a99c234024e54, type: 3}
@@ -3719,6 +3739,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1320909926}
+    - target: {fileID: 5302151203205761002, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: m_text
+      value: 'Enemy Health: 5'
+      objectReference: {fileID: 0}
     - target: {fileID: 5302151203205761002, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: m_fontAsset
       value: 
