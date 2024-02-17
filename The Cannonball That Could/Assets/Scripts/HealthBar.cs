@@ -24,7 +24,7 @@ public class HealthBar : MonoBehaviour
     /// Modifies healthbar when neccessary
     /// </summary>
     /// <param name="health"></param>
-    public void SetEnemyBar(int health)
+    public void SetBar(int health)
     {
         slider.value = health;
         fill.color = gradient.Evaluate(slider.normalizedValue);

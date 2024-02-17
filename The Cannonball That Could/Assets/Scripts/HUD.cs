@@ -34,7 +34,7 @@ public class HUD : MonoBehaviour
         // score setup
         EnemyUI.SetText("Enemy Health: " + enemyScore.ToString() + "/ 10");
         // score setup
-        PlayerUI.SetText("Player Health: " + playerScore.ToString());
+        PlayerUI.SetText("Player Health: " + playerScore.ToString() + "/ 3");
 
         // Add self as health reduced event listener
         EventManager.AddHealthReducedEventListener(SubtractEnemyPoints);
@@ -53,7 +53,7 @@ public class HUD : MonoBehaviour
         // updated score
         enemyScore -= points;
         EnemyUI.SetText("Enemy Health: " + enemyScore.ToString() + "/ 10");
-        enemyHealthSlider.SetEnemyBar(enemyScore);
+        enemyHealthSlider.SetBar(enemyScore);
     }
 
     /// <summary>
@@ -63,13 +63,14 @@ public class HUD : MonoBehaviour
     {
         // updated score
         playerScore -= points;
-        PlayerUI.SetText("Player Health: " + playerScore.ToString());
+        PlayerUI.SetText("Player Health: " + playerScore.ToString() + "/ 3");
+        playerHealthSlider.SetBar(playerScore);
 
         // check if player score is empty
         if (playerScore <= 0)
         {
             playerScore = 0;
-            PlayerUI.SetText("Player Health: " + playerScore.ToString());
+            PlayerUI.SetText("Player Health: " + playerScore.ToString() + "/ 3");
         }
     }
     /// <summary>
