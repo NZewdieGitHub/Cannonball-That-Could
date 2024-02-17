@@ -17,10 +17,8 @@ public class HUD : MonoBehaviour
     public int playerScore = 3;
 
     // Slider Fields
-    public Slider enemyHealthSlider;
-    public Slider playerHealthSlider;
-    public Gradient enemyGradient;
-    public Gradient playerGradient;
+    public HealthBar enemyHealthSlider;
+    public HealthBar playerHealthSlider;
 
     // Panel Field
     [SerializeField]
@@ -34,7 +32,7 @@ public class HUD : MonoBehaviour
     void Start()
     {
         // score setup
-        EnemyUI.SetText("Enemy Health: " + enemyScore.ToString());
+        EnemyUI.SetText("Enemy Health: " + enemyScore.ToString() + "/ 10");
         // score setup
         PlayerUI.SetText("Player Health: " + playerScore.ToString());
 
@@ -54,7 +52,8 @@ public class HUD : MonoBehaviour
     {
         // updated score
         enemyScore -= points;
-        EnemyUI.SetText("Enemy Health: " + enemyScore.ToString());
+        EnemyUI.SetText("Enemy Health: " + enemyScore.ToString() + "/ 10");
+        enemyHealthSlider.SetEnemyBar(enemyScore);
     }
 
     /// <summary>
