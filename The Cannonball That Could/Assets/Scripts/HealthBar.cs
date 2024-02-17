@@ -17,8 +17,8 @@ public class HealthBar : MonoBehaviour
     {
         slider.maxValue = health;
         slider.value = health;
-
-       fill.color = gradient.Evaluate(1f);
+        // make health yellow
+        fill.color = gradient.Evaluate(1f);
     }
     /// <summary>
     /// Modifies healthbar when neccessary
@@ -27,5 +27,7 @@ public class HealthBar : MonoBehaviour
     public void SetEnemyBar(int health)
     {
         slider.value = health;
+
+        fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 }
