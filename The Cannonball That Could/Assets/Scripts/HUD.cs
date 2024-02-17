@@ -16,6 +16,12 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI PlayerUI;
     public int playerScore = 3;
 
+    // Slider Fields
+    public Slider enemyHealthSlider;
+    public Slider playerHealthSlider;
+    public Gradient enemyGradient;
+    public Gradient playerGradient;
+
     // Panel Field
     [SerializeField]
     GameObject WinPanel;
@@ -83,4 +89,5 @@ public class HUD : MonoBehaviour
         WinPanel.SetActive(true);
         Time.timeScale = 0;
     }
+ 
 }
