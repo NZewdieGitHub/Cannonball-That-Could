@@ -3625,6 +3625,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 280719911127657708, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 958589445126265124, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1400705167633149428, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
@@ -3677,7 +3681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3737394441730709068, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4268222252692922867, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: m_SizeDelta.x
