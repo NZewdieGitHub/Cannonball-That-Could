@@ -82,7 +82,17 @@ public class HUD : MonoBehaviour
     public void SpawnLoseMenu()
     {
         LosePanel.SetActive(true);
-        Time.timeScale = 0;
+        if (LosePanel != null)
+        {
+            Animator animator = LosePanel.GetComponent<Animator>();
+            // make sure componenet is assigned to panel
+            if (animator != null)
+            {
+                bool isActivated = animator.GetBool("LoseActivated");
+                // inverse animation's current state
+                animator.SetBool("LoseActivated", !isActivated);
+            }
+        }
     }
     /// <summary>
     /// Instantiate Win Menu

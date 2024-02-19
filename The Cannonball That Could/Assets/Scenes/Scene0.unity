@@ -3937,7 +3937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8732766332195385974, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 694.1666
       objectReference: {fileID: 0}
     - target: {fileID: 9019971371860193519, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: m_fontSize
@@ -3990,6 +3990,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3033367134981406973, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4411475041619454374}
+    - targetCorrespondingSourceObject: {fileID: 280719911127657708, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4411475041619454376}
   m_SourcePrefab: {fileID: 100100000, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
 --- !u!1 &4411475041619454373 stripped
 GameObject:
@@ -4007,6 +4010,32 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1350aedd172e8ca4ea100c7727f4fd09, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &4411475041619454375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 280719911127657708, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+  m_PrefabInstance: {fileID: 4411475041619454372}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4411475041619454376
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4411475041619454375}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 67616c8f8804f0c44a2126f40c21bde9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
