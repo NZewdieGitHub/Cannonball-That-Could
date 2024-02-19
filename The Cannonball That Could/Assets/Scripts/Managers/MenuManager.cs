@@ -53,6 +53,7 @@ public class MenuManager : MonoBehaviour
     /// </summary>
     public void OpenInstructions()
     {
+        // check if component has animation
         if (InstructionsPanel != null)
         {
             Animator animator = InstructionsPanel.GetComponent<Animator>();
@@ -64,5 +65,23 @@ public class MenuManager : MonoBehaviour
                 animator.SetBool("InstructionsOpened", !isActivated);
             }
         }
+    }
+    /// <summary>
+    /// Closes the instructions menu
+    /// </summary>
+    public void CloseInstructions()
+    {
+        
+        if (InstructionsPanel != null)
+        {
+            Animator animator = InstructionsPanel.GetComponent<Animator>();
+            if (animator != null)
+            {
+                bool isActivated = animator.GetBool("InstructionsOpened");
+                // inverse animation's current state
+                animator.SetBool("InstructionsOpened", false);
+            }
+        }
+        
     }
 }
