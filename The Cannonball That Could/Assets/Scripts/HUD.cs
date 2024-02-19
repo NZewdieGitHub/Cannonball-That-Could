@@ -28,6 +28,9 @@ public class HUD : MonoBehaviour
     [SerializeField]
     GameObject LosePanel;
 
+    // Animation setup fields
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -87,7 +90,19 @@ public class HUD : MonoBehaviour
     public void SpawnWinMenu()
     {
         WinPanel.SetActive(true);
-        Time.timeScale = 0;
+        CameraFollower cf = new CameraFollower();
+        cf.respawnTimeRunning = false;
+        if (WinPanel != null) 
+        {
+            Animator animator = WinPanel.GetComponent<Animator>();
+            // make sure componenet is assigned to panel
+            if (animator != null) 
+            {
+                bool isActivated = animator.GetBool("WinActivated");
+                // inverse animation's current state
+                animator.SetBool("WinActivated", !isActivated);
+            }
+        }
     }
  
 }
