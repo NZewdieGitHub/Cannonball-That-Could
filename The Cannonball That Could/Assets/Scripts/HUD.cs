@@ -28,7 +28,9 @@ public class HUD : MonoBehaviour
     [SerializeField]
     GameObject LosePanel;
 
-    // Animation setup fields
+    // Pause Button Field
+    [SerializeField]
+    GameObject PauseButton;
 
 
     // Start is called before the first frame update
@@ -81,7 +83,12 @@ public class HUD : MonoBehaviour
     /// </summary>
     public void SpawnLoseMenu()
     {
+        // Make panel visible
         LosePanel.SetActive(true);
+        // Make Pause Button Invisible
+        PauseButton.SetActive(false);
+        // Make Pause Button Invisible
+        PauseButton.SetActive(false);
         if (LosePanel != null)
         {
             Animator animator = LosePanel.GetComponent<Animator>();
@@ -99,9 +106,12 @@ public class HUD : MonoBehaviour
     /// </summary>
     public void SpawnWinMenu()
     {
+        // Make panel visible
         WinPanel.SetActive(true);
         CameraFollower cf = new CameraFollower();
         cf.respawnTimeRunning = false;
+        // Make Pause Button Invisible
+        PauseButton.SetActive(false);
         if (WinPanel != null) 
         {
             Animator animator = WinPanel.GetComponent<Animator>();

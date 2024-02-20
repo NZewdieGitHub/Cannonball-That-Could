@@ -2978,6 +2978,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2605926951295872996, guid: fcfdd94810e10514aa2a99c234024e54, type: 3}
   m_PrefabInstance: {fileID: 279782085}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1858677273 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7048947841792002231, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+  m_PrefabInstance: {fileID: 4411475041619454372}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1861414895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3601,6 +3606,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virtual Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 4160053597302271003, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: PauseButton
+      value: 
+      objectReference: {fileID: 1858677273}
     - target: {fileID: 4897321343295417165, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
