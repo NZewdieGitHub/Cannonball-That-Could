@@ -153,6 +153,9 @@ public class CameraFollower : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// Move the regular timer to the screen
+    /// </summary>
     public void SpawnTimer()
     {
         // make object visible 
@@ -166,6 +169,23 @@ public class CameraFollower : MonoBehaviour
                 bool timerActivated = animator.GetBool("TimerStarted");
                 // inverse animation's current state
                 animator.SetBool("TimerStarted", true);
+            }
+        }
+    }
+    /// <summary>
+    /// Move the regular timer to the screen
+    /// </summary>
+    public void MoveTimer()
+    {
+        if (TimeHolder != null)
+        {
+            Animator animator = TimeHolder.GetComponent<Animator>();
+            // make sure componenet is assigned to panel
+            if (animator != null)
+            {
+                bool timerActivated = animator.GetBool("TimerStarted");
+                // inverse animation's current state
+                animator.SetBool("TimerStarted", false);
             }
         }
     }
@@ -204,7 +224,7 @@ public class CameraFollower : MonoBehaviour
         {
             // Make Object invisible 
             TextObject.SetActive(false);
-            TimeHolder.SetActive(false);
+            MoveTimer();
             // deactivate timer
             timeRunning = false;
 
