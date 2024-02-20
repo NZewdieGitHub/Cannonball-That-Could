@@ -31,6 +31,10 @@ public class CameraFollower : MonoBehaviour
     public bool timeRunning = false;
     public bool frozenScreen = false;
 
+    // Timer parent object holder
+    [SerializeField]
+    GameObject TimeHolder;
+
     // Respawn timer fields
     [SerializeField]
     TextMeshProUGUI RespawnText;
@@ -163,6 +167,7 @@ public class CameraFollower : MonoBehaviour
             {
                 // Make timer visible 
                 TextObject.SetActive(true);
+                TimeHolder.SetActive(true);
 
                 // count down timer
                 timeRunning = true;
@@ -182,7 +187,7 @@ public class CameraFollower : MonoBehaviour
         {
             // Make Object invisible 
             TextObject.SetActive(false);
-
+            TimeHolder.SetActive(false);
             // deactivate timer
             timeRunning = false;
 
