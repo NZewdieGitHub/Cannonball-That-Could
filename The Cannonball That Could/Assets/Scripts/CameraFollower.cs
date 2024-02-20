@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using Unity.VisualScripting;
+using UnityEngine.UIElements;
 
 public class CameraFollower : MonoBehaviour
 {
@@ -49,6 +50,9 @@ public class CameraFollower : MonoBehaviour
     // Event Fields 
     RespawnEvent respawnEvent = new RespawnEvent();
 
+    // Animation Fields
+    Animator animator;
+    public bool timerSpawned = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +62,9 @@ public class CameraFollower : MonoBehaviour
         RespawnText.SetText("Respawning in: " + respawnTime.ToString());
         // Save reference to HUD Script
         hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
+        // add animation component
+        Animator animator = TimeHolder.GetComponent<Animator>();
+        timerSpawned = animator.GetBool("TimerStarted");
     }
 
     // Update is called once per frame
@@ -150,6 +157,19 @@ public class CameraFollower : MonoBehaviour
                 // Make player visible again
                 player.gameObject.SetActive(true);
                 player.ballDestroyed = false;
+            }
+        }
+    }
+    public void SpawnTimer()
+    {
+        if (TimeHolder != null)
+        {
+            // make sure componenet is assigned to panel
+            if (animator != null)
+            {
+
+                // inverse animation's current state
+               
             }
         }
     }
