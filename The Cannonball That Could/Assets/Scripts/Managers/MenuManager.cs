@@ -66,7 +66,7 @@ public class MenuManager : MonoBehaviour
             {
                 isActivated = animator.GetBool("InstructionsOpened");
                 // inverse animation's current state
-                animator.SetBool("InstructionsOpened", !isActivated);
+                animator.SetBool("InstructionsOpened", true);
             }
         }
     }
