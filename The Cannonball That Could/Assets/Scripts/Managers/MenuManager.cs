@@ -10,6 +10,10 @@ public class MenuManager : MonoBehaviour
     public string SceneName;
     [SerializeField]
     public GameObject InstructionsPanel;
+
+    // Animator fields
+    Animator animator;
+    bool isActivated = false;
     /// <summary>
     /// Restart Game
     /// </summary>
@@ -56,11 +60,11 @@ public class MenuManager : MonoBehaviour
         // check if component has animation
         if (InstructionsPanel != null)
         {
-            Animator animator = InstructionsPanel.GetComponent<Animator>();
+            animator = InstructionsPanel.GetComponent<Animator>();
             // make sure componenet is assigned to panel
             if (animator != null)
             {
-                bool isActivated = animator.GetBool("InstructionsOpened");
+                isActivated = animator.GetBool("InstructionsOpened");
                 // inverse animation's current state
                 animator.SetBool("InstructionsOpened", !isActivated);
             }
