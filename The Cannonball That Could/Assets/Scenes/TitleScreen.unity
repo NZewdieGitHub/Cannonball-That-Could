@@ -381,7 +381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4014916124665271191, guid: 84a31ae0d9cb1da45b3008f5766425f6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -30.416664
+      value: -49.166664
       objectReference: {fileID: 0}
     - target: {fileID: 4014916124665271191, guid: 84a31ae0d9cb1da45b3008f5766425f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -596,7 +596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -125.83333, y: 112.49999}
+  m_AnchoredPosition: {x: -5.4166718, y: 134.58333}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1040224991
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Cannonball That Could
+  m_text: "The Cannonball That \nCould"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a9ad874826778af4691d0896e5985566, type: 2}
   m_sharedMaterial: {fileID: 8269228916982154610, guid: a9ad874826778af4691d0896e5985566, type: 2}
@@ -653,7 +653,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1116,7 +1116,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.8635, y: 38.33333}
+  m_AnchoredPosition: {x: -1.8635, y: 19.58333}
   m_SizeDelta: {x: 92.9088, y: 61.0852}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1758015780
@@ -1770,7 +1770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6545723225090859068, guid: 3bfad06a86cb0f6439083f6f25b09b42, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -103.33332
+      value: -122.08332
       objectReference: {fileID: 0}
     - target: {fileID: 6545723225090859068, guid: 3bfad06a86cb0f6439083f6f25b09b42, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
