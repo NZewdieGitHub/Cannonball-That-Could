@@ -34,7 +34,8 @@ public class CameraFollower : MonoBehaviour
     // Timer parent object holder
     [SerializeField]
     GameObject TimeHolder;
-
+    [SerializeField]
+    GameObject RespawnTimeHolder;
     // Respawn timer fields
     [SerializeField]
     TextMeshProUGUI RespawnText;
@@ -134,6 +135,7 @@ public class CameraFollower : MonoBehaviour
             if (respawnTime >= 0)
             {
                 RespawnTextObject.SetActive(true);
+                SpawnRespawnTimer();
                 // have count down match the frame count
                 respawnTime -= Time.deltaTime;
                 StartRespawnTimer(respawnTime);
@@ -146,6 +148,7 @@ public class CameraFollower : MonoBehaviour
                 respawnEvent.Invoke();
                 // reset timer
                 RespawnTextObject.SetActive(false);
+                MoveRespawnTimer();
                 respawnTime = 3f;
                 // Make player visible again
                 player.gameObject.SetActive(true);
@@ -186,6 +189,44 @@ public class CameraFollower : MonoBehaviour
                 bool timerActivated = animator.GetBool("TimerStarted");
                 // inverse animation's current state
                 animator.SetBool("TimerStarted", false);
+            }
+        }
+    }
+    /// <summary>
+    /// Move the respawn timer to the screen
+    /// </summary>
+    public void SpawnRespawnTimer()
+    {
+        // make object visible 
+        RespawnTimeHolder.SetActive(true);
+        if (TimeHolder != null)
+        {
+            Animator animator = RespawnTimeHolder.GetComponent<Animator>();
+            // make sure componenet is assigned to panel
+            if (animator != null)
+            {
+                bool timerActivated = animator.GetBool("RespawnTriggered");
+                // inverse animation's current state
+                animator.SetBool("RespawnTriggered", true);
+            }
+        }
+    }
+    /// <summary>
+    /// Move the respawn timer to the screen
+    /// </summary>
+    public void MoveRespawnTimer()
+    {
+        // make object visible 
+        RespawnTimeHolder.SetActive(true);
+        if (TimeHolder != null)
+        {
+            Animator animator = RespawnTimeHolder.GetComponent<Animator>();
+            // make sure componenet is assigned to panel
+            if (animator != null)
+            {
+                bool timerActivated = animator.GetBool("RespawnTriggered");
+                // inverse animation's current state
+                animator.SetBool("RespawnTriggered", false);
             }
         }
     }
