@@ -2010,7 +2010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cf: {fileID: 2137439067}
-  TextObject: {fileID: 0}
+  TextObject: {fileID: 1469160973}
 --- !u!4 &1170652637 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2605926951295872996, guid: fcfdd94810e10514aa2a99c234024e54, type: 3}
@@ -2553,6 +2553,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1be2261b6c81b7d4799e953dab4fe053, type: 3}
+--- !u!1 &1469160973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8816936092771100930, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+  m_PrefabInstance: {fileID: 4411475041619454372}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1481732404
 PrefabInstance:
   m_ObjectHideFlags: 0
