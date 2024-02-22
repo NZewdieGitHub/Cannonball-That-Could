@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,26 +10,24 @@ public class AudioManager : MonoBehaviour
 
     // arrays for music and sound effects
     [SerializeField]
-    public Sound[] musicSounds, sfxSounds;
-    [SerializeField]
-    public AudioSource musicSource, sfxScource;
-
-    private void Awake()
+    public Sound[] sounds;
+ 
+    void Awake()
     {
-        if (Instance == null)
+        foreach (Sound s in sounds)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
+           s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.audioClip;
+
+            s.source.volume = s.volume;
+            s.source.pitch = s.pitch;
         }
     }
+
     // Start is called before the first frame update
     void Start()
     {
-        PlayMusic("BattleTheme");
+        Play("Waves");
     }
 
     // Update is called once per frame
@@ -37,39 +36,13 @@ public class AudioManager : MonoBehaviour
         
     }
     /// <summary>
-    /// Play Specific Music
+    /// Play sound
     /// </summary>
     /// <param name="name"></param>
-    public void PlayMusic(string name)
+    public void Play (string name)
     {
-        Sound s = Array.Find(musicSounds, x => x.name == name);
-        // Search for parameter sound
-        if (s == null)
-        {
-            Debug.Log("Sound Not Found");      
-        }
-        else
-        {
-            musicSource.clip = s.audioClip;
-            musicSource.Play();
-        }
-    }
-    /// <summary>
-    /// Play Specific Music
-    /// </summary>
-    /// <param name="name"></param>
-    public void PlaySFX(string name)
-    {
-        Sound s = Array.Find(sfxSounds, x => x.name == name);
-        // Search for parameter sound
-        if (s == null)
-        {
-            Debug.Log("Sound Not Found");
-        }
-        else
-        {
-            sfxScource.PlayOneShot(s.audioClip);
-        }
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        s.source.Play();
     }
 }
 

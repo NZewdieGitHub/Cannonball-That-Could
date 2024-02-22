@@ -194,6 +194,9 @@ public class Player : MonoBehaviour
         rb2d.gravityScale = 0f;
         rb2d.velocity = new Vector2(transform.localScale.x * firingPower, 0f);
 
+        // Play Sound
+        FindObjectOfType<AudioManager>().Play("CannonFire");
+
         // stop dashing for a short amount of time
         yield return new WaitForSeconds(fireTime);
         rb2d.gravityScale = orginalGravity;
@@ -263,7 +266,8 @@ public class Player : MonoBehaviour
     public void SpawnExplosion()
     {
         Instantiate(ExplosionHolder, transform.position, Quaternion.identity);
-        
+        // Play Sound 
+        FindObjectOfType<AudioManager>().Play("Explosion");
         //// Check if component isn't empty
         //if (ExplosionHolder != null)
         //{
