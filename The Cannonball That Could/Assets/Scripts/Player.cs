@@ -236,14 +236,17 @@ public class Player : MonoBehaviour
         {
             // update score
             hud.SubtractEnemyPoints(2);
-
-            // reposition player
-            transform.position = cannon.transform.position;
-            canFire = true;
-            hasFired = false;
-            vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
-
+            // Turn invisible
+            ballDestroyed = true;
+            gameObject.SetActive(false);
             Destroy(collision.gameObject);
+            //// reposition player
+            //transform.position = cannon.transform.position;
+            //canFire = true;
+            //hasFired = false;
+            //vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
+            // spawn animation
+            SpawnExplosion();
             // If enemy's defeated
             if (hud.enemyScore <= 0)
             {
