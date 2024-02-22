@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2303714263178237857}
   - component: {fileID: 1231147572311233294}
   m_Layer: 0
-  m_Name: EnemyShip
+  m_Name: Front
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2f7041806e28eda448686e6b69220829, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8b3f8d24050fc6147828aa28b642d00d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
