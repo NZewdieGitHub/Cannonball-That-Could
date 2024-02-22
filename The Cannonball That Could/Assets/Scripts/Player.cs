@@ -48,7 +48,8 @@ public class Player : MonoBehaviour
     EnemyRubbleEvent enemyRubbleEvent = new EnemyRubbleEvent();
 
     // Animation holder fields
-    public GameObject ExplosionHolder;
+    [SerializeField]
+    GameObject ExplosionHolder;
 
     // Damage field
     public int normalDamage = 1;
@@ -59,6 +60,10 @@ public class Player : MonoBehaviour
     // Respawn timer fields
     [SerializeField]
     GameObject RespawnText;
+
+    // Explosuon animator field
+    [SerializeField]
+    Animator explosionAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +82,9 @@ public class Player : MonoBehaviour
 
         // get particle script component
         particleManager.GetComponent<ParticleManager>();
+
+        // Set up animator for explosion
+        explosionAnimator = ExplosionHolder.GetComponent<Animator>();
 
         Time.timeScale = 1;
         // Firing setup
@@ -251,22 +259,30 @@ public class Player : MonoBehaviour
     /// </summary>
     public void SpawnExplosion()
     {
+        Instantiate(ExplosionHolder, transform.position, Quaternion.identity);
         
-        // Check if component isn't empty
-        if (ExplosionHolder != null)
-        {
-            Animator animator = ExplosionHolder.GetComponent<Animator>();
-            // make sure componenet is assigned to explosions
-            if (animator != null)
-            {
-                Instantiate(ExplosionHolder, transform.position, Quaternion.identity);
-                bool isActivated = animator.GetBool("BallExploded");
-                // inverse animation's current state
-                animator.SetBool("BallExploded", true);
-            }
-        }
+        //// Check if component isn't empty
+        //if (ExplosionHolder != null)
+        //{
+            
+        //    // make sure componenet is assigned to explosions
+        //    if (explosionAnimator != null)
+        //    {
+        //        Instantiate(ExplosionHolder, transform.position, Quaternion.identity);
+        //        bool isActivated = explosionAnimator.GetBool("BallExploded");
+        //        explosionAnimator.SetBool("BallExploded", true);
+        //        // Destroy explosion prefab
+        //        DestroyExplosion(ExplosionHolder);
+        //    }
+        //}
     }
-
+    /// <summary>
+    /// Destroy the explosion prefab
+    /// </summary>
+    public void DestroyExplosion(GameObject explosion)
+    {
+        DestroyImmediate(explosion,true);
+    }
     /// <summary>
     /// Adds listener to the points added event
     /// </summary>
