@@ -11,6 +11,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     public GameObject InstructionsPanel;
 
+    [SerializeField]
+    public GameObject CreditsPanel;
     // Animator fields
     Animator animator;
     bool isActivated = false;
@@ -71,6 +73,24 @@ public class MenuManager : MonoBehaviour
         }
     }
     /// <summary>
+    /// Opens Credits panel
+    /// </summary>
+    public void OpenCredits()
+    {
+        // check if component has animation
+        if (CreditsPanel != null)
+        {
+            animator = CreditsPanel.GetComponent<Animator>();
+            // make sure componenet is assigned to panel
+            if (animator != null)
+            {
+                isActivated = animator.GetBool("CreditsOpened");
+                // inverse animation's current state
+                animator.SetBool("CreditsOpened", true);
+            }
+        }
+    }
+    /// <summary>
     /// Closes the instructions menu
     /// </summary>
     public void CloseInstructions()
@@ -87,5 +107,23 @@ public class MenuManager : MonoBehaviour
             }
         }
         
+    }
+    /// <summary>
+    /// Closes the instructions menu
+    /// </summary>
+    public void CloseCredits()
+    {
+
+        if (CreditsPanel != null)
+        {
+            Animator animator = CreditsPanel.GetComponent<Animator>();
+            if (animator != null)
+            {
+                bool isActivated = animator.GetBool("CreditsOpened");
+                // inverse animation's current state
+                animator.SetBool("CreditsOpened", false);
+            }
+        }
+
     }
 }
