@@ -2889,6 +2889,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1661353376}
     - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+      propertyPath: ExplosionHolder
+      value: 
+      objectReference: {fileID: 1969416164025969326, guid: e5cd43eab76ef684486c72fce2291bb9, type: 3}
+    - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: particleManager
       value: 
       objectReference: {fileID: 2132721387}

@@ -47,6 +47,9 @@ public class Player : MonoBehaviour
     HealthReducedEvent healthReducedEvent = new HealthReducedEvent();
     EnemyRubbleEvent enemyRubbleEvent = new EnemyRubbleEvent();
 
+    // Animation holder fields
+    public GameObject ExplosionHolder;
+
     // Damage field
     public int normalDamage = 1;
 
@@ -204,6 +207,8 @@ public class Player : MonoBehaviour
             gameObject.SetActive(false);
             Destroy(collision.gameObject);
             enemyRubbleEvent.Invoke();
+            // spawn animation
+            //SpawnExplosion();
             // reposition player
             //transform.position = cannon.transform.position;
             //canFire = true;
@@ -241,7 +246,27 @@ public class Player : MonoBehaviour
         }
 
     }
-  
+    /// <summary>
+    /// Instantiate Explosion prefab
+    /// </summary>
+    public void SpawnExplosion()
+    {
+        
+        // Check if component isn't empty
+        if (ExplosionHolder != null)
+        {
+            Animator animator = ExplosionHolder.GetComponent<Animator>();
+            // make sure componenet is assigned to explosions
+            if (animator != null)
+            {
+                Instantiate(ExplosionHolder, transform.position, Quaternion.identity);
+                bool isActivated = animator.GetBool("BallExploded");
+                // inverse animation's current state
+                animator.SetBool("BallExploded", true);
+            }
+        }
+    }
+
     /// <summary>
     /// Adds listener to the points added event
     /// </summary>
