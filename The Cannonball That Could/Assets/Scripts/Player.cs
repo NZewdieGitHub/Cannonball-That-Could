@@ -208,7 +208,7 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
             enemyRubbleEvent.Invoke();
             // spawn animation
-            //SpawnExplosion();
+            SpawnExplosion();
             // reposition player
             //transform.position = cannon.transform.position;
             //canFire = true;
