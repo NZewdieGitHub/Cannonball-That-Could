@@ -238,7 +238,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("TNT"))
         {
             // update score
-            hud.SubtractEnemyPoints(2);
+            healthReducedEvent.Invoke(5);
             // Turn invisible
             ballDestroyed = true;
             gameObject.SetActive(false);
