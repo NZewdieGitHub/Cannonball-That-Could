@@ -65,6 +65,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     Animator explosionAnimator;
 
+    // Player Speed fields
+    bool isBoosted = false;
+    bool canSlowDown = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -91,6 +94,9 @@ public class Player : MonoBehaviour
         canFire = true;
         hasFired = false;
 
+        // Slowdown/Speedup Set up
+        isBoosted = false;
+        canSlowDown = true;
         // Add self as an event invoker
         EventManager.AddHealthReducedEventInvoker(this);
 
