@@ -86,6 +86,9 @@ public class Player : MonoBehaviour
         // get particle script component
         particleManager.GetComponent<ParticleManager>();
 
+        // Set player position to cannons
+        transform.position = cannon.transform.position;
+
         // Set up animator for explosion
         explosionAnimator = ExplosionHolder.GetComponent<Animator>();
 
@@ -152,7 +155,7 @@ public class Player : MonoBehaviour
         // If player can fire itself
         if (canFire == true)
         {
-            transform.position = Vector3.zero;
+            transform.position = cannon.transform.position;
         }
     }
     /// <summary>
