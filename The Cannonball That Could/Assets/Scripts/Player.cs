@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     public bool isFiring = false;
     public bool hasFired = false;
     private float firingPower = 8f;
-    private float fireTime = 2f;
+    private float fireTime = 4f;
 
     // HUD fields
     HUD hud = new HUD();
