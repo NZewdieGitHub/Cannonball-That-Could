@@ -296,6 +296,7 @@ public class CameraFollower : MonoBehaviour
         // update timer
         RespawnText.SetText("Respawning in: " + respawnTime.ToString("0"));
     }
+  
     /// <summary>
     /// Adds listener to the respawn event 
     /// </summary>

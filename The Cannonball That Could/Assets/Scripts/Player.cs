@@ -66,8 +66,8 @@ public class Player : MonoBehaviour
     Animator explosionAnimator;
 
     // Player Speed fields
-    bool isBoosted = false;
-    bool canSlowDown = false;
+    public bool isBoosted = false;
+    public bool canSlowDown = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -171,7 +171,7 @@ public class Player : MonoBehaviour
         if (canFire == false)
         {
             // Check if the ball isn't destroyed
-            if (ballDestroyed == false)
+            if (ballDestroyed == false || isBoosted == false)
             {
                 // move cannon ball freely
                 rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
@@ -291,6 +291,15 @@ public class Player : MonoBehaviour
         //        DestroyExplosion(ExplosionHolder);
         //    }
         //}
+    }
+    /// <summary>
+    /// Speed up CannonBall
+    /// </summary>
+    public void SpeedUpCannonBall()
+    {
+        // move cannon speed 2x faster
+        accelleration *= 2;
+        rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
     }
     /// <summary>
     /// Destroy the explosion prefab

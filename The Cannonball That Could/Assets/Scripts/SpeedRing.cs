@@ -19,7 +19,11 @@ public class SpeedRing : MonoBehaviour
         // make sure only the player exits
         if (collision == player.collider)
         {
-            
+            if (player.isBoosted == false)
+            {
+                player.SpeedUpCannonBall();
+                player.isBoosted = true;
+            }
 
         }
     }
