@@ -90,7 +90,7 @@ public class CameraFollower : MonoBehaviour
             }
             else if (player.ballDestroyed == false && player.isBoosted == true)
             {
-                cameraAccelleration = 15f;
+                cameraAccelleration = 16f;
                 // move camera along the x-axis
                 transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
                 Debug.Log("Camera's bossted");
