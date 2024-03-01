@@ -69,7 +69,7 @@ public class CameraFollower : MonoBehaviour
         if (player.slowDownPressed == true && player.hasFired == true)
         {
             // check if the ball hasn't been destroyed
-            if (player.ballDestroyed == false) 
+            if (player.ballDestroyed == false || player.isBoosted == false) 
             { 
                 // move camera along the x-axis at slower speed
                 cameraAccelleration = 2f;
