@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour
         player.canFire = true;
         player.hasFired = false;
         vc.transform.position = new Vector3(5.71467f, 0.37f, -21.64309f);
+        // deactivate speed boost
+        player.isBoosted = false;
     }
     /// <summary>
     /// Pauses game
