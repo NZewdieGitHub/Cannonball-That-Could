@@ -220,8 +220,16 @@ public class Player : MonoBehaviour
         // if player collides with enemy
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // Do damage to ship
-            healthReducedEvent.Invoke(normalDamage);
+            if (isBoosted == true) 
+            {
+                // Do damage to ship
+                healthReducedEvent.Invoke(4);
+            }
+            else
+            {
+                // Do damage to ship
+                healthReducedEvent.Invoke(normalDamage);
+            }
             // Turn invisible
             ballDestroyed = true;
             gameObject.SetActive(false);
