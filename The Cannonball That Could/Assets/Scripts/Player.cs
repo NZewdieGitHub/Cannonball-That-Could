@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 {
     // movement fields
     public Rigidbody2D rb2d;
-    public float accelleration = 8f;
+    public float accelleration = 20f;
     Vector2 movement;
     public string levelName;
 
