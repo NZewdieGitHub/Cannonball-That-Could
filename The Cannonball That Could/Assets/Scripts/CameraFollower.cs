@@ -83,7 +83,7 @@ public class CameraFollower : MonoBehaviour
             // check if the ball hasn't been destroyed or boosted
             if (player.ballDestroyed == false && player.isBoosted == false)
             {
-                cameraAccelleration = 16f;
+                cameraAccelleration = 12f;
                 // move camera along the x-axis
                 transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
                 Debug.Log("Camera's sped up");

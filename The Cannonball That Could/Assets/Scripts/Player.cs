@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 {
     // movement fields
     public Rigidbody2D rb2d;
-    public float accelleration = 20f;
+    public float accelleration = 12f;
     Vector2 movement;
     public string levelName;
 
@@ -25,8 +25,8 @@ public class Player : MonoBehaviour
     public bool canFire = true;
     public bool isFiring = false;
     public bool hasFired = false;
-    private float firingPower = 8f;
-    private float fireTime = 4f;
+    private float firingPower = 16f;
+    private float fireTime = 3f;
 
     // HUD fields
     HUD hud = new HUD();
