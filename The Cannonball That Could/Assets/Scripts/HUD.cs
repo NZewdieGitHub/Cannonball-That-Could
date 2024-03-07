@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class HUD : MonoBehaviour
 {
@@ -58,6 +59,9 @@ public class HUD : MonoBehaviour
     public float respawnTime = 3f;
     public bool respawnTimeRunning = false;
 
+    // Event Fields 
+    RespawnEvent respawnEvent = new RespawnEvent();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,7 +69,9 @@ public class HUD : MonoBehaviour
         EnemyUI.SetText("Enemy Health: " + enemyScore.ToString() + "/ 10");
         // score setup
         PlayerUI.SetText("Player Health: " + playerScore.ToString() + "/ 3");
-
+        // Setup initial text
+        TimeText.SetText("Get back in: " + exitTime.ToString());
+        RespawnText.SetText("Respawning in: " + respawnTime.ToString());
         // Add self as health reduced event listener
         EventManager.AddHealthReducedEventListener(SubtractEnemyPoints);
     }
@@ -140,6 +146,103 @@ public class HUD : MonoBehaviour
         }
     }
     /// <summary>
+    /// Move the regular timer to the screen
+    /// </summary>
+    public void SpawnTimer()
+    {
+        // make object visible 
+        TimeHolder.SetActive(true);
+        if (TimeHolder != null)
+        {
+            Animator animator = TimeHolder.GetComponent<Animator>();
+            // make sure componenet is assigned to panel
+            if (animator != null)
+            {
+                bool timerActivated = animator.GetBool("TimerStarted");
+                // inverse animation's current state
+                animator.SetBool("TimerStarted", true);
+            }
+        }
+    }
+    /// <summary>
+    /// Move the regular timer to the screen
+    /// </summary>
+    public void MoveTimer()
+    {
+        if (TimeHolder != null)
+        {
+            Animator animator = TimeHolder.GetComponent<Animator>();
+            // make sure componenet is assigned to panel
+            if (animator != null)
+            {
+                bool timerActivated = animator.GetBool("TimerStarted");
+                // inverse animation's current state
+                animator.SetBool("TimerStarted", false);
+            }
+        }
+    }
+    /// <summary>
+    /// Move the respawn timer to the screen
+    /// </summary>
+    public void SpawnRespawnTimer()
+    {
+        // make object visible 
+        RespawnTimeHolder.SetActive(true);
+        if (TimeHolder != null)
+        {
+            Animator animator = RespawnTimeHolder.GetComponent<Animator>();
+            // make sure componenet is assigned to panel
+            if (animator != null)
+            {
+                bool timerActivated = animator.GetBool("RespawnTriggered");
+                // inverse animation's current state
+                animator.SetBool("RespawnTriggered", true);
+            }
+        }
+    }
+    /// <summary>
+    /// Move the respawn timer to the screen
+    /// </summary>
+    public void MoveRespawnTimer()
+    {
+        // make object visible 
+        RespawnTimeHolder.SetActive(true);
+        if (TimeHolder != null)
+        {
+            Animator animator = RespawnTimeHolder.GetComponent<Animator>();
+            // make sure componenet is assigned to panel
+            if (animator != null)
+            {
+                bool timerActivated = animator.GetBool("RespawnTriggered");
+                // inverse animation's current state
+                animator.SetBool("RespawnTriggered", false);
+            }
+        }
+    }
+    /// <summary>
+    /// Start timer
+    /// </summary>
+    private void StartTimer(float currentTime)
+    {
+        // increment the current time by one second
+        currentTime += 1;
+        float seconds = Mathf.FloorToInt(currentTime / 60f);
+        // update timer
+        TimeText.SetText("Get back in: " + exitTime.ToString("0"));
+    }
+    /// <summary>
+    /// RespawnTimer
+    /// </summary>
+    private void StartRespawnTimer(float currentTime)
+    {
+        // increment the current time by one second
+        currentTime += 1;
+        float seconds = Mathf.FloorToInt(currentTime / 60f);
+        // update timer
+        RespawnText.SetText("Respawning in: " + respawnTime.ToString("0"));
+    }
+
+    /// <summary>
     /// Take away points from Enemy
     /// </summary>
     public void SubtractEnemyPoints(int points)
@@ -213,5 +316,12 @@ public class HUD : MonoBehaviour
             }
         }
     }
- 
+
+    /// <summary>
+    /// Adds listener to the respawn event 
+    /// </summary>
+    public void AddRespawnEventListener(UnityAction listener)
+    {
+        respawnEvent.AddListener(listener);
+    }
 }

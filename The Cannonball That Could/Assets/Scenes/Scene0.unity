@@ -2618,6 +2618,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3604372017880709901, guid: 1be2261b6c81b7d4799e953dab4fe053, type: 3}
   m_PrefabInstance: {fileID: 1556621098}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1413863081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6865036701960404925, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+  m_PrefabInstance: {fileID: 4411475041619454372}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1413863084 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3696747600907910863, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+  m_PrefabInstance: {fileID: 4411475041619454372}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413863081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1452706504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2700,6 +2716,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8816936092771100930, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
   m_PrefabInstance: {fileID: 4411475041619454372}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1469160976 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1609177533332056176, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+  m_PrefabInstance: {fileID: 4411475041619454372}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469160973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1481732404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4517,9 +4544,37 @@ PrefabInstance:
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4160053597302271003, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1320909926}
+    - target: {fileID: 4160053597302271003, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: TimeText
+      value: 
+      objectReference: {fileID: 1469160976}
+    - target: {fileID: 4160053597302271003, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: TextObject
+      value: 
+      objectReference: {fileID: 1469160973}
+    - target: {fileID: 4160053597302271003, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: TimeHolder
+      value: 
+      objectReference: {fileID: 1033166666}
+    - target: {fileID: 4160053597302271003, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: PauseButton
       value: 
       objectReference: {fileID: 1858677273}
+    - target: {fileID: 4160053597302271003, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: RespawnText
+      value: 
+      objectReference: {fileID: 1413863084}
+    - target: {fileID: 4160053597302271003, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: RespawnTextObject
+      value: 
+      objectReference: {fileID: 1413863081}
+    - target: {fileID: 4160053597302271003, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: RespawnTimeHolder
+      value: 
+      objectReference: {fileID: 4411475041619454373}
     - target: {fileID: 4897321343295417165, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
