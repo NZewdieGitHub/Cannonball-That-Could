@@ -41,7 +41,7 @@ public class HUD : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI TimeText;
     [SerializeField]
-    GameObject TextObject;
+    public GameObject TextObject;
     public float exitTime = 3f;
     public bool timeRunning = false;
     public bool frozenScreen = false;
@@ -300,8 +300,7 @@ public class HUD : MonoBehaviour
     {
         // Make panel visible
         WinPanel.SetActive(true);
-        CameraFollower cf = new CameraFollower();
-        cf.respawnTimeRunning = false;
+        respawnTimeRunning = false;
         // Make Pause Button Invisible
         PauseButton.SetActive(false);
         if (WinPanel != null) 

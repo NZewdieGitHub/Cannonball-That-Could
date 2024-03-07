@@ -13,8 +13,6 @@ public class LevelBoundsCheck : MonoBehaviour
 
     [SerializeField]
     GameObject TextObject;
-
-   
     // Start is called before the first frame update
     void Start()
     {
@@ -36,9 +34,9 @@ public class LevelBoundsCheck : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // start timer
-            cf.timeRunning = true;
-            cf.SpawnTimer();
-            if (cf.timeRunning) 
+            hud.timeRunning = true;
+            hud.SpawnTimer();
+            if (hud.timeRunning) 
             {
                 TextObject.SetActive(true);
             }
@@ -57,10 +55,10 @@ public class LevelBoundsCheck : MonoBehaviour
             TextObject.SetActive(false);
 
             // deactivate timer
-            cf.timeRunning = false;
-            cf.MoveTimer();
+            hud.timeRunning = false;
+            hud.MoveTimer();
             // reset timer count
-            cf.exitTime = 3f;
+            hud.exitTime = 3f;
 
         }
     }
