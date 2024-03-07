@@ -4240,7 +4240,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 4411475041619454372}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137439065}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7801a2f5b5311041813d730588de9c8, type: 3}
   m_Name: 
@@ -4568,6 +4568,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1413863084}
     - target: {fileID: 4160053597302271003, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 519420035}
+    - target: {fileID: 4160053597302271003, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: RespawnTextObject
       value: 
       objectReference: {fileID: 1413863081}
@@ -4693,7 +4697,7 @@ PrefabInstance:
       objectReference: {fileID: 1320909926}
     - target: {fileID: 6413037844197503920, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6413037844197503920, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: gameManager

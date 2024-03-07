@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class HUD : MonoBehaviour
 {
+    #region Fields
     // Player field
     [SerializeField]
     Player player;
@@ -28,6 +29,10 @@ public class HUD : MonoBehaviour
     // Panel Field
     [SerializeField]
     GameObject WinPanel;
+
+    // Game Manager Script
+    [SerializeField]
+    GameManager gameManager;
 
     // Panel Setup
     [SerializeField]
@@ -61,7 +66,8 @@ public class HUD : MonoBehaviour
 
     // Event Fields 
     RespawnEvent respawnEvent = new RespawnEvent();
-
+    #endregion
+    #region Methods
     // Start is called before the first frame update
     void Start()
     {
@@ -97,7 +103,7 @@ public class HUD : MonoBehaviour
                     timeRunning = false;
                     SubtractPlayerPoints(1);
                     // move cannon ball and camera back to starting position
-                    respawnEvent.Invoke();
+                    gameManager.Respawn();
                 }
 
                 // Spawn lose menu
@@ -134,7 +140,7 @@ public class HUD : MonoBehaviour
                 // check if time reaches 0
                 respawnTimeRunning = false;
                 // move cannon ball and camera back to starting position
-                respawnEvent.Invoke();
+                gameManager.Respawn();
                 // reset timer
                 RespawnTextObject.SetActive(false);
                 MoveRespawnTimer();
@@ -315,7 +321,8 @@ public class HUD : MonoBehaviour
             }
         }
     }
-
+    #endregion
+    #region Eventlisteners
     /// <summary>
     /// Adds listener to the respawn event 
     /// </summary>
@@ -323,4 +330,5 @@ public class HUD : MonoBehaviour
     {
         respawnEvent.AddListener(listener);
     }
+    #endregion
 }
