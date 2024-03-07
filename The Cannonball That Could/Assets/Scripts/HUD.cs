@@ -6,6 +6,10 @@ using TMPro;
 
 public class HUD : MonoBehaviour
 {
+    // Player field
+    [SerializeField]
+    Player player;
+
     // Text Updating fields (Enemy)
     [SerializeField]
     public TextMeshProUGUI EnemyUI;
@@ -32,6 +36,27 @@ public class HUD : MonoBehaviour
     [SerializeField]
     GameObject PauseButton;
 
+    // Text Field
+    [SerializeField]
+    TextMeshProUGUI TimeText;
+    [SerializeField]
+    GameObject TextObject;
+    public float exitTime = 3f;
+    public bool timeRunning = false;
+    public bool frozenScreen = false;
+
+    // Timer parent object holder
+    [SerializeField]
+    GameObject TimeHolder;
+    [SerializeField]
+    GameObject RespawnTimeHolder;
+    // Respawn timer fields
+    [SerializeField]
+    TextMeshProUGUI RespawnText;
+    [SerializeField]
+    GameObject RespawnTextObject;
+    public float respawnTime = 3f;
+    public bool respawnTimeRunning = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +73,71 @@ public class HUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Check if time is running
+        if (timeRunning == true)
+        {
+            // check if balll isn't destroyed
+            if (player.ballDestroyed == false)
+            {
+                if (exitTime >= 0)
+                {
+                    // have count down match the frame count
+                    exitTime -= Time.deltaTime;
+                    StartTimer(exitTime);
+                }
+                else
+                {
+                    // check if time reaches 0
+                    timeRunning = false;
+                    SubtractPlayerPoints(1);
+                    // move cannon ball and camera back to starting position
+                    respawnEvent.Invoke();
+                }
+
+                // Spawn lose menu
+                if (playerScore <= 0)
+                {
+                    SpawnLoseMenu();
+                }
+            }
+
+        }
+        // check if ball is destroyed
+        if (player.ballDestroyed == true)
+        {
+            respawnTimeRunning = true;
+            // set exit timer to false 
+            if (TextObject.activeInHierarchy)
+            {
+                TextObject.SetActive(false);
+            }
+        }
+        // Check if respawn time is running
+        if (respawnTimeRunning == true)
+        {
+            if (respawnTime >= 0)
+            {
+                RespawnTextObject.SetActive(true);
+                SpawnRespawnTimer();
+                // have count down match the frame count
+                respawnTime -= Time.deltaTime;
+                StartRespawnTimer(respawnTime);
+            }
+            else
+            {
+                // check if time reaches 0
+                respawnTimeRunning = false;
+                // move cannon ball and camera back to starting position
+                respawnEvent.Invoke();
+                // reset timer
+                RespawnTextObject.SetActive(false);
+                MoveRespawnTimer();
+                respawnTime = 3f;
+                // Make player visible again
+                player.gameObject.SetActive(true);
+                player.ballDestroyed = false;
+            }
+        }
     }
     /// <summary>
     /// Take away points from Enemy
