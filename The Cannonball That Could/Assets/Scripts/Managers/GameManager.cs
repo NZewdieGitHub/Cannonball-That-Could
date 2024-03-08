@@ -25,8 +25,9 @@ public class GameManager : MonoBehaviour
    
     // Start is called before the first frame update
     void Start()
-    {
-        HUD hudScript = GameObject.FindWithTag("VC").GetComponent<HUD>();
+    { 
+        // add self as a respawn event listener
+        HUD hudScript = GameObject.FindWithTag("HUD").GetComponent<HUD>();
         hudScript.AddRespawnEventListener(Respawn);
     }
 

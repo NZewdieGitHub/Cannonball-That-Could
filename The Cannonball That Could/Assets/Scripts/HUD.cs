@@ -103,7 +103,7 @@ public class HUD : MonoBehaviour
                     timeRunning = false;
                     SubtractPlayerPoints(1);
                     // move cannon ball and camera back to starting position
-                    gameManager.Respawn();
+                    respawnEvent.Invoke();
                 }
 
                 // Spawn lose menu
@@ -140,7 +140,7 @@ public class HUD : MonoBehaviour
                 // check if time reaches 0
                 respawnTimeRunning = false;
                 // move cannon ball and camera back to starting position
-                gameManager.Respawn();
+                respawnEvent.Invoke();
                 // reset timer
                 RespawnTextObject.SetActive(false);
                 MoveRespawnTimer();
