@@ -4506,7 +4506,7 @@ PrefabInstance:
     - target: {fileID: 580968173596308787, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 1661353377}
+      objectReference: {fileID: 0}
     - target: {fileID: 1400705167633149428, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
