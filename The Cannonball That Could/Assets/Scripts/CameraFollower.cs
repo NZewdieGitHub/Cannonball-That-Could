@@ -37,13 +37,13 @@ public class CameraFollower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         // if player presses and holds space
         if (player.slowDownPressed == true && player.hasFired == true)
         {
             // check if the ball hasn't been destroyed
-            if (player.ballDestroyed == false) 
-            { 
+            if (player.ballDestroyed == false)
+            {
                 // move camera along the x-axis at slower speed
                 cameraAccelleration = 2f;
                 transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
@@ -51,27 +51,28 @@ public class CameraFollower : MonoBehaviour
             }
 
         }
-        //else if (player.slowDownPressed == false && player.hasFired == true)
-        //{
-        //    // check if the ball hasn't been destroyed or boosted
-        //    if (player.ballDestroyed == false && player.isBoosted == false)
-        //    {
-        //        cameraAccelleration = 12f;
-        //        // move camera along the x-axis
-        //        transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
-        //        Debug.Log("Camera's sped up");
-        //    }
-        //    else if (player.ballDestroyed == false && player.isBoosted == true)
-        //    {
-        //        cameraAccelleration = 16f;
-        //        // move camera along the x-axis
-        //        transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
-        //        Debug.Log("Camera's bossted");
-        //    }
-        //}
-        
-    }
+        else if (player.slowDownPressed == false && player.hasFired == true)
+        {
+            // check if the ball hasn't been destroyed or boosted
+            if (player.ballDestroyed == false && player.isBoosted == false)
+            {
+                cameraAccelleration = 20f;
+                // move camera along the x-axis
+                transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
+                Debug.Log("Camera's sped up");
+            }
+            //    else if (player.ballDestroyed == false && player.isBoosted == true)
+            //    {
+            //        cameraAccelleration = 16f;
+            //        // move camera along the x-axis
+            //        transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
+            //        Debug.Log("Camera's bossted");
+            //    }
+            //}
 
+        }
+
+    }
     /// <summary>
     /// Used to determine if player left camera view
     /// </summary>

@@ -173,7 +173,7 @@ public class Player : MonoBehaviour
             // Check if the ball isn't destroyed
             if (ballDestroyed == false || isBoosted == false)
             {
-                accelleration = 12f;
+                accelleration = 20f;
                 // move cannon ball freely
                 rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
             }
