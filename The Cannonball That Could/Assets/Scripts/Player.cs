@@ -177,6 +177,11 @@ public class Player : MonoBehaviour
                 // move cannon ball freely
                 rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
             }
+
+            if (isBoosted == true)
+            {
+                SpeedUpCannonBall();
+            }
         }
     }
     /// <summary>

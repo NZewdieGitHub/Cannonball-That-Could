@@ -61,14 +61,13 @@ public class CameraFollower : MonoBehaviour
                 transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
                 Debug.Log("Camera's sped up");
             }
-            //    else if (player.ballDestroyed == false && player.isBoosted == true)
-            //    {
-            //        cameraAccelleration = 16f;
-            //        // move camera along the x-axis
-            //        transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
-            //        Debug.Log("Camera's bossted");
-            //    }
-            //}
+            else if (player.ballDestroyed == false && player.isBoosted == true)
+            {
+                cameraAccelleration = 20f * 2f;
+                // move camera along the x-axis
+                transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
+                Debug.Log("Camera's bossted");
+            }
 
         }
 
