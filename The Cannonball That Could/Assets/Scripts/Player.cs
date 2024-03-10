@@ -255,7 +255,8 @@ public class Player : MonoBehaviour
             // If enemy's defeated
             if (hud.enemyScore <= 0)
             {
-
+                // make sure the health stays 0
+                hud.enemyScore = 0;
                 // Display the win screen
                 hud.SpawnWinMenu();
             }
@@ -268,6 +269,14 @@ public class Player : MonoBehaviour
             {
                 // Do damage to ship
                 healthReducedEvent.Invoke(10);
+                // Check if player is below 0
+                if (hud.enemyScore <= 0)
+                {
+                    // make sure the health stays 0
+                    hud.enemyScore = 0;
+                    // Display the win screen
+                    hud.SpawnWinMenu();
+                }
             }
             else 
             {
@@ -288,6 +297,8 @@ public class Player : MonoBehaviour
             // If enemy's defeated
             if (hud.enemyScore <= 0)
             {
+                // make sure the health stays 0
+                hud.enemyScore = 0;
                 // Display the win screen
                 hud.SpawnWinMenu();
 
