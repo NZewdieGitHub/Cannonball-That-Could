@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
         {
             player.accelleration = (player.accelleration / 2);
             player.isBoosted = false;
+            // give player back the ability to slowdown
+            player.canSlowDown = true;
         }
     }
     /// <summary>

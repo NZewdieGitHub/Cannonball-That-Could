@@ -23,6 +23,8 @@ public class SpeedRing : MonoBehaviour
             {
                 player.SpeedUpCannonBall();
                 player.isBoosted = true;
+                // take away slowdown mechaanic
+                player.canSlowDown = false;
             }
 
         }
