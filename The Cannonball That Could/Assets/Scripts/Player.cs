@@ -229,7 +229,7 @@ public class Player : MonoBehaviour
             if (isBoosted == true) 
             {
                 // Do damage to ship
-                healthReducedEvent.Invoke(4);
+                healthReducedEvent.Invoke(3);
             }
             else
             {
@@ -260,8 +260,16 @@ public class Player : MonoBehaviour
         // if player collides with TNT
         if (collision.gameObject.CompareTag("TNT"))
         {
-            // update score
-            healthReducedEvent.Invoke(5);
+            if (isBoosted == true)
+            {
+                // Do damage to ship
+                healthReducedEvent.Invoke(10);
+            }
+            else 
+            {
+                // update score
+                healthReducedEvent.Invoke(5);
+            }
             // Turn invisible
             ballDestroyed = true;
             gameObject.SetActive(false);
