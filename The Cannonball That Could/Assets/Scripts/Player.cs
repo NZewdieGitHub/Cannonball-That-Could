@@ -253,13 +253,6 @@ public class Player : MonoBehaviour
             //hasFired = false;
             //vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
             // If enemy's defeated
-            if (hud.enemyScore <= 0)
-            {
-                // make sure the health stays 0
-                hud.enemyScore = 0;
-                // Display the win screen
-                hud.SpawnWinMenu();
-            }
 
         }
         // if player collides with TNT
@@ -269,14 +262,7 @@ public class Player : MonoBehaviour
             {
                 // Do damage to ship
                 healthReducedEvent.Invoke(10);
-                // Check if player is below 0
-                if (hud.enemyScore <= 0)
-                {
-                    // make sure the health stays 0
-                    hud.enemyScore = 0;
-                    // Display the win screen
-                    hud.SpawnWinMenu();
-                }
+              
             }
             else 
             {
@@ -294,15 +280,23 @@ public class Player : MonoBehaviour
             //vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
             // spawn animation
             SpawnExplosion();
-            // If enemy's defeated
-            if (hud.enemyScore <= 0)
-            {
-                // make sure the health stays 0
-                hud.enemyScore = 0;
-                // Display the win screen
-                hud.SpawnWinMenu();
+            
+            //if (hud.enemyScore <= 0)
+            //{
+            //    // make sure the health stays 0
+            //    hud.enemyScore = 0;
+            //    // Display the win screen
+            //    hud.SpawnWinMenu();
 
-            }
+            //}
+        }
+        // If enemy's defeated
+        if (hud.enemyScore <= 0)
+        {
+            // make sure the health stays 0
+            hud.enemyScore = 0;
+            // Display the win screen
+            hud.SpawnWinMenu();
         }
 
     }
