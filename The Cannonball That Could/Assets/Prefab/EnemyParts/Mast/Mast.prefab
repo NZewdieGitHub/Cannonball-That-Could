@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2674460056593703509}
   - component: {fileID: 8551736873850168372}
   - component: {fileID: 2410097119370015528}
-  - component: {fileID: 816453351470829969}
+  - component: {fileID: 5219418808291595632}
   m_Layer: 0
   m_Name: Mast
   m_TagString: EnemyPiece
@@ -134,10 +134,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15c1c21a5b06614b816360128b1b0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MastObject: {fileID: 5152842507007687525}
+  FlagObject: {fileID: 0}
   damagedPart: {fileID: 0}
   player: {fileID: 0}
-  collider: {fileID: 8551736873850168372}
---- !u!95 &816453351470829969
+  MastCollider: {fileID: 8551736873850168372}
+  flagCollider: {fileID: 0}
+--- !u!95 &5219418808291595632
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0

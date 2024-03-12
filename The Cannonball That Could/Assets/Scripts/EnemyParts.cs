@@ -35,14 +35,14 @@ public class EnemyParts : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.enemyPieceDamaged == true)
+        if (player.enemyMastDamaged == true)
         {
             if (gameObject == MastObject)
             {
                 // change animation
                 ActivateDamageMast();
             }
-            else if (gameObject == FlagObject) 
+            else if (gameObject == FlagObject)
             {
                 ActivateDamagedFlag();
             }
