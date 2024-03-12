@@ -2712,6 +2712,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2175641096956913236, guid: d2f08f63280f1b54ab2a1547b456b4ae, type: 3}
   m_PrefabInstance: {fileID: 4261838740265918919}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &1330701244 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8551736873850168372, guid: d2f08f63280f1b54ab2a1547b456b4ae, type: 3}
+  m_PrefabInstance: {fileID: 4261838740265918919}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1330701245
 Animator:
   serializedVersion: 5
@@ -5011,6 +5016,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2410097119370015528, guid: d2f08f63280f1b54ab2a1547b456b4ae, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1320909926}
+    - target: {fileID: 2410097119370015528, guid: d2f08f63280f1b54ab2a1547b456b4ae, type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 1330701244}
     - target: {fileID: 5152842507007687525, guid: d2f08f63280f1b54ab2a1547b456b4ae, type: 3}
       propertyPath: m_Name
       value: Mast

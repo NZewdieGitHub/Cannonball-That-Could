@@ -13,7 +13,8 @@ public class EnemyParts : MonoBehaviour
     [SerializeField]
     Player player;
 
-    private CircleCollider2D collider;
+    [SerializeField]
+    private CapsuleCollider2D collider;
     // Start is called before the first frame update
     void Start()
     {
