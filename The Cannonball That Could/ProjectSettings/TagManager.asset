@@ -10,6 +10,8 @@ TagManager:
   - HUD
   - VC
   - EnemyPiece
+  - FlagPiece
+  - MastPiece
   layers:
   - Default
   - TransparentFX

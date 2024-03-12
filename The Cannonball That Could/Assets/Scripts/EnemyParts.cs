@@ -37,16 +37,14 @@ public class EnemyParts : MonoBehaviour
     {
         if (player.enemyMastDamaged == true)
         {
-            if (gameObject == MastObject)
-            {
-                // change animation
-                ActivateDamageMast();
-            }
-            else if (gameObject == FlagObject)
-            {
-                ActivateDamagedFlag();
-            }
+            // change animation
+            ActivateDamageMast();
         }
+        else if (player.enemyFlagDamaged == true)
+        {
+            ActivateDamagedFlag();
+        }
+        
     }
     /// <summary>
     /// Activates Damaged Mast Animation
@@ -54,9 +52,9 @@ public class EnemyParts : MonoBehaviour
     public void ActivateDamageMast()
     {
        // start animation
-        if (gameObject != null)
+        if (MastObject != null)
         {
-            Animator animator = gameObject.GetComponent<Animator>();
+            Animator animator = MastObject.GetComponent<Animator>();
             // make sure componenet is assigned to panel
             if (animator != null)
             {
@@ -76,18 +74,18 @@ public class EnemyParts : MonoBehaviour
     public void ActivateDamagedFlag()
     {
         // start animation
-        if (gameObject != null)
+        if (FlagObject != null)
         {
-            Animator animator = gameObject.GetComponent<Animator>();
+            Animator animator = FlagObject.GetComponent<Animator>();
             // make sure componenet is assigned to panel
             if (animator != null)
             {
                 bool timerActivated = animator.GetBool("FlagDamaged");
                 animator.SetBool("FlagDamaged", true);
                 // turn off collider
-                if (MastCollider.enabled == true)
+                if (flagCollider.enabled == true)
                 {
-                    MastCollider.enabled = false;
+                    flagCollider.enabled = false;
                 }
             }
         }

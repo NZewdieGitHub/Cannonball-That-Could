@@ -294,7 +294,7 @@ public class Player : MonoBehaviour
 
             //}
         }
-        if (collision.gameObject.CompareTag("EnemyPiece"))
+        if (collision.gameObject.CompareTag("MastPiece"))
         {
             // Turn invisible
             ballDestroyed = true;
@@ -305,6 +305,19 @@ public class Player : MonoBehaviour
             SpawnExplosion();
             // Activate Sprite animation
             enemyMastDamaged = true;
+
+        }
+        if (collision.gameObject.CompareTag("FlagPiece"))
+        {
+            // Turn invisible
+            ballDestroyed = true;
+            gameObject.SetActive(false);
+            // Do damage to ship
+            healthReducedEvent.Invoke(4);
+            // spawn animation
+            SpawnExplosion();
+            // Activate Sprite animation
+            enemyFlagDamaged = true;
 
         }
         // If enemy's defeated
