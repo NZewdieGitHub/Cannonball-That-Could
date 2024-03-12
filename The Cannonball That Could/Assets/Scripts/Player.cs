@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
     public bool canSlowDown = false;
 
     // field to tell when part is damaged
-    public bool enemyMastDamaged = false;
+    public bool enemyPieceDamaged = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -303,7 +303,7 @@ public class Player : MonoBehaviour
             // spawn animation
             SpawnExplosion();
             // Activate Sprite animation
-            enemyMastDamaged = true;
+            enemyPieceDamaged = true;
 
         }
         // If enemy's defeated

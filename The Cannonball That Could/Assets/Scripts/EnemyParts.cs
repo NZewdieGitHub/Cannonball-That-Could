@@ -6,6 +6,14 @@ using UnityEngine;
 /// </summary>
 public class EnemyParts : MonoBehaviour
 {
+    // Game Object holder
+    [SerializeField]
+    GameObject MastObject;
+
+    // Game Object holder
+    [SerializeField]
+    GameObject FlagObject;
+
     // Game Object Part Fields
     [SerializeField]
     SpriteRenderer damagedPart;
@@ -14,7 +22,10 @@ public class EnemyParts : MonoBehaviour
     Player player;
 
     [SerializeField]
-    private CapsuleCollider2D collider;
+    private CapsuleCollider2D MastCollider;
+
+    [SerializeField]
+    private BoxCollider2D flagCollider;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,14 +35,21 @@ public class EnemyParts : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.enemyMastDamaged == true)
+        if (player.enemyPieceDamaged == true)
         {
-            // change animation
-            ActivateDamageMast();
+            if (gameObject == MastObject)
+            {
+                // change animation
+                ActivateDamageMast();
+            }
+            else if (gameObject == FlagObject) 
+            {
+                ActivateDamagedFlag();
+            }
         }
     }
     /// <summary>
-    /// Activates Damaged Enemy Animation
+    /// Activates Damaged Mast Animation
     /// </summary>
     public void ActivateDamageMast()
     {
@@ -45,12 +63,33 @@ public class EnemyParts : MonoBehaviour
                 bool timerActivated = animator.GetBool("MastDamaged");
                 animator.SetBool("MastDamaged", true);
                 // turn off collider
-                if (collider.enabled == true)
+                if (MastCollider.enabled == true)
                 {
-                    collider.enabled = false;
+                    MastCollider.enabled = false;
                 }
             }
         }
     }
-
+    /// <summary>
+    /// Activates Damaged Flag Animation
+    /// </summary>
+    public void ActivateDamagedFlag()
+    {
+        // start animation
+        if (gameObject != null)
+        {
+            Animator animator = gameObject.GetComponent<Animator>();
+            // make sure componenet is assigned to panel
+            if (animator != null)
+            {
+                bool timerActivated = animator.GetBool("FlagDamaged");
+                animator.SetBool("FlagDamaged", true);
+                // turn off collider
+                if (MastCollider.enabled == true)
+                {
+                    MastCollider.enabled = false;
+                }
+            }
+        }
+    }
 }
