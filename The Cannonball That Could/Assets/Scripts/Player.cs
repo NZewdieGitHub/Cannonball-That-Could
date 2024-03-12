@@ -68,6 +68,9 @@ public class Player : MonoBehaviour
     // Player Speed fields
     public bool isBoosted = false;
     public bool canSlowDown = false;
+
+    // field to tell when part is damaged
+    public bool enemyMastDamaged = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -289,6 +292,19 @@ public class Player : MonoBehaviour
             //    hud.SpawnWinMenu();
 
             //}
+        }
+        if (collision.gameObject.CompareTag("EnemyPiece"))
+        {
+            // Turn invisible
+            ballDestroyed = true;
+            gameObject.SetActive(false);
+            // Do damage to ship
+            healthReducedEvent.Invoke(4);
+            // spawn animation
+            SpawnExplosion();
+            // Activate Sprite animation
+            enemyMastDamaged = true;
+
         }
         // If enemy's defeated
         if (hud.enemyScore <= 0)

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2826442073120626855}
   - component: {fileID: 2247314268507496283}
   - component: {fileID: 106419991370237457}
+  - component: {fileID: 8106393258147280320}
   m_Layer: 0
   m_Name: EnemyFlag
   m_TagString: EnemyPiece
@@ -130,3 +131,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 4.8}
   m_EdgeRadius: 0
+--- !u!114 &8106393258147280320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208578014915595402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15c1c21a5b06614b816360128b1b0a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagedPart: {fileID: 0}
+  player: {fileID: 0}
