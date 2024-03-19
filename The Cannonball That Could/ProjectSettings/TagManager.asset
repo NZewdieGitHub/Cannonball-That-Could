@@ -12,6 +12,7 @@ TagManager:
   - EnemyPiece
   - FlagPiece
   - MastPiece
+  - PlayerPiece
   layers:
   - Default
   - TransparentFX

@@ -212,7 +212,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 57b1f304a36f4204bb97cb6c5952d838, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e3a586ed7d9062c448622621495607ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -280,6 +280,10 @@ MonoBehaviour:
   particleManager: {fileID: 0}
   RespawnText: {fileID: 0}
   explosionAnimator: {fileID: 0}
+  isBoosted: 0
+  canSlowDown: 0
+  enemyMastDamaged: 0
+  enemyFlagDamaged: 0
 --- !u!58 &5267974027490718516
 CircleCollider2D:
   m_ObjectHideFlags: 0
