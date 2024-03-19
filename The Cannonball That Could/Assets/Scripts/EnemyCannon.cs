@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class EnemyCannon : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+    // fire point field
+    public Transform firePoint;
 
     // Update is called once per frame
     void Update()
