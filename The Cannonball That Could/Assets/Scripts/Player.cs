@@ -25,9 +25,10 @@ public class Player : MonoBehaviour
     public bool canFire = true;
     public bool isFiring = false;
     public bool hasFired = false;
+    public bool cannonShot = false;
     private float firingPower = 16f;
     private float fireTime = 4f;
-
+    
     // HUD fields
     HUD hud = new HUD();
 
@@ -153,10 +154,12 @@ public class Player : MonoBehaviour
 
 
         if (isFiring == false && canFire == true)
-        {
+        {   
+            // fire cannon
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 StartCoroutine(Fire());
+                cannonShot = true;
             }
         }
 
