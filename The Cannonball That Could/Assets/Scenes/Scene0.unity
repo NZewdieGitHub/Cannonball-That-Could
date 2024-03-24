@@ -2748,6 +2748,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5621087128762886112, guid: 12acc24cc9a32154ca9601813d6b9086, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1320909926}
+    - target: {fileID: 5621087128762886112, guid: 12acc24cc9a32154ca9601813d6b9086, type: 3}
+      propertyPath: enemyBullet
+      value: 
+      objectReference: {fileID: 729774319474495368, guid: 9777971815443e548b43cac539670c70, type: 3}
     - target: {fileID: 6958231961405683837, guid: 12acc24cc9a32154ca9601813d6b9086, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.07
@@ -3293,6 +3301,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5621087128762886112, guid: 12acc24cc9a32154ca9601813d6b9086, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1320909926}
+    - target: {fileID: 5621087128762886112, guid: 12acc24cc9a32154ca9601813d6b9086, type: 3}
+      propertyPath: enemyBullet
+      value: 
+      objectReference: {fileID: 729774319474495368, guid: 9777971815443e548b43cac539670c70, type: 3}
     - target: {fileID: 8158722878291100998, guid: 12acc24cc9a32154ca9601813d6b9086, type: 3}
       propertyPath: m_Name
       value: 'Enemy Cannon '
@@ -5328,6 +5344,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420035}
     - target: {fileID: 4160053597302271003, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: playerScore
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160053597302271003, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: RespawnTextObject
       value: 
       objectReference: {fileID: 1413863081}
@@ -5335,6 +5355,14 @@ PrefabInstance:
       propertyPath: RespawnTimeHolder
       value: 
       objectReference: {fileID: 4411475041619454373}
+    - target: {fileID: 4766829149723687681, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: m_Value
+      value: 4.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766829149723687681, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: m_MaxValue
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4897321343295417165, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
