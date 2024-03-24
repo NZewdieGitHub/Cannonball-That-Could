@@ -3305,10 +3305,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1320909926}
-    - target: {fileID: 5621087128762886112, guid: 12acc24cc9a32154ca9601813d6b9086, type: 3}
-      propertyPath: enemyBullet
-      value: 
-      objectReference: {fileID: 729774319474495368, guid: 9777971815443e548b43cac539670c70, type: 3}
     - target: {fileID: 8158722878291100998, guid: 12acc24cc9a32154ca9601813d6b9086, type: 3}
       propertyPath: m_Name
       value: 'Enemy Cannon '

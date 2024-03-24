@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 6664613377710523865}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.89, y: -0.2, z: 0}
+  m_LocalPosition: {x: -1.89, y: 0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -130,3 +130,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 6958231961405683837}
+  enemyBullet: {fileID: 729774319474495368, guid: 9777971815443e548b43cac539670c70, type: 3}
+  player: {fileID: 0}

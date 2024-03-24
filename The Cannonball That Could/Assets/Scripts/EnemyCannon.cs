@@ -19,12 +19,14 @@ public class EnemyCannon : MonoBehaviour
         if (player.cannonShot == true)
         {
             ShootEnemy();
+            
         }
     }
 
     public void ShootEnemy()
     {
         // shooting logic
-
+        Instantiate(enemyBullet, firePoint.position, firePoint.rotation);
+        player.cannonShot = false;
     }
 }
