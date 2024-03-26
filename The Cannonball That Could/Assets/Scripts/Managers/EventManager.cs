@@ -10,6 +10,7 @@ public static class EventManager
     // Player fields
     static Player invoker;
     static UnityAction<int> listener;
+    static UnityAction<IEnumerator> cannonListener;
 
     // Lists of listeners and invokers
     static List<ParticleManager> invokers = new List<ParticleManager>();
@@ -37,6 +38,28 @@ public static class EventManager
         if (invoker != null)
         {
             invoker.AddHealthReducedEventListener(listener);
+        }
+    }
+    /// <summary>
+    /// Add listener to the player cannon fired event
+    /// </summary>
+    public static void AddPlayerCannonFiredEventInvoker(Player script)
+    {
+        invoker = script;
+        if (cannonListener != null)
+        {
+            invoker.AddPlayerCannonFiredEventListener(cannonListener);
+        }
+    }
+    /// <summary>
+    /// Add listener to the player cannon fired event
+    /// </summary>
+    public static void AddPlayerCannonFiredEventListener(UnityAction<IEnumerator> handler)
+    {
+        cannonListener = handler;
+        if (invoker != null)
+        {
+            invoker.AddPlayerCannonFiredEventListener(cannonListener);
         }
     }
 }

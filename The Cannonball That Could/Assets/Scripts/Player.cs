@@ -107,6 +107,7 @@ public class Player : MonoBehaviour
         canSlowDown = true;
         // Add self as an event invoker
         EventManager.AddHealthReducedEventInvoker(this);
+        EventManager.AddPlayerCannonFiredEventInvoker(this);
 
     }
 
@@ -389,7 +390,7 @@ public class Player : MonoBehaviour
     /// <summary>
     /// Add listener to the player cannon fired event
     /// </summary>
-    public void AddPlayerCannonFiredEventListener(UnityAction listener)
+    public void AddPlayerCannonFiredEventListener(UnityAction<IEnumerator> listener)
     {
         playerCannonFiredEvent.AddListener(listener);
     }

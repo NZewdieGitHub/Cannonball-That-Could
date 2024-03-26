@@ -12,6 +12,10 @@ public class EnemyCannon : MonoBehaviour
     public GameObject enemyBullet;
     // Player field 
     public Player player;
+    private void Start()
+    {
+        
+    }
     // Update is called once per frame
     void Update()
     {

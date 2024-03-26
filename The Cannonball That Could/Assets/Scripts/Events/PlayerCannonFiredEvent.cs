@@ -5,6 +5,6 @@ using UnityEngine.Events;
 /// <summary>
 /// A player cannon fired event
 /// </summary>
-public class PlayerCannonFiredEvent : UnityEvent
+public class PlayerCannonFiredEvent : UnityEvent<IEnumerator>
 {
 }
