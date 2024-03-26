@@ -24,8 +24,10 @@ public class EnemyCannon : MonoBehaviour
         // fire only when the player fires
         if (player.cannonShot == true)
         {
-            ShootEnemy();
-            
+            if (enemyCannonShot == false)
+            {
+                ShootEnemy();
+            }
         }
     }
 
@@ -33,6 +35,6 @@ public class EnemyCannon : MonoBehaviour
     {
         // shooting logic
         Instantiate(enemyBullet, firePoint.position, firePoint.rotation);
-       
+        enemyCannonShot = true;
     }
 }

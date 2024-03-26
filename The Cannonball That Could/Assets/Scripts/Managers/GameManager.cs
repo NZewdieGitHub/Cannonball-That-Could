@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     // Hold every enemy cannon gameobject in the scene
     [SerializeField]
-    List<GameObject> enemyCannons = new List<GameObject>(); 
+    List<EnemyCannon> enemyCannons = new List<EnemyCannon>(); 
     // Start is called before the first frame update
     void Start()
     { 
@@ -37,7 +37,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // check if player shot their cannon
+        if (player.cannonShot == true)
+        {
+            // Fire all enemy cannons
+            foreach(EnemyCannon enemyCannon in enemyCannons) 
+            {
+                enemyCannon.ShootEnemy();
+            }
+            
+        }
     }
 
     /// <summary>
