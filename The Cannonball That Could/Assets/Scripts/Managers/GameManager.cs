@@ -22,7 +22,10 @@ public class GameManager : MonoBehaviour
     //Pause Panel Fields 
     [SerializeField]
     GameObject PausePanel;
-   
+
+    // Hold every enemy cannon gameobject in the scene
+    [SerializeField]
+    List<GameObject> enemyCannons = new List<GameObject>(); 
     // Start is called before the first frame update
     void Start()
     { 

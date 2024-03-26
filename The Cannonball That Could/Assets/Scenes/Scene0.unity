@@ -735,6 +735,11 @@ Transform:
   - {fileID: 2147148734}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &440949679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8158722878291100998, guid: 12acc24cc9a32154ca9601813d6b9086, type: 3}
+  m_PrefabInstance: {fileID: 1528532567}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &467231515
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,6 +1161,9 @@ MonoBehaviour:
   vc: {fileID: 2137439065}
   cannon: {fileID: 1564250472}
   PausePanel: {fileID: 7277090491658286295}
+  enemyCannons:
+  - {fileID: 440949679}
+  - {fileID: 1667026367}
 --- !u!114 &519420036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3708,6 +3716,11 @@ CircleCollider2D:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1030166840803704284, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
   m_PrefabInstance: {fileID: 1661353375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1667026367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8158722878291100998, guid: 12acc24cc9a32154ca9601813d6b9086, type: 3}
+  m_PrefabInstance: {fileID: 1439419263}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1722023141
 GameObject:

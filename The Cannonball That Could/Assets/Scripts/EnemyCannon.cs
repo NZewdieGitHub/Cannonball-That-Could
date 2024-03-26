@@ -12,9 +12,11 @@ public class EnemyCannon : MonoBehaviour
     public GameObject enemyBullet;
     // Player field 
     public Player player;
+    // Enemy Cannon Firing Field
+    public bool enemyCannonShot = false;
     private void Start()
     {
-        
+         enemyCannonShot = false;
     }
     // Update is called once per frame
     void Update()
@@ -31,6 +33,6 @@ public class EnemyCannon : MonoBehaviour
     {
         // shooting logic
         Instantiate(enemyBullet, firePoint.position, firePoint.rotation);
-        player.cannonShot = false;
+       
     }
 }
