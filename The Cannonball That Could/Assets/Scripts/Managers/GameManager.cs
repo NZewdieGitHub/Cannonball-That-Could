@@ -18,10 +18,11 @@ public class GameManager : MonoBehaviour
     // Cannon Fields
     [SerializeField]
     GameObject cannon;
-
+    static EnemyCannon enemyCannon;
     //Pause Panel Fields 
     [SerializeField]
     GameObject PausePanel;
+
 
     // Hold every enemy cannon gameobject in the scene
     [SerializeField]
@@ -40,11 +41,11 @@ public class GameManager : MonoBehaviour
         // check if player shot their cannon
         if (player.cannonShot == true)
         {
-            // Fire all enemy cannons
-            foreach(EnemyCannon enemyCannon in enemyCannons) 
-            {
-                enemyCannon.ShootEnemy();
-            }
+            //// Fire all enemy cannons
+            //foreach(EnemyCannon enemyCannon in enemyCannons) 
+            //{
+            //    enemyCannon.ShootEnemy();
+            //}
             
         }
     }
@@ -67,6 +68,8 @@ public class GameManager : MonoBehaviour
             // give player back the ability to slowdown
             player.canSlowDown = true;
         }
+      
+
     }
     /// <summary>
     /// Pauses game

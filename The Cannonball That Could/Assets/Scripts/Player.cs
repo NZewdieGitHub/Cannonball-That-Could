@@ -160,7 +160,11 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 StartCoroutine(Fire());
-                cannonShot = true;
+                if (cannonShot == false)
+                {
+                    cannonShot = true;
+                }
+                
             }
         }
 
