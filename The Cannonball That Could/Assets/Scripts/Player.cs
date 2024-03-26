@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     public bool cannonShot = false;
     private float firingPower = 16f;
     private float fireTime = 4f;
-    
+
     // HUD fields
     HUD hud = new HUD();
 
@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
     // Event fields
     HealthReducedEvent healthReducedEvent = new HealthReducedEvent();
     EnemyRubbleEvent enemyRubbleEvent = new EnemyRubbleEvent();
-
+    PlayerCannonFiredEvent playerCannonFiredEvent = new PlayerCannonFiredEvent();
     // Animation holder fields
     [SerializeField]
     GameObject ExplosionHolder;
@@ -154,7 +154,7 @@ public class Player : MonoBehaviour
 
 
         if (isFiring == false && canFire == true)
-        {   
+        {
             // fire cannon
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -237,7 +237,7 @@ public class Player : MonoBehaviour
         // if player collides with enemy
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            if (isBoosted == true) 
+            if (isBoosted == true)
             {
                 // Do damage to ship
                 healthReducedEvent.Invoke(3);
@@ -269,9 +269,9 @@ public class Player : MonoBehaviour
             {
                 // Do damage to ship
                 healthReducedEvent.Invoke(10);
-              
+
             }
-            else 
+            else
             {
                 // update score
                 healthReducedEvent.Invoke(5);
@@ -287,7 +287,7 @@ public class Player : MonoBehaviour
             //vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
             // spawn animation
             SpawnExplosion();
-            
+
             //if (hud.enemyScore <= 0)
             //{
             //    // make sure the health stays 0
@@ -344,7 +344,7 @@ public class Player : MonoBehaviour
         //// Check if component isn't empty
         //if (ExplosionHolder != null)
         //{
-            
+
         //    // make sure componenet is assigned to explosions
         //    if (explosionAnimator != null)
         //    {
@@ -370,7 +370,7 @@ public class Player : MonoBehaviour
     /// </summary>
     public void DestroyExplosion(GameObject explosion)
     {
-        DestroyImmediate(explosion,true);
+        DestroyImmediate(explosion, true);
     }
     /// <summary>
     /// Adds listener to the points added event
@@ -386,5 +386,11 @@ public class Player : MonoBehaviour
     {
         enemyRubbleEvent.AddListener(listener);
     }
-
+    /// <summary>
+    /// Add listener to the player cannon fired event
+    /// </summary>
+    public void AddPlayerCannonFiredEventListener(UnityAction listener)
+    {
+        playerCannonFiredEvent.AddListener(listener);
+    }
 }
