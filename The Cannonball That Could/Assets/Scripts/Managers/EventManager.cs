@@ -11,7 +11,7 @@ public static class EventManager
     static Player invoker;
     static UnityAction<int> listener;
     static UnityAction<IEnumerator> cannonListener;
-
+    static UnityAction particleListener;
     // Lists of listeners and invokers
     static List<ParticleManager> invokers = new List<ParticleManager>();
     static List<ParticleManager> listeners = new List<ParticleManager>();
@@ -60,6 +60,28 @@ public static class EventManager
         if (invoker != null)
         {
             invoker.AddPlayerCannonFiredEventListener(cannonListener);
+        }
+    }
+    /// <summary>
+    /// Add Invoker to the enemy rubble event
+    /// </summary>
+    public static void AddEnemyRubbleEventInvoker(Player script)
+    {
+        invoker = script;
+        if (particleListener != null)
+        {
+            invoker.AddEnemyRubbleEventListener(particleListener);
+        }
+    }
+    /// <summary>
+    /// Add listener to the enemy rubble event
+    /// </summary>
+    public static void AddEnemyRubbleEventListener(UnityAction handler)
+    {
+        particleListener = handler;
+        if (invoker != null)
+        {
+            invoker.AddEnemyRubbleEventListener(particleListener);
         }
     }
 }
