@@ -108,7 +108,7 @@ public class Player : MonoBehaviour
         // Add self as an event invoker
         EventManager.AddHealthReducedEventInvoker(this);
         EventManager.AddPlayerCannonFiredEventInvoker(this);
-
+        EventManager.AddEnemyRubbleEventInvoker(this);
     }
 
     // Update is called once per frame
