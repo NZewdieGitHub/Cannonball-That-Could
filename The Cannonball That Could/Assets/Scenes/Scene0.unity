@@ -1160,6 +1160,7 @@ MonoBehaviour:
   player: {fileID: 1320909926}
   vc: {fileID: 2137439065}
   cannon: {fileID: 1564250472}
+  enemyCannon: {fileID: 5621087128762886112, guid: 12acc24cc9a32154ca9601813d6b9086, type: 3}
   PausePanel: {fileID: 7277090491658286295}
   enemyCannons:
   - {fileID: 440949679}

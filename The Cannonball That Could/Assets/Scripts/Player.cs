@@ -164,7 +164,7 @@ public class Player : MonoBehaviour
                 {
                     cannonShot = true;
                 }
-                
+
             }
         }
 
@@ -333,6 +333,8 @@ public class Player : MonoBehaviour
             // Turn invisible
             ballDestroyed = true;
             gameObject.SetActive(false);
+            // destroy enemy cannonball
+            Destroy(collision.gameObject);
             // spawn animation
             SpawnExplosion();
         }

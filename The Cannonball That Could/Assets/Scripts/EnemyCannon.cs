@@ -14,27 +14,30 @@ public class EnemyCannon : MonoBehaviour
     public Player player;
     // Enemy Cannon Firing Field
     public bool enemyCannonShot = false;
-    private void Start()
-    {
-         enemyCannonShot = false;
-    }
+    public bool canFireAgain = false;
+    //private void Start()
+    //{
+    //     enemyCannonShot = false;
+    //}
     // Update is called once per frame
     void Update()
     {
         // fire only when the player fires
         if (player.cannonShot == true)
         {
-            if (enemyCannonShot == false)
-            {
-                ShootEnemy();
-            }
+          
+              ShootEnemy();
+           
         }
     }
 
     public void ShootEnemy()
     {
-        // shooting logic
-        Instantiate(enemyBullet, firePoint.position, firePoint.rotation);
-        enemyCannonShot = true;
+        if (enemyCannonShot == false)
+        {
+            // shooting logic
+            Instantiate(enemyBullet, firePoint.position, firePoint.rotation);
+            enemyCannonShot = true;
+        }
     }
 }

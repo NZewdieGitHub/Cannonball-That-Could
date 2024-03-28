@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour
     // Cannon Fields
     [SerializeField]
     GameObject cannon;
-    static EnemyCannon enemyCannon;
+
+
     //Pause Panel Fields 
     [SerializeField]
     GameObject PausePanel;
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     // Hold every enemy cannon gameobject in the scene
     [SerializeField]
-    List<EnemyCannon> enemyCannons = new List<EnemyCannon>(); 
+    List<GameObject> enemyCannons;
     // Start is called before the first frame update
     void Start()
     { 
@@ -68,8 +69,12 @@ public class GameManager : MonoBehaviour
             // give player back the ability to slowdown
             player.canSlowDown = true;
         }
-      
-
+        player.cannonShot = false;
+        foreach (GameObject eC in enemyCannons)
+        {
+            eC.GetComponent<EnemyCannon>().enemyCannonShot = false;
+        }
+        
     }
     /// <summary>
     /// Pauses game
