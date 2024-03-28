@@ -11,6 +11,9 @@ public class EnemyBullet : MonoBehaviour
     [SerializeField]
     GameObject ExplosionHolder;
 
+    // hud field
+    [SerializeField]
+    HUD hud = new HUD();
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,7 @@ public class EnemyBullet : MonoBehaviour
             Destroy(gameObject);
             Destroy(collision.gameObject);
             SpawnExplosion();
+            hud.SubtractPlayerPoints(1);
         }
     }
     public void SpawnExplosion()
