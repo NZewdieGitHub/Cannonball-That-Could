@@ -328,6 +328,14 @@ public class Player : MonoBehaviour
             enemyFlagDamaged = true;
 
         }
+        if (collision.gameObject.CompareTag("EnemyPiece"))
+        {
+            // Turn invisible
+            ballDestroyed = true;
+            gameObject.SetActive(false);
+            // spawn animation
+            SpawnExplosion();
+        }
         // If enemy's defeated
         if (hud.enemyScore <= 0)
         {
