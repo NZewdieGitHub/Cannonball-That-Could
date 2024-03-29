@@ -298,6 +298,8 @@ public class HUD : MonoBehaviour
                 animator.SetBool("LoseActivated", !isActivated);
             }
         }
+        // Reset player's position
+        gameManager.Respawn();
     }
     /// <summary>
     /// Instantiate Win Menu
@@ -320,6 +322,8 @@ public class HUD : MonoBehaviour
                 animator.SetBool("WinActivated", !isActivated);
             }
         }
+        // Reset player's position
+        gameManager.Respawn();
     }
     #endregion
     #region Eventlisteners
