@@ -12,12 +12,11 @@ public class EnemyBullet : MonoBehaviour
     GameObject ExplosionHolder;
 
     // hud field
-    [SerializeField]
     HUD hud = new HUD();
     // Start is called before the first frame update
     void Start()
     {
-        
+       hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
     }
 
     // Update is called once per frame
