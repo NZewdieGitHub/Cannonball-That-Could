@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         {
             eC.GetComponent<EnemyCannon>().enemyCannonShot = false;
         }
-        
+        player.slowDownPressed = false;
     }
     /// <summary>
     /// Pauses game

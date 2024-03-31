@@ -299,7 +299,7 @@ public class HUD : MonoBehaviour
             }
         }
         // Reset player's position
-        gameManager.Respawn();
+        // gameManager.Respawn();
     }
     /// <summary>
     /// Instantiate Win Menu
@@ -323,7 +323,7 @@ public class HUD : MonoBehaviour
             }
         }
         // Reset player's position
-        gameManager.Respawn();
+        // gameManager.Respawn();
     }
     #endregion
     #region Eventlisteners

@@ -330,13 +330,25 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("EnemyPiece"))
         {
-            // Turn invisible
-            ballDestroyed = true;
-            gameObject.SetActive(false);
-            // destroy enemy cannonball
-            Destroy(collision.gameObject);
-            // spawn animation
-            SpawnExplosion();
+            // if player is boosted
+            if (isBoosted == true)
+            {
+                // destroy enemy cannonball
+                Destroy(collision.gameObject);
+                // spawn animation
+                SpawnExplosion();
+            }
+            else
+            {
+                // Turn invisible
+                ballDestroyed = true;
+                gameObject.SetActive(false);
+                // destroy enemy cannonball
+                Destroy(collision.gameObject);
+                // spawn animation
+                SpawnExplosion();
+            }
+            
         }
         // If enemy's defeated
         if (hud.enemyScore <= 0)
