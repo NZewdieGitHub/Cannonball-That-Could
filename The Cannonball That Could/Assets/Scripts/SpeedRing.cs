@@ -25,6 +25,8 @@ public class SpeedRing : MonoBehaviour
                 player.isBoosted = true;
                 // take away slowdown mechaanic
                 player.canSlowDown = false;
+                // Destroy speed ring
+                Destroy(gameObject);
             }
 
         }
