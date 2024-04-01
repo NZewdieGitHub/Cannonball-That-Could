@@ -1291,6 +1291,7 @@ MonoBehaviour:
   vc: {fileID: 2137439065}
   cannon: {fileID: 1564250472}
   PausePanel: {fileID: 7277090491658286295}
+  deadZone: {fileID: 1173780546}
   enemyCannons:
   - {fileID: 440949679}
 --- !u!114 &519420036
@@ -2479,6 +2480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e2afd7d186abf49b94fee89a2b2409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyCannonDestroyed: 0
 --- !u!1 &1190712424
 GameObject:
   m_ObjectHideFlags: 0
@@ -3597,6 +3599,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1320909926}
+    - target: {fileID: 5621087128762886112, guid: 12acc24cc9a32154ca9601813d6b9086, type: 3}
+      propertyPath: deadZone
+      value: 
+      objectReference: {fileID: 1173780546}
     - target: {fileID: 6295152490001240998, guid: 12acc24cc9a32154ca9601813d6b9086, type: 3}
       propertyPath: m_Size.x
       value: 2.6965003

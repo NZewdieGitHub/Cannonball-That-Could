@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject PausePanel;
 
+    // Dead Zone Field
+    [SerializeField]
+    public DeadZone deadZone;
 
     // Hold every enemy cannon gameobject in the scene
     [SerializeField]
@@ -70,9 +73,12 @@ public class GameManager : MonoBehaviour
             player.canSlowDown = true;
         }
         player.cannonShot = false;
-        foreach (GameObject eC in enemyCannons)
+        if (deadZone.enemyCannonDestroyed == false)
         {
-            eC.GetComponent<EnemyCannon>().enemyCannonShot = false;
+            foreach (GameObject eC in enemyCannons)
+            {
+                eC.GetComponent<EnemyCannon>().enemyCannonShot = false;
+            }
         }
         player.slowDownPressed = false;
     }

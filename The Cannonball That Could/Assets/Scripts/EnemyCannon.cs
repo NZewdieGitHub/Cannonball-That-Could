@@ -15,18 +15,25 @@ public class EnemyCannon : MonoBehaviour
     // Enemy Cannon Firing Field
     public bool enemyCannonShot = false;
     public bool canFireAgain = false;
-    //private void Start()
-    //{
-    //     enemyCannonShot = false;
-    //}
+
+    // Dead Zone Field
+    [SerializeField]
+    public DeadZone deadZone;
+    void Start()
+    {
+        deadZone.GetComponent<DeadZone>();
+    }
     // Update is called once per frame
     void Update()
     {
         // fire only when the player fires
         if (player.cannonShot == true)
         {
-             
-              ShootEnemy();
+            if (deadZone.enemyCannonDestroyed == false) 
+            {
+                ShootEnemy();
+            }
+              
            
         }
     }
