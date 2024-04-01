@@ -58,13 +58,10 @@ public class EnemyParts : MonoBehaviour
             // make sure componenet is assigned to panel
             if (animator != null)
             {
+                LayerMask lm;
                 bool timerActivated = animator.GetBool("MastDamaged");
                 animator.SetBool("MastDamaged", true);
-                // turn off collider
-                if (MastCollider.enabled == true)
-                {
-                    MastCollider.enabled = false;
-                }
+                Physics2D.IgnoreLayerCollision(9,10);
             }
         }
     }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1087516921508705957}
   - component: {fileID: 2303714263178237857}
   - component: {fileID: 1231147572311233294}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyShip
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0.01953125, y: 0.01953125, z: 0.0234375, w: 0.015625}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
