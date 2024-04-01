@@ -41,14 +41,18 @@ public class DeadZone : MonoBehaviour
             Destroy(collision.gameObject);
             enemyCannonDestroyed = true;
             hud.SubtractEnemyPoints(4);
-            // If enemy's defeated
-            if (hud.enemyScore <= 0)
-            {
-                // make sure the health stays 0
-                hud.enemyScore = 0;
-                // Display the win screen
-                hud.SpawnWinMenu();
-            }
+        }
+        if (collision.gameObject.CompareTag("MastPiece"))
+        {
+            hud.SubtractEnemyPoints(4);
+        }
+        // If enemy's defeated
+        if (hud.enemyScore <= 0)
+        {
+            // make sure the health stays 0
+            hud.enemyScore = 0;
+            // Display the win screen
+            hud.SpawnWinMenu();
         }
     }
     
