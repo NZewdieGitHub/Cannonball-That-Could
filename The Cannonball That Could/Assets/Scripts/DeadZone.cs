@@ -16,11 +16,15 @@ public class DeadZone : MonoBehaviour
     // Hud field
     HUD hud = new HUD();
 
+    // Player Field
+    [SerializeField]
+    Player player;
     // Start is called before the first frame update
     void Start()
     {
         // Save reference to HUD Script
         hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
+        
     }
 
     // Update is called once per frame
@@ -44,8 +48,21 @@ public class DeadZone : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("MastPiece"))
         {
-            hud.SubtractEnemyPoints(4);
+            // If the mast is not damaged
+            if (player.enemyMastDamaged == false)
+            {
+                // take away 4 health from the enemy
+                hud.SubtractEnemyPoints(4);
+                Destroy(collision.gameObject);
+            }
+            else
+            {
+                // just destroy the game object
+                Destroy(collision.gameObject);
+            }
+            
         }
+
         // If enemy's defeated
         if (hud.enemyScore <= 0)
         {
