@@ -6,6 +6,11 @@ using UnityEngine;
 /// </summary>
 public class TNT : MonoBehaviour
 {
+    // Area of Effect Fields
+    public float areaOfEffect;
+    public float force;
+    public LayerMask layerToHit;
+
     public BoxCollider2D TNTCollider;
     // Start is called before the first frame update
     void Start()
