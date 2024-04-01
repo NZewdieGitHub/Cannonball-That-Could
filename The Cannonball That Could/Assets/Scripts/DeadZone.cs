@@ -62,7 +62,22 @@ public class DeadZone : MonoBehaviour
             }
             
         }
+        if (collision.gameObject.CompareTag("FlagPiece"))
+        {
+            // If the mast is not damaged
+            if (player.enemyFlagDamaged == false)
+            {
+                // take away 4 health from the enemy
+                hud.SubtractEnemyPoints(4);
+                Destroy(collision.gameObject);
+            }
+            else
+            {
+                // just destroy the game object
+                Destroy(collision.gameObject);
+            }
 
+        }
         // If enemy's defeated
         if (hud.enemyScore <= 0)
         {

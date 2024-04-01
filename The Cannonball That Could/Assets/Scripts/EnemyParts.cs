@@ -79,11 +79,9 @@ public class EnemyParts : MonoBehaviour
             {
                 bool timerActivated = animator.GetBool("FlagDamaged");
                 animator.SetBool("FlagDamaged", true);
-                // turn off collider
-                if (flagCollider.enabled == true)
-                {
-                    flagCollider.enabled = false;
-                }
+                // Exclude enemy layer from flag layer
+                Physics2D.IgnoreLayerCollision(9, 11);
+
             }
         }
     }
