@@ -13,6 +13,7 @@ TagManager:
   - FlagPiece
   - MastPiece
   - PlayerPiece
+  - CannonPiece
   layers:
   - Default
   - TransparentFX
