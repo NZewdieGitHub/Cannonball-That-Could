@@ -26,7 +26,7 @@ public class DeadZone : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // if a game object enters the dead zone
-        if (collision.gameObject.CompareTag("EnemyPiece"))
+        if (collision.gameObject.CompareTag("EnemyCannonPiece"))
         {
             // destroy the game object that enters dead zone
             Destroy(collision.gameObject);

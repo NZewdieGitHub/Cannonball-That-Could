@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 6295152490001240998}
   m_Layer: 0
   m_Name: 'Enemy Cannon '
-  m_TagString: Untagged
+  m_TagString: EnemyCannonPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,6 +136,7 @@ MonoBehaviour:
   player: {fileID: 0}
   enemyCannonShot: 0
   canFireAgain: 0
+  deadZone: {fileID: 0}
 --- !u!50 &5562055427809863657
 Rigidbody2D:
   serializedVersion: 4
@@ -195,7 +196,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.061681747, y: -0.3503769}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -206,5 +207,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.56, y: 3.56}
+  m_Size: {x: 2.6965003, y: 2.917643}
   m_EdgeRadius: 0
