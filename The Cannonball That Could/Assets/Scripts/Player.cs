@@ -73,6 +73,7 @@ public class Player : MonoBehaviour
     // field to tell when part is damaged
     public bool enemyMastDamaged = false;
     public bool enemyFlagDamaged = false;
+    public bool enemyPirateDamaged = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -349,6 +350,18 @@ public class Player : MonoBehaviour
                 SpawnExplosion();
             }
             
+        }
+        if (collision.gameObject.CompareTag("PiratePiece"))
+        {
+            // Turn invisible
+            ballDestroyed = true;
+            gameObject.SetActive(false);
+            // Do damage to ship
+            healthReducedEvent.Invoke(4);
+            // spawn animation
+            SpawnExplosion();
+            // Activate Sprite animation
+            enemyPirateDamaged = true;
         }
         // If enemy's defeated
         if (hud.enemyScore <= 0)

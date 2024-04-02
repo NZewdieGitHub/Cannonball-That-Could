@@ -16,7 +16,7 @@ public class EnemyParts : MonoBehaviour
 
     // Game Object Part Fields
     [SerializeField]
-    SpriteRenderer damagedPart;
+    Sprite damagedPart;
 
     [SerializeField]
     Player player;
@@ -42,7 +42,12 @@ public class EnemyParts : MonoBehaviour
         }
         else if (player.enemyFlagDamaged == true)
         {
+            // change animation
             ActivateDamagedFlag();
+        }
+        else if (player.enemyPirateDamaged == true)
+        {
+            ActivateBlownUpPirate();
         }
         
     }
@@ -58,7 +63,6 @@ public class EnemyParts : MonoBehaviour
             // make sure componenet is assigned to panel
             if (animator != null)
             {
-                LayerMask lm;
                 bool timerActivated = animator.GetBool("MastDamaged");
                 animator.SetBool("MastDamaged", true);
                 Physics2D.IgnoreLayerCollision(9,10);
@@ -84,5 +88,14 @@ public class EnemyParts : MonoBehaviour
 
             }
         }
+    }
+    /// <summary>
+    /// Switch pirate spirtes when damaged
+    /// </summary>
+    public void ActivateBlownUpPirate()
+    {
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = damagedPart;
+        // Exclude enemy layer from flag layer
+        Physics2D.IgnoreLayerCollision(9, 12);
     }
 }

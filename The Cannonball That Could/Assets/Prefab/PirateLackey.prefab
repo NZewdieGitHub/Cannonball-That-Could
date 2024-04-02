@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3409714423714777987}
   - component: {fileID: 5573222065677239693}
   - component: {fileID: 6223113470251634860}
-  m_Layer: 0
+  - component: {fileID: 6165485771425768361}
+  m_Layer: 12
   m_Name: PirateLackey
-  m_TagString: Untagged
+  m_TagString: PiratePiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,3 +159,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.58369946, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6165485771425768361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4254241692714651119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15c1c21a5b06614b816360128b1b0a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MastObject: {fileID: 0}
+  FlagObject: {fileID: 0}
+  damagedPart: {fileID: 21300000, guid: e66c55405659c3344a89eb5dba7336bb, type: 3}
+  player: {fileID: 0}
+  MastCollider: {fileID: 0}
+  flagCollider: {fileID: 0}
