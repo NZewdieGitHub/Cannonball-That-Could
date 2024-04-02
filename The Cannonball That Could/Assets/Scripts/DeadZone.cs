@@ -81,7 +81,7 @@ public class DeadZone : MonoBehaviour
         if (collision.gameObject.CompareTag("PiratePiece"))
         {
             // If the mast is not damaged
-            if (player.enemyPirateDamaged == false)
+            if (collision.gameObject.GetComponent<EnemyParts>().pirateBlownUp == false)
             {
                 // take away 4 health from the enemy
                 hud.SubtractEnemyPoints(4);

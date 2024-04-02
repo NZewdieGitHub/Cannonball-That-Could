@@ -360,8 +360,7 @@ public class Player : MonoBehaviour
             healthReducedEvent.Invoke(4);
             // spawn animation
             SpawnExplosion();
-            // Activate Sprite animation
-            enemyPirateDamaged = true;
+            collision.gameObject.GetComponent<EnemyParts>().pirateBlownUp = true;
         }
         // If enemy's defeated
         if (hud.enemyScore <= 0)

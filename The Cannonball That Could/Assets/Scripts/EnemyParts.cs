@@ -26,6 +26,10 @@ public class EnemyParts : MonoBehaviour
 
     [SerializeField]
     private BoxCollider2D flagCollider;
+
+    // Damage fields
+    public bool pirateBlownUp = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,11 +49,11 @@ public class EnemyParts : MonoBehaviour
             // change animation
             ActivateDamagedFlag();
         }
-        else if (player.enemyPirateDamaged == true)
+        else if (pirateBlownUp == true)
         {
             ActivateBlownUpPirate();
         }
-        
+
     }
     /// <summary>
     /// Activates Damaged Mast Animation
