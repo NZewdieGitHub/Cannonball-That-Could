@@ -23,4 +23,8 @@ public class TNT : MonoBehaviour
     {
         
     }
+    public void Explode()
+    {
+        Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, areaOfEffect, layerToHit);
+    }
 }
