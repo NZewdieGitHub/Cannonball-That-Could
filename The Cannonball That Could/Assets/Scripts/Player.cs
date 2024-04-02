@@ -285,7 +285,6 @@ public class Player : MonoBehaviour
             // Turn invisible
             ballDestroyed = true;
             gameObject.SetActive(false);
-            Destroy(collision.gameObject);
             //// reposition player
             //transform.position = cannon.transform.position;
             //canFire = true;
@@ -293,7 +292,9 @@ public class Player : MonoBehaviour
             //vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
             // spawn animation
             SpawnExplosion();
-
+            // Create Explosion Radius
+            collision.gameObject.GetComponent<TNT>().Explode();
+            Destroy(collision.gameObject);
             //if (hud.enemyScore <= 0)
             //{
             //    // make sure the health stays 0

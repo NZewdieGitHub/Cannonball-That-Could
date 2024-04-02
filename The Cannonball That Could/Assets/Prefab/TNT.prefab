@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6368828174945970791}
   - component: {fileID: 9196839231478111997}
   - component: {fileID: 9101832994657773274}
+  - component: {fileID: 3725183482501621384}
   m_Layer: 0
   m_Name: TNT
   m_TagString: TNT
@@ -148,3 +149,20 @@ CircleCollider2D:
   m_Offset: {x: -0.042617798, y: 0}
   serializedVersion: 2
   m_Radius: 1.3510132
+--- !u!114 &3725183482501621384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3266763268765739192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff08080f01c6ff41b220820702b7cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaOfEffect: 8.33
+  force: 0
+  layerToHit:
+    serializedVersion: 2
+    m_Bits: 512

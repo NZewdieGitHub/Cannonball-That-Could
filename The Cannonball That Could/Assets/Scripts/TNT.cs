@@ -11,11 +11,13 @@ public class TNT : MonoBehaviour
     public float force;
     public LayerMask layerToHit;
 
-    public BoxCollider2D TNTCollider;
+    [SerializeField]
+    ParticleManager pM;
+
     // Start is called before the first frame update
     void Start()
     {
-        TNTCollider = GetComponent<BoxCollider2D>();
+        
     }
 
     // Update is called once per frame
@@ -23,14 +25,25 @@ public class TNT : MonoBehaviour
     {
         
     }
+    /// <summary>
+    /// An explosion
+    /// </summary>
     public void Explode()
     {
         Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, areaOfEffect, layerToHit);
         foreach (Collider2D obj in objects) 
         {
             //Vector2 direction = obj.transform.position - transform.position;
-            ParticleManager pM = new ParticleManager();
             pM.SpawnEnemyRubble(obj.gameObject);
+            Destroy(obj.gameObject);
         }
+    }
+    /// <summary>
+    /// Create Radius
+    /// </summary>
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, areaOfEffect);
     }
 }
