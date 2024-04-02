@@ -16,6 +16,8 @@ public class DeadZone : MonoBehaviour
     // Hud field
     HUD hud = new HUD();
 
+    
+
     // Player Field
     [SerializeField]
     Player player;
@@ -24,7 +26,7 @@ public class DeadZone : MonoBehaviour
     {
         // Save reference to HUD Script
         hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
-        
+
     }
 
     // Update is called once per frame
@@ -102,6 +104,8 @@ public class DeadZone : MonoBehaviour
             // Display the win screen
             hud.SpawnWinMenu();
         }
+        // Play Sound
+        FindObjectOfType<AudioManager>().Play("Splash");
     }
     
 }

@@ -315,7 +315,8 @@ public class Player : MonoBehaviour
             SpawnExplosion();
             // Activate Sprite animation
             enemyMastDamaged = true;
-
+            // Make Player Phase through layers
+            collision.gameObject.GetComponent<EnemyParts>().isSteady = false;
         }
         if (collision.gameObject.CompareTag("FlagPiece"))
         {
@@ -328,7 +329,8 @@ public class Player : MonoBehaviour
             SpawnExplosion();
             // Activate Sprite animation
             enemyFlagDamaged = true;
-
+            // Make Player Phase through layers
+            collision.gameObject.GetComponent<EnemyParts>().isSteady = false;
         }
         if (collision.gameObject.CompareTag("EnemyPiece"))
         {

@@ -4843,6 +4843,11 @@ MonoBehaviour:
     volume: 0.281
     pitch: 1
     source: {fileID: 0}
+  - name: Splash
+    audioClip: {fileID: 8300000, guid: 85bd01ef449b2f5449019c7b9dd07aae, type: 3}
+    volume: 0.281
+    pitch: 1
+    source: {fileID: 0}
 --- !u!82 &2046543860
 AudioSource:
   m_ObjectHideFlags: 0

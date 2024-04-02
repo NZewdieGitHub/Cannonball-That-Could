@@ -33,10 +33,17 @@ public class EnemyParts : MonoBehaviour
     // Damage fields
     public bool pirateBlownUp = false;
 
+    // layer bool
+    public bool isSteady;
+
     // Start is called before the first frame update
     void Start()
     {
-       
+        // Make sure items are steady at start of the game
+        isSteady = true;
+        Physics2D.IgnoreLayerCollision(9, 10, false);
+        // Exclude enemy layer from flag layer
+        Physics2D.IgnoreLayerCollision(9, 11, false);
     }
 
     // Update is called once per frame
@@ -47,15 +54,15 @@ public class EnemyParts : MonoBehaviour
             // change animation
             ActivateDamageMast();
         }
-        else if (player.enemyFlagDamaged == true)
+        if (player.enemyFlagDamaged == true)
         {
             // change animation
             ActivateDamagedFlag();
         }
-        else if (pirateBlownUp == true)
-        {
-            ActivateBlownUpPirate();
-        }
+        //else if (pirateBlownUp == true)
+        //{
+        //    ActivateBlownUpPirate();
+        //}
 
     }
     /// <summary>
@@ -72,7 +79,11 @@ public class EnemyParts : MonoBehaviour
             {
                 bool timerActivated = animator.GetBool("MastDamaged");
                 animator.SetBool("MastDamaged", true);
-                Physics2D.IgnoreLayerCollision(9,10);
+                if (isSteady == false)
+                {
+                    Physics2D.IgnoreLayerCollision(9, 10, true);
+                }
+                
             }
         }
     }
@@ -90,9 +101,11 @@ public class EnemyParts : MonoBehaviour
             {
                 bool timerActivated = animator.GetBool("FlagDamaged");
                 animator.SetBool("FlagDamaged", true);
-                // Exclude enemy layer from flag layer
-                Physics2D.IgnoreLayerCollision(9, 11);
-
+                if (isSteady == false)
+                {
+                    // Exclude enemy layer from flag layer
+                    Physics2D.IgnoreLayerCollision(9, 11, true);
+                }
             }
         }
     }
