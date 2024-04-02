@@ -12,7 +12,7 @@ public class ParticleManager : MonoBehaviour
     void Start()
     {
         
-        EventManager.AddEnemyRubbleEventListener(SpawnEnemyRubble);
+        //EventManager.AddEnemyRubbleEventListener(SpawnEnemyRubble);
     }
 
     // Update is called once per frame
@@ -23,8 +23,8 @@ public class ParticleManager : MonoBehaviour
     /// <summary>
     /// Spawn Enemy rubble when piece of ship is destroyed
     /// </summary>
-    public void SpawnEnemyRubble()
+    public void SpawnEnemyRubble(GameObject beacon)
     {
-        Instantiate(enemyRubbleParticleEffect, player.transform.position, Quaternion.identity);
+        Instantiate(enemyRubbleParticleEffect, beacon.transform.position, Quaternion.identity);
     }
 }

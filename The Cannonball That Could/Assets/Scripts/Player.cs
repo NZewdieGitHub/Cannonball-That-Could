@@ -257,7 +257,7 @@ public class Player : MonoBehaviour
             ballDestroyed = true;
             gameObject.SetActive(false);
             Destroy(collision.gameObject);
-            enemyRubbleEvent.Invoke();
+            particleManager.SpawnEnemyRubble(gameObject);
             // spawn animation
             SpawnExplosion();
             // reposition player
