@@ -27,13 +27,16 @@ public class EnemyParts : MonoBehaviour
     [SerializeField]
     private BoxCollider2D flagCollider;
 
+    [SerializeField]
+    private BoxCollider2D pirateCollider;
+
     // Damage fields
     public bool pirateBlownUp = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -99,7 +102,10 @@ public class EnemyParts : MonoBehaviour
     public void ActivateBlownUpPirate()
     {
         this.gameObject.GetComponent<SpriteRenderer>().sprite = damagedPart;
-        // Exclude enemy layer from flag layer
-        Physics2D.IgnoreLayerCollision(9, 12);
+        // deactivate pirate collider
+        if (pirateCollider.enabled == true)
+        {
+            pirateCollider.enabled = false;
+        }
     }
 }
