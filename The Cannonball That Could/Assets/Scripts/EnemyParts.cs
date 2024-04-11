@@ -59,10 +59,10 @@ public class EnemyParts : MonoBehaviour
             // change animation
             ActivateDamagedFlag();
         }
-        //else if (pirateBlownUp == true)
-        //{
-        //    ActivateBlownUpPirate();
-        //}
+        else if (pirateBlownUp == true)
+        {
+            ActivateBlownUpPirate();
+        }
 
     }
     /// <summary>
@@ -116,9 +116,7 @@ public class EnemyParts : MonoBehaviour
     {
         this.gameObject.GetComponent<SpriteRenderer>().sprite = damagedPart;
         // deactivate pirate collider
-        if (pirateCollider.enabled == true)
-        {
-            pirateCollider.enabled = false;
-        }
+        // Exclude enemy layer from flag layer
+        Physics2D.IgnoreLayerCollision(9, 12, true);
     }
 }
