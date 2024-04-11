@@ -177,3 +177,6 @@ MonoBehaviour:
   player: {fileID: 0}
   MastCollider: {fileID: 0}
   flagCollider: {fileID: 0}
+  pirateCollider: {fileID: 0}
+  pirateBlownUp: 0
+  isSteady: 0

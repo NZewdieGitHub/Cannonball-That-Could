@@ -44,6 +44,8 @@ public class EnemyParts : MonoBehaviour
         Physics2D.IgnoreLayerCollision(9, 10, false);
         // Exclude enemy layer from flag layer
         Physics2D.IgnoreLayerCollision(9, 11, false);
+        // Exclude enemy layer from flag layer
+        Physics2D.IgnoreLayerCollision(9, 12, false);
     }
 
     // Update is called once per frame
