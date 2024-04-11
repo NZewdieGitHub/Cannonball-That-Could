@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         player.transform.position = cannon.transform.position;
         player.canFire = true;
         player.hasFired = false;
-        vc.transform.position = new Vector3(-22f, 0.37f, -21.64309f);
+        vc.transform.position = new Vector3(-45.4f, 0.37f, -21.64309f);
         // respet player speed
         if (player.isBoosted == true)
         {
