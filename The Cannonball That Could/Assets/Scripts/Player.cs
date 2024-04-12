@@ -365,6 +365,19 @@ public class Player : MonoBehaviour
             SpawnExplosion();
             collision.gameObject.GetComponent<EnemyParts>().pirateBlownUp = true;
         }
+        // check for collision with player ship
+        if (collision.gameObject.CompareTag("PlayerPiece"))
+        {
+            // Turn invisible
+            ballDestroyed = true;
+            gameObject.SetActive(false);
+            // Do damage to player ship
+            hud.SubtractPlayerPoints(1);
+            // destroy enemy cannonball
+            Destroy(collision.gameObject);
+            // spawn animation
+            SpawnExplosion();
+        }
         // If enemy's defeated
         if (hud.enemyScore <= 0)
         {
