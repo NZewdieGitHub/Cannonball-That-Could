@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb2d;
     public float accelleration = 12f;
     Vector2 movement;
+    Vector2 vertMovement;
     public string levelName;
 
     // Camera field
@@ -129,12 +130,12 @@ public class Player : MonoBehaviour
         }
 
         // movement input setup
-        if(canMoveHoriz == true)
+        if (canMoveHoriz == true)
         {
             movement.x = Input.GetAxis("Horizontal");
         }
         movement.y = Input.GetAxis("Vertical");
-
+        vertMovement.y = Input.GetAxis("Vertical");
         // restart functionality (for testing purposes)
         if (Input.GetKey(KeyCode.Escape))
         {
@@ -202,9 +203,18 @@ public class Player : MonoBehaviour
             // Check if the ball isn't destroyed
             if (ballDestroyed == false || isBoosted == false)
             {
-                accelleration = 20f;
-                // move cannon ball freely
-                rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
+                if (canMoveHoriz == true)
+                {
+                    accelleration = 20f;
+                    // move cannon ball freely
+                    rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
+                }
+                else if (canMoveHoriz == false)
+                {
+                    accelleration = 20f;
+                    // move cannon ball only vertically
+                    rb2d.MovePosition(rb2d.position + Vector2.right + vertMovement * accelleration * Time.deltaTime);
+                }
             }
 
             if (isBoosted == true)
