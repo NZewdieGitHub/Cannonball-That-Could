@@ -238,7 +238,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -271,6 +271,7 @@ MonoBehaviour:
   canFire: 1
   isFiring: 0
   hasFired: 0
+  cannonShot: 0
   collider: {fileID: 5267974027490718516}
   ballDestroyed: 0
   enemy: {fileID: 0}
@@ -284,6 +285,7 @@ MonoBehaviour:
   canSlowDown: 0
   enemyMastDamaged: 0
   enemyFlagDamaged: 0
+  enemyPirateDamaged: 0
 --- !u!58 &5267974027490718516
 CircleCollider2D:
   m_ObjectHideFlags: 0
