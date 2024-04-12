@@ -106,11 +106,6 @@ public class HUD : MonoBehaviour
                     respawnEvent.Invoke();
                 }
 
-                // Spawn lose menu
-                if (playerScore <= 0)
-                {
-                    SpawnLoseMenu();
-                }
             }
 
         }
@@ -149,6 +144,11 @@ public class HUD : MonoBehaviour
                 player.gameObject.SetActive(true);
                 player.ballDestroyed = false;
             }
+        }
+        // Spawn lose menu if player score is below 0
+        if (playerScore <= 0)
+        {
+            SpawnLoseMenu();
         }
     }
     /// <summary>

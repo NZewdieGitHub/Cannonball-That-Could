@@ -1887,8 +1887,8 @@ Transform:
   m_GameObject: {fileID: 552509347}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 80.6, y: 4.2, z: 0.19870491}
-  m_LocalScale: {x: 10.332973, y: 1.0861632, z: 1}
+  m_LocalPosition: {x: 80.6, y: 4.3599, z: 0.19870491}
+  m_LocalScale: {x: 10.332973, y: 0.9612544, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1317679620}
@@ -2446,7 +2446,7 @@ Transform:
   m_GameObject: {fileID: 967720295}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 82.4527, y: 6.9, z: 0.19870491}
+  m_LocalPosition: {x: 82.4527, y: 6.8, z: 0.19870491}
   m_LocalScale: {x: 10.676924, y: 0.9272575, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6463,6 +6463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyRubbleParticleEffect: {fileID: 8006676662661635553, guid: 7cb1ef0d9a4e03346b8ce3df4c9c08db, type: 3}
+  playerRubbleParticleEffect: {fileID: 8006676662661635553, guid: 31c6ec7bbec9a914f8fe776dc53428a1, type: 3}
   player: {fileID: 1320909926}
 --- !u!4 &2132721388
 Transform:

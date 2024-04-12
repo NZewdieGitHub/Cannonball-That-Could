@@ -5,7 +5,8 @@ using UnityEngine;
 public class ParticleManager : MonoBehaviour
 {
     public ParticleSystem enemyRubbleParticleEffect;
-    
+    public ParticleSystem playerRubbleParticleEffect;
+
     [SerializeField]
     Player player;
     // Start is called before the first frame update
@@ -26,5 +27,12 @@ public class ParticleManager : MonoBehaviour
     public void SpawnEnemyRubble(GameObject beacon)
     {
         Instantiate(enemyRubbleParticleEffect, beacon.transform.position, Quaternion.identity);
+    }
+    /// <summary>
+    /// Spawn Player rubble when piece of ship is destroyed
+    /// </summary>
+    public void SpawnPlayerRubble(GameObject beacon)
+    {
+        Instantiate(playerRubbleParticleEffect, beacon.transform.position, Quaternion.identity);
     }
 }

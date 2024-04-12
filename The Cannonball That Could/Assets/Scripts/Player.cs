@@ -377,6 +377,7 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
             // spawn animation
             SpawnExplosion();
+            particleManager.SpawnPlayerRubble(gameObject);
         }
         // If enemy's defeated
         if (hud.enemyScore <= 0)
