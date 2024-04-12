@@ -36,6 +36,11 @@ public class EnemyParts : MonoBehaviour
     // layer bool
     public bool isSteady;
 
+    // Rigidbody fields
+    [SerializeField]
+    Rigidbody2D rb2d;
+    [SerializeField]
+    LayerMask layer;
     // Start is called before the first frame update
     void Start()
     {
@@ -119,6 +124,7 @@ public class EnemyParts : MonoBehaviour
         this.gameObject.GetComponent<SpriteRenderer>().sprite = damagedPart;
         // deactivate pirate collider
         // Exclude enemy layer from flag layer
-        Physics2D.IgnoreLayerCollision(9, 12, true);
+        // Physics2D.IgnoreLayerCollision(9, 12, true);
+        rb2d.excludeLayers = layer;
     }
 }
