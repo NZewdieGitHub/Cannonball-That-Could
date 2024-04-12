@@ -379,14 +379,6 @@ public class Player : MonoBehaviour
             SpawnExplosion();
             particleManager.SpawnPlayerRubble(gameObject);
         }
-        // If enemy's defeated
-        if (hud.enemyScore <= 0)
-        {
-            // make sure the health stays 0
-            hud.enemyScore = 0;
-            // Display the win screen
-            hud.SpawnWinMenu();
-        }
 
     }
     /// <summary>

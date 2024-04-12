@@ -148,7 +148,21 @@ public class HUD : MonoBehaviour
         // Spawn lose menu if player score is below 0
         if (playerScore <= 0)
         {
+            // make sure the health stays 0
+            playerScore = 0;
+            // score setup
+            PlayerUI.SetText("Player Health: " + playerScore.ToString() + "/ 5");
             SpawnLoseMenu();
+        }
+        // If enemy's defeated
+        if (enemyScore <= 0)
+        {
+            // make sure the health stays 0
+            enemyScore = 0;
+            // score setup
+            EnemyUI.SetText("Enemy Health: " + enemyScore.ToString() + "/ 10");
+            // Display the win screen
+            SpawnWinMenu();
         }
     }
     /// <summary>
