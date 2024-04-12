@@ -74,6 +74,9 @@ public class Player : MonoBehaviour
     public bool enemyMastDamaged = false;
     public bool enemyFlagDamaged = false;
     public bool enemyPirateDamaged = false;
+
+    // Movement limitation field
+    private bool canMoveHoriz = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -106,6 +109,10 @@ public class Player : MonoBehaviour
         // Slowdown/Speedup Set up
         isBoosted = false;
         canSlowDown = true;
+
+        // movement limitation setup
+        canMoveHoriz = false;
+        
         // Add self as an event invoker
         EventManager.AddHealthReducedEventInvoker(this);
         EventManager.AddPlayerCannonFiredEventInvoker(this);
@@ -122,7 +129,10 @@ public class Player : MonoBehaviour
         }
 
         // movement input setup
-        movement.x = Input.GetAxis("Horizontal");
+        if(canMoveHoriz == true)
+        {
+            movement.x = Input.GetAxis("Horizontal");
+        }
         movement.y = Input.GetAxis("Vertical");
 
         // restart functionality (for testing purposes)
@@ -141,10 +151,12 @@ public class Player : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.LeftControl))
                 {
                     slowDownPressed = true;
+                    canMoveHoriz = true;
                 }
                 else if (Input.GetKeyUp(KeyCode.LeftControl))
                 {
                     slowDownPressed = false;
+                    canMoveHoriz = false;
                 }
             }
         }
