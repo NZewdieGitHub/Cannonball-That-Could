@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour
             }
         }
         player.slowDownPressed = false;
+        player.canMoveHoriz = false;
     }
     /// <summary>
     /// Pauses game
