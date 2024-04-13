@@ -207,14 +207,14 @@ public class Player : MonoBehaviour
                 {
                     accelleration = 20f;
                     // move cannon ball freely
-                    rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
+                    rb2d.MovePosition(rb2d.position + movement * accelleration * Time.fixedDeltaTime);
                 }
                 else if (canMoveHoriz == false)
                 {
                     accelleration = 20f;
                     vertMovement.y = Input.GetAxis("Vertical");
                     // move cannon ball only vertically
-                    rb2d.MovePosition(rb2d.position + (Vector2.right + vertMovement) * accelleration * Time.deltaTime);
+                    rb2d.MovePosition(rb2d.position + (Vector2.right + vertMovement) * accelleration * Time.fixedDeltaTime);
                 }
             }
 
@@ -434,7 +434,7 @@ public class Player : MonoBehaviour
     {
         // move cannon speed 2x faster
         accelleration *= 2;
-        rb2d.MovePosition(rb2d.position + movement * accelleration * Time.deltaTime);
+        rb2d.MovePosition(rb2d.position + (Vector2.right + vertMovement) * accelleration * Time.fixedDeltaTime);
     }
     /// <summary>
     /// Destroy the explosion prefab
