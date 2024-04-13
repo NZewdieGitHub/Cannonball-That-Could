@@ -212,8 +212,9 @@ public class Player : MonoBehaviour
                 else if (canMoveHoriz == false)
                 {
                     accelleration = 20f;
+                    vertMovement.y = Input.GetAxis("Vertical");
                     // move cannon ball only vertically
-                    rb2d.MovePosition(rb2d.position + Vector2.right + vertMovement * accelleration * Time.deltaTime);
+                    rb2d.MovePosition(rb2d.position + (Vector2.right + vertMovement) * accelleration * Time.deltaTime);
                 }
             }
 
