@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 81191145}
   - component: {fileID: 81191147}
   - component: {fileID: 81191146}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: sprite_2 1 (5)
   m_TagString: PlayerPiece
   m_Icon: {fileID: 0}
@@ -695,7 +695,7 @@ GameObject:
   - component: {fileID: 254071113}
   - component: {fileID: 254071115}
   - component: {fileID: 254071114}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: sprite_2 1 (6)
   m_TagString: PlayerPiece
   m_Icon: {fileID: 0}
@@ -1109,7 +1109,7 @@ GameObject:
   - component: {fileID: 434814974}
   - component: {fileID: 434814976}
   - component: {fileID: 434814975}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: sprite_2 1 (9)
   m_TagString: PlayerPiece
   m_Icon: {fileID: 0}
@@ -1244,7 +1244,7 @@ GameObject:
   - component: {fileID: 465816483}
   - component: {fileID: 465816485}
   - component: {fileID: 465816484}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: sprite_2 1 (11)
   m_TagString: PlayerPiece
   m_Icon: {fileID: 0}
@@ -1374,7 +1374,7 @@ GameObject:
   - component: {fileID: 467231517}
   - component: {fileID: 467231516}
   - component: {fileID: 467231518}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: sprite_2 1 (1)
   m_TagString: PlayerPiece
   m_Icon: {fileID: 0}
@@ -1970,7 +1970,7 @@ GameObject:
   - component: {fileID: 552509348}
   - component: {fileID: 552509350}
   - component: {fileID: 552509349}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: sprite_2 1 (7)
   m_TagString: PlayerPiece
   m_Icon: {fileID: 0}
@@ -2542,7 +2542,7 @@ GameObject:
   - component: {fileID: 967720296}
   - component: {fileID: 967720298}
   - component: {fileID: 967720297}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: sprite_2 1 (13)
   m_TagString: PlayerPiece
   m_Icon: {fileID: 0}
@@ -3032,7 +3032,7 @@ GameObject:
   - component: {fileID: 1065177282}
   - component: {fileID: 1065177284}
   - component: {fileID: 1065177283}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: sprite_2 1 (12)
   m_TagString: PlayerPiece
   m_Icon: {fileID: 0}
@@ -3642,7 +3642,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1317679620}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3868,7 +3868,7 @@ GameObject:
   - component: {fileID: 1403251568}
   - component: {fileID: 1403251570}
   - component: {fileID: 1403251569}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: sprite_2 1 (3)
   m_TagString: PlayerPiece
   m_Icon: {fileID: 0}
@@ -4168,7 +4168,7 @@ GameObject:
   - component: {fileID: 1486486832}
   - component: {fileID: 1486486831}
   - component: {fileID: 1486486833}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: sprite_2 1 (2)
   m_TagString: PlayerPiece
   m_Icon: {fileID: 0}
@@ -4368,7 +4368,7 @@ GameObject:
   - component: {fileID: 1507314691}
   - component: {fileID: 1507314690}
   - component: {fileID: 1507314692}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: sprite_0 1
   m_TagString: PlayerPiece
   m_Icon: {fileID: 0}
@@ -5222,7 +5222,7 @@ GameObject:
   - component: {fileID: 1856322920}
   - component: {fileID: 1856322919}
   - component: {fileID: 1856322921}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: sprite_0 1 (1)
   m_TagString: PlayerPiece
   m_Icon: {fileID: 0}
@@ -5352,7 +5352,7 @@ GameObject:
   - component: {fileID: 1857971560}
   - component: {fileID: 1857971562}
   - component: {fileID: 1857971561}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: sprite_2 1 (10)
   m_TagString: PlayerPiece
   m_Icon: {fileID: 0}
@@ -5793,7 +5793,7 @@ GameObject:
   - component: {fileID: 2018725006}
   - component: {fileID: 2018725008}
   - component: {fileID: 2018725007}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: sprite_2 1 (8)
   m_TagString: PlayerPiece
   m_Icon: {fileID: 0}
@@ -6426,7 +6426,7 @@ GameObject:
   - component: {fileID: 2090315871}
   - component: {fileID: 2090315873}
   - component: {fileID: 2090315872}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: sprite_2 1 (4)
   m_TagString: PlayerPiece
   m_Icon: {fileID: 0}
@@ -7295,7 +7295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 903331600979876304, guid: 0c216d5c7eb6bd24592435e2ded2a18e, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 903331600979876304, guid: 0c216d5c7eb6bd24592435e2ded2a18e, type: 3}
       propertyPath: m_TagString
@@ -7555,6 +7555,10 @@ PrefabInstance:
     - target: {fileID: 7999237808558084296, guid: ffffe0f33b82e804db782e2db119caf3, type: 3}
       propertyPath: m_Name
       value: sprite_2 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7999237808558084296, guid: ffffe0f33b82e804db782e2db119caf3, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7999237808558084296, guid: ffffe0f33b82e804db782e2db119caf3, type: 3}
       propertyPath: m_TagString
