@@ -5054,6 +5054,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 81044826271833836, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1030166840803704284, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: m_LocalPosition.x
       value: -64.6
@@ -5094,6 +5098,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2890473703657718527, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: cf
       value: 
@@ -5110,6 +5118,10 @@ PrefabInstance:
       propertyPath: collider
       value: 
       objectReference: {fileID: 1661353376}
+    - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+      propertyPath: trailRenderer
+      value: 
+      objectReference: {fileID: 1949489777}
     - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: ExplosionHolder
       value: 
@@ -5137,7 +5149,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8987264604497825743, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
-      insertIndex: -1
+      insertIndex: 5
       addedObject: {fileID: 1949489774}
   m_SourcePrefab: {fileID: 100100000, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
 --- !u!58 &1661353376 stripped
@@ -5871,6 +5883,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!96 &1949489777 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 81044826271833836, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+  m_PrefabInstance: {fileID: 1661353375}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2018725005
 GameObject:
   m_ObjectHideFlags: 0
@@ -6731,6 +6748,7 @@ MonoBehaviour:
   enemyRubbleParticleEffect: {fileID: 8006676662661635553, guid: 7cb1ef0d9a4e03346b8ce3df4c9c08db, type: 3}
   playerRubbleParticleEffect: {fileID: 8006676662661635553, guid: 31c6ec7bbec9a914f8fe776dc53428a1, type: 3}
   cloudDustParticleEffect: {fileID: 5215724620359526126, guid: 5d238d9c6d32517428182ac63c466e44, type: 3}
+  speedRingParticleEffect: {fileID: 8006676662661635553, guid: a9891fdcf17896b4fb61c93aa3821219, type: 3}
   player: {fileID: 1320909926}
 --- !u!4 &2132721388
 Transform:
@@ -7069,6 +7087,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1320909926}
+    - target: {fileID: 8570641173902411013, guid: 608ac7cf458d039488afa4900aff7123, type: 3}
+      propertyPath: particleManager
+      value: 
+      objectReference: {fileID: 2132721387}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

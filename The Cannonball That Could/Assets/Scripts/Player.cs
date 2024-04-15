@@ -29,7 +29,8 @@ public class Player : MonoBehaviour
     public bool cannonShot = false;
     private float firingPower = 16f;
     private float fireTime = 2f;
-
+    [SerializeField]
+    private TrailRenderer trailRenderer;
     // HUD fields
     HUD hud = new HUD();
 
@@ -250,7 +251,7 @@ public class Player : MonoBehaviour
         float orginalGravity = rb2d.gravityScale;
         rb2d.gravityScale = 0f;
         rb2d.velocity = new Vector2(transform.localScale.x * firingPower, 0f);
-
+        trailRenderer.emitting = true;
         // Play Sound
         FindObjectOfType<AudioManager>().Play("CannonFire");
 
@@ -258,6 +259,7 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(fireTime);
         rb2d.gravityScale = orginalGravity;
         isFiring = false;
+        trailRenderer.emitting = false;
     }
     /// <summary>
     /// Used for colliding with the enemy ship

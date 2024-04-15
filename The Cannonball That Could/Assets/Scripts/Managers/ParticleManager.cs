@@ -7,6 +7,8 @@ public class ParticleManager : MonoBehaviour
     public ParticleSystem enemyRubbleParticleEffect;
     public ParticleSystem playerRubbleParticleEffect;
     public ParticleSystem cloudDustParticleEffect;
+    public ParticleSystem speedRingParticleEffect;
+
     [SerializeField]
     Player player;
     // Start is called before the first frame update
@@ -42,5 +44,12 @@ public class ParticleManager : MonoBehaviour
     public void SpawnDustCloud()
     {
         Instantiate(cloudDustParticleEffect, cloudDustParticleEffect.transform.position, cloudDustParticleEffect.transform.rotation);
+    }
+    /// <summary>
+    /// Spawn speed ring particles
+    /// </summary>
+    public void SpawnSpeedRing(GameObject beacon) 
+    {
+        Instantiate(speedRingParticleEffect, beacon.transform.position, Quaternion.identity);
     }
 }

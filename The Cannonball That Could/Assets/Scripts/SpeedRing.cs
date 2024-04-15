@@ -10,6 +10,8 @@ public class SpeedRing : MonoBehaviour
     [SerializeField]
     Player player;
 
+    [SerializeField]
+    ParticleManager particleManager;
     /// <summary>
     /// Check when player enters the ring
     /// </summary>
@@ -21,6 +23,8 @@ public class SpeedRing : MonoBehaviour
         {
             if (player.isBoosted == false)
             {
+                // instantiate particle effects
+                particleManager.SpawnSpeedRing(player.gameObject);
                 player.SpeedUpCannonBall();
                 player.isBoosted = true;
                 // take away slowdown mechaanic
