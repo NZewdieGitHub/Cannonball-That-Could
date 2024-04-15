@@ -23,6 +23,8 @@ public class SpeedRing : MonoBehaviour
         {
             if (player.isBoosted == false)
             {
+                // Play Sound
+                FindObjectOfType<AudioManager>().Play("Boost");
                 // instantiate particle effects
                 particleManager.SpawnSpeedRing(player.gameObject);
                 player.SpeedUpCannonBall();
