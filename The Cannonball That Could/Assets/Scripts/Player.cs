@@ -419,6 +419,11 @@ public class Player : MonoBehaviour
             // spawn animation
             SpawnExplosion();
             particleManager.SpawnPlayerRubble(gameObject);
+            if (hud.playerScore <= 0)
+            {
+                playerLost = true;
+                hud.SpawnLoseMenu();
+            }
         }
 
     }

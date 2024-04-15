@@ -100,11 +100,20 @@ public class HUD : MonoBehaviour
                 }
                 else
                 {
-                    // check if time reaches 0
-                    timeRunning = false;
-                    SubtractPlayerPoints(1);
-                    // move cannon ball and camera back to starting position
-                    respawnEvent.Invoke();
+                    if (playerScore > 0) 
+                    {
+                        // check if time reaches 0
+                        timeRunning = false;
+                        SubtractPlayerPoints(1);
+                        // move cannon ball and camera back to starting position
+                        respawnEvent.Invoke();
+                    }
+                    else if (playerScore <= 0) 
+                    {
+                        player.playerLost = true;
+                        respawnEvent.Invoke();
+                    }
+                    
                 }
 
             }
@@ -113,7 +122,7 @@ public class HUD : MonoBehaviour
         // check if ball is destroyed
         if (player.ballDestroyed == true)
         {
-            if (player.playerWon == false)
+            if (player.playerWon == false || player.playerLost == false)
             {
                 respawnTimeRunning = true;
                 // set exit timer to false 
@@ -122,7 +131,7 @@ public class HUD : MonoBehaviour
                     TextObject.SetActive(false);
                 }
             }
-            else if (player.playerWon == true) 
+            else if (player.playerWon == true || player.playerLost == true) 
             {
                 respawnTimeRunning = false;
                 RespawnTextObject.SetActive(false);
