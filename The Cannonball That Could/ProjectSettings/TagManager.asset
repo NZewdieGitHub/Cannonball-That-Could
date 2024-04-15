@@ -16,6 +16,7 @@ TagManager:
   - CannonPiece
   - EnemyCannonPiece
   - PiratePiece
+  - Blockage
   layers:
   - Default
   - TransparentFX

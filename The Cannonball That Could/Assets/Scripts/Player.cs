@@ -291,6 +291,15 @@ public class Player : MonoBehaviour
             // If enemy's defeated
 
         }
+        if (collision.gameObject.CompareTag("Blockage"))
+        {
+            // Turn invisible
+            ballDestroyed = true;
+            gameObject.SetActive(false);
+            // spawn animation
+            SpawnExplosion();
+         
+        }
         // if player collides with TNT
         if (collision.gameObject.CompareTag("TNT"))
         {
