@@ -6640,6 +6640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyRubbleParticleEffect: {fileID: 8006676662661635553, guid: 7cb1ef0d9a4e03346b8ce3df4c9c08db, type: 3}
   playerRubbleParticleEffect: {fileID: 8006676662661635553, guid: 31c6ec7bbec9a914f8fe776dc53428a1, type: 3}
+  cloudDustParticleEffect: {fileID: 8006676662661635553, guid: 5d238d9c6d32517428182ac63c466e44, type: 3}
   player: {fileID: 1320909926}
 --- !u!4 &2132721388
 Transform:

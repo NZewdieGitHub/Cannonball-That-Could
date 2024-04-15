@@ -6,7 +6,7 @@ public class ParticleManager : MonoBehaviour
 {
     public ParticleSystem enemyRubbleParticleEffect;
     public ParticleSystem playerRubbleParticleEffect;
-
+    public ParticleSystem cloudDustParticleEffect;
     [SerializeField]
     Player player;
     // Start is called before the first frame update
@@ -34,5 +34,13 @@ public class ParticleManager : MonoBehaviour
     public void SpawnPlayerRubble(GameObject beacon)
     {
         Instantiate(playerRubbleParticleEffect, beacon.transform.position, Quaternion.identity);
+    }
+    /// <summary>
+    /// Spawn Dust Clouds when player cannon fires
+    /// </summary>
+    /// <param name="beacon"></param>
+    public void SpawnDustCloud(GameObject beacon)
+    {
+        Instantiate(cloudDustParticleEffect, beacon.transform.position, Quaternion.identity);
     }
 }

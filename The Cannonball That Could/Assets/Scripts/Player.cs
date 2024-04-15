@@ -174,6 +174,8 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 StartCoroutine(Fire());
+                // instantiate dust particles
+                particleManager.SpawnDustCloud(cannon.gameObject);
                 if (cannonShot == false)
                 {
                     cannonShot = true;
