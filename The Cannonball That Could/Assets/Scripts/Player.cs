@@ -175,7 +175,7 @@ public class Player : MonoBehaviour
             {
                 StartCoroutine(Fire());
                 // instantiate dust particles
-                particleManager.SpawnDustCloud(cannon.gameObject);
+                particleManager.SpawnDustCloud();
                 if (cannonShot == false)
                 {
                     cannonShot = true;

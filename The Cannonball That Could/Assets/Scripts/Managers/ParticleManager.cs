@@ -39,8 +39,8 @@ public class ParticleManager : MonoBehaviour
     /// Spawn Dust Clouds when player cannon fires
     /// </summary>
     /// <param name="beacon"></param>
-    public void SpawnDustCloud(GameObject beacon)
+    public void SpawnDustCloud()
     {
-        Instantiate(cloudDustParticleEffect, beacon.transform.position, Quaternion.identity);
+        Instantiate(cloudDustParticleEffect, cloudDustParticleEffect.transform.position, cloudDustParticleEffect.transform.rotation);
     }
 }
