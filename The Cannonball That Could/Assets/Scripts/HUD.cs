@@ -88,9 +88,10 @@ public class HUD : MonoBehaviour
         // Check if time is running
         if (timeRunning == true)
         {
-            // check if balll isn't destroyed
+            // check if ball isn't destroyed
             if (player.ballDestroyed == false)
             {
+
                 if (exitTime >= 0)
                 {
                     // have count down match the frame count
@@ -112,11 +113,20 @@ public class HUD : MonoBehaviour
         // check if ball is destroyed
         if (player.ballDestroyed == true)
         {
-            respawnTimeRunning = true;
-            // set exit timer to false 
-            if (TextObject.activeInHierarchy)
+            if (player.playerWon == false)
             {
-                TextObject.SetActive(false);
+                respawnTimeRunning = true;
+                // set exit timer to false 
+                if (TextObject.activeInHierarchy)
+                {
+                    TextObject.SetActive(false);
+                }
+            }
+            else if (player.playerWon == true) 
+            {
+                respawnTimeRunning = false;
+                RespawnTextObject.SetActive(false);
+                RespawnTimeHolder.SetActive(false);
             }
         }
         // Check if respawn time is running
@@ -124,6 +134,7 @@ public class HUD : MonoBehaviour
         {
             if (respawnTime >= 0)
             {
+                // check enemy health
                 RespawnTextObject.SetActive(true);
                 SpawnRespawnTimer();
                 // have count down match the frame count
@@ -153,6 +164,7 @@ public class HUD : MonoBehaviour
             // score setup
             PlayerUI.SetText("Player Health: " + playerScore.ToString() + "/ 5");
             SpawnLoseMenu();
+            
         }
         // If enemy's defeated
         if (enemyScore <= 0)
@@ -163,6 +175,8 @@ public class HUD : MonoBehaviour
             EnemyUI.SetText("Enemy Health: " + enemyScore.ToString() + "/ 10");
             // Display the win screen
             SpawnWinMenu();
+            // deactivate timer
+            player.playerWon = true;
         }
     }
     /// <summary>
@@ -221,7 +235,7 @@ public class HUD : MonoBehaviour
         }
     }
     /// <summary>
-    /// Move the respawn timer to the screen
+    /// Move the respawn timer away from the screen
     /// </summary>
     public void MoveRespawnTimer()
     {

@@ -79,6 +79,11 @@ public class Player : MonoBehaviour
 
     // Movement limitation field
     public bool canMoveHoriz = false;
+
+    // To see if player won/lost the game
+    public bool playerWon = false;
+    public bool playerLost = false;
+
     // Start is called before the first frame update
     void Start()
     {
