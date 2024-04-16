@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
         else if (player.playerLost == true) 
         {
             player.canFire = false;
-            player.isFiring = true;
+            player.isFiring = false;
         }
         player.hasFired = false;
         vc.transform.position = new Vector3(-45.4f, 0.37f, -21.64309f);

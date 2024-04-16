@@ -100,7 +100,7 @@ public class HUD : MonoBehaviour
                 }
                 else
                 {
-                    if (playerScore > 0) 
+                    if (playerScore > 1) 
                     {
                         // check if time reaches 0
                         timeRunning = false;
@@ -108,10 +108,12 @@ public class HUD : MonoBehaviour
                         // move cannon ball and camera back to starting position
                         respawnEvent.Invoke();
                     }
-                    else if (playerScore <= 0) 
+                    else if (playerScore <= 1) 
                     {
                         player.playerLost = true;
+                        SubtractPlayerPoints(1);
                         respawnEvent.Invoke();
+                        SpawnLoseMenu();
                     }
                     
                 }

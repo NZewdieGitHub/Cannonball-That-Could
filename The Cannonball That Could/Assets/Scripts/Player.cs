@@ -172,8 +172,6 @@ public class Player : MonoBehaviour
         {
             Application.Quit();
         }
-
-
         if (isFiring == false && canFire == true)
         {
             // fire cannon
@@ -189,7 +187,7 @@ public class Player : MonoBehaviour
 
             }
         }
-
+        
         // If player can fire itself
         if (canFire == true)
         {
@@ -223,6 +221,13 @@ public class Player : MonoBehaviour
                     vertMovement.y = Input.GetAxis("Vertical");
                     // move cannon ball only vertically
                     rb2d.MovePosition(rb2d.position + (Vector2.right + vertMovement) * accelleration * Time.fixedDeltaTime);
+                }
+
+                // check if player lost after going out of bounds
+                if (playerLost == true)
+                {
+                    // make player stand still
+                    transform.position = cannon.transform.position;
                 }
             }
 
