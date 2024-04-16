@@ -188,7 +188,10 @@ public class Player : MonoBehaviour
 
             }
         }
-        
+        if (playerWon == true)
+        {
+            transform.position = cannon.transform.position;
+        }
         // If player can fire itself
         if (canFire == true)
         {
@@ -311,17 +314,18 @@ public class Player : MonoBehaviour
             //hasFired = false;
             //vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
             // If enemy's defeated
-
+            if (hud.enemyScore <= 0)
+            {
+                playerWon = true;
+                hud.SpawnWinMenu();
+            }
         }
         if (collision.gameObject.CompareTag("Blockage"))
         {
             // Turn invisible
             ballDestroyed = true;
             gameObject.SetActive(false);
-            // spawn animation
-            particleManager.SpawnAngelBall(gameObject);
             SpawnExplosion();
-         
         }
         // if player collides with TNT
         if (collision.gameObject.CompareTag("TNT"))
@@ -346,14 +350,11 @@ public class Player : MonoBehaviour
             // Create Explosion Radius
             collision.gameObject.GetComponent<TNT>().Explode();
             Destroy(collision.gameObject);
-            //if (hud.enemyScore <= 0)
-            //{
-            //    // make sure the health stays 0
-            //    hud.enemyScore = 0;
-            //    // Display the win screen
-            //    hud.SpawnWinMenu();
-
-            //}
+            if (hud.enemyScore <= 0)
+            {
+                playerWon = true;
+                hud.SpawnWinMenu();
+            }
         }
         if (collision.gameObject.CompareTag("MastPiece"))
         {
@@ -369,6 +370,11 @@ public class Player : MonoBehaviour
             enemyMastDamaged = true;
             // Make Player Phase through layers
             collision.gameObject.GetComponent<EnemyParts>().isSteady = false;
+            if (hud.enemyScore <= 0)
+            {
+                playerWon = true;
+                hud.SpawnWinMenu();
+            }
         }
         if (collision.gameObject.CompareTag("FlagPiece"))
         {
@@ -384,6 +390,12 @@ public class Player : MonoBehaviour
             enemyFlagDamaged = true;
             // Make Player Phase through layers
             collision.gameObject.GetComponent<EnemyParts>().isSteady = false;
+            if (hud.enemyScore <= 0)
+            {
+                playerWon = true;
+                hud.SpawnWinMenu();
+            }
+
         }
         if (collision.gameObject.CompareTag("EnemyPiece"))
         {
@@ -406,8 +418,13 @@ public class Player : MonoBehaviour
                 // spawn animation
                 particleManager.SpawnAngelBall(gameObject);
                 SpawnExplosion();
+               
             }
-            
+            if (hud.enemyScore <= 0)
+            {
+                playerWon = true;
+                hud.SpawnWinMenu();
+            }
         }
         if (collision.gameObject.CompareTag("PiratePiece"))
         {
@@ -420,6 +437,11 @@ public class Player : MonoBehaviour
             particleManager.SpawnAngelBall(gameObject);
             SpawnExplosion();
             collision.gameObject.GetComponent<EnemyParts>().pirateBlownUp = true;
+            if (hud.enemyScore <= 0)
+            {
+                playerWon = true;
+                hud.SpawnWinMenu();
+            }
         }
         // check for collision with player ship
         if (collision.gameObject.CompareTag("PlayerPiece"))
@@ -491,7 +513,11 @@ public class Player : MonoBehaviour
         SpawnExplosion();
         particleManager.SpawnAngelBall(gameObject);
         playerLost = true;
-        hud.SpawnLoseMenu();
+        // check if player hasn't won
+        if (playerWon == false)
+        {
+            hud.SpawnLoseMenu();
+        }
         cf.cameraAccelleration = 0f;
         vc.transform.Translate(Vector2.right * cf.cameraAccelleration * Time.deltaTime);
         hud.TimeHolder.SetActive(false);

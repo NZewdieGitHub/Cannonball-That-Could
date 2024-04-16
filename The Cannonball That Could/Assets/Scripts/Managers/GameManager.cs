@@ -33,11 +33,13 @@ public class GameManager : MonoBehaviour
     List<GameObject> enemyCannons;
     // player ship death field
     public bool finalHit = false;
+    // Hud field
+    HUD hudScript;
     // Start is called before the first frame update
     void Start()
     { 
         // add self as a respawn event listener
-        HUD hudScript = GameObject.FindWithTag("HUD").GetComponent<HUD>();
+        hudScript = GameObject.FindWithTag("HUD").GetComponent<HUD>();
         hudScript.AddRespawnEventListener(Respawn);
     }
 
@@ -73,6 +75,18 @@ public class GameManager : MonoBehaviour
         {
             player.canFire = false;
             player.isFiring = false;
+        }
+        if (player.playerWon == false)
+        {
+            player.canFire = true;
+        }
+        else if (player.playerWon == true)
+        {
+            player.canFire = false;
+            player.isFiring = false;
+            hudScript.timeRunning = false;
+            hudScript.TextObject.SetActive(false);
+            hudScript.TimeHolder.SetActive(false);
         }
         player.hasFired = false;
         vc.transform.position = new Vector3(-45.4f, 0.37f, -21.64309f);

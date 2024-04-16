@@ -113,7 +113,10 @@ public class HUD : MonoBehaviour
                         player.playerLost = true;
                         SubtractPlayerPoints(1);
                         respawnEvent.Invoke();
-                        SpawnLoseMenu();
+                        if (player.playerWon == false)
+                        {
+                            SpawnLoseMenu();
+                        }
                     }
                     
                 }
@@ -174,8 +177,11 @@ public class HUD : MonoBehaviour
             playerScore = 0;
             // score setup
             PlayerUI.SetText("Player Health: " + playerScore.ToString() + "/ 5");
-            SpawnLoseMenu();
-            
+            if (player.playerWon == false)
+            {
+                SpawnLoseMenu();
+            }
+
         }
         // If enemy's defeated
         if (enemyScore <= 0)
@@ -320,6 +326,10 @@ public class HUD : MonoBehaviour
     /// </summary>
     public void SpawnLoseMenu()
     {
+        // Deactivate all timers
+        respawnTimeRunning = false;
+        RespawnTextObject.SetActive(false);
+        RespawnTimeHolder.SetActive(false);
         // Make panel visible
         LosePanel.SetActive(true);
         // Make Pause Button Invisible
@@ -345,6 +355,10 @@ public class HUD : MonoBehaviour
     /// </summary>
     public void SpawnWinMenu()
     {
+        // Deactivate all timers
+        respawnTimeRunning = false;
+        RespawnTextObject.SetActive(false);
+        RespawnTimeHolder.SetActive(false);
         // Make panel visible
         WinPanel.SetActive(true);
         respawnTimeRunning = false;
