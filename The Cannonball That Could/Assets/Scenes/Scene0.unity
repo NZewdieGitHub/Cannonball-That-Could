@@ -5061,7 +5061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1030166840803704284, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -64.6
+      value: -43.4
       objectReference: {fileID: 0}
     - target: {fileID: 1030166840803704284, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6759,6 +6759,7 @@ MonoBehaviour:
   playerRubbleParticleEffect: {fileID: 8006676662661635553, guid: 31c6ec7bbec9a914f8fe776dc53428a1, type: 3}
   cloudDustParticleEffect: {fileID: 5215724620359526126, guid: 5d238d9c6d32517428182ac63c466e44, type: 3}
   speedRingParticleEffect: {fileID: 8006676662661635553, guid: a9891fdcf17896b4fb61c93aa3821219, type: 3}
+  angelBallParticleEffect: {fileID: 6196117093626337966, guid: 5dffe51bec0621343945f23ef21b46d3, type: 3}
   player: {fileID: 1320909926}
 --- !u!4 &2132721388
 Transform:

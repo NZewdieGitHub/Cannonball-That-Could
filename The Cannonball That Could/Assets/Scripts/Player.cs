@@ -303,6 +303,7 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
             particleManager.SpawnEnemyRubble(gameObject);
             // spawn animation
+            particleManager.SpawnAngelBall(gameObject);
             SpawnExplosion();
             // reposition player
             //transform.position = cannon.transform.position;
@@ -318,6 +319,7 @@ public class Player : MonoBehaviour
             ballDestroyed = true;
             gameObject.SetActive(false);
             // spawn animation
+            particleManager.SpawnAngelBall(gameObject);
             SpawnExplosion();
          
         }
@@ -338,12 +340,8 @@ public class Player : MonoBehaviour
             // Turn invisible
             ballDestroyed = true;
             gameObject.SetActive(false);
-            //// reposition player
-            //transform.position = cannon.transform.position;
-            //canFire = true;
-            //hasFired = false;
-            //vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
             // spawn animation
+            particleManager.SpawnAngelBall(gameObject);
             SpawnExplosion();
             // Create Explosion Radius
             collision.gameObject.GetComponent<TNT>().Explode();
@@ -365,6 +363,7 @@ public class Player : MonoBehaviour
             // Do damage to ship
             healthReducedEvent.Invoke(4);
             // spawn animation
+            particleManager.SpawnAngelBall(gameObject);
             SpawnExplosion();
             // Activate Sprite animation
             enemyMastDamaged = true;
@@ -379,6 +378,7 @@ public class Player : MonoBehaviour
             // Do damage to ship
             healthReducedEvent.Invoke(4);
             // spawn animation
+            particleManager.SpawnAngelBall(gameObject);
             SpawnExplosion();
             // Activate Sprite animation
             enemyFlagDamaged = true;
@@ -393,6 +393,7 @@ public class Player : MonoBehaviour
                 // destroy enemy cannonball
                 Destroy(collision.gameObject);
                 // spawn animation
+                particleManager.SpawnAngelBall(gameObject);
                 SpawnExplosion();
             }
             else
@@ -403,6 +404,7 @@ public class Player : MonoBehaviour
                 // destroy enemy cannonball
                 Destroy(collision.gameObject);
                 // spawn animation
+                particleManager.SpawnAngelBall(gameObject);
                 SpawnExplosion();
             }
             
@@ -415,6 +417,7 @@ public class Player : MonoBehaviour
             // Do damage to ship
             healthReducedEvent.Invoke(4);
             // spawn animation
+            particleManager.SpawnAngelBall(gameObject);
             SpawnExplosion();
             collision.gameObject.GetComponent<EnemyParts>().pirateBlownUp = true;
         }
@@ -430,6 +433,7 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
             // spawn animation
             SpawnExplosion();
+            particleManager.SpawnAngelBall(gameObject);
             particleManager.SpawnPlayerRubble(gameObject);
             if (hud.playerScore <= 0)
             {
@@ -485,6 +489,7 @@ public class Player : MonoBehaviour
     {
         gameObject.SetActive(false);
         SpawnExplosion();
+        particleManager.SpawnAngelBall(gameObject);
         playerLost = true;
         hud.SpawnLoseMenu();
         cf.cameraAccelleration = 0f;
