@@ -53,7 +53,8 @@ public class Player : MonoBehaviour
     // Animation holder fields
     [SerializeField]
     GameObject ExplosionHolder;
-
+    //GM field
+    public GameManager gameManager;
     // Damage field
     public int normalDamage = 1;
 
@@ -192,6 +193,12 @@ public class Player : MonoBehaviour
         if (canFire == true)
         {
             transform.position = cannon.transform.position;
+        }
+
+        // check if player's ship was destroyed
+        if (gameManager.finalHit == true)
+        {
+            SelfDestruct();
         }
     }
     /// <summary>
@@ -470,6 +477,13 @@ public class Player : MonoBehaviour
     public void DestroyExplosion(GameObject explosion)
     {
         DestroyImmediate(explosion, true);
+    }
+    public void SelfDestruct()
+    {
+        gameObject.SetActive(false);
+        SpawnExplosion();
+        playerLost = true;
+        hud.SpawnLoseMenu();
     }
     /// <summary>
     /// Adds listener to the points added event

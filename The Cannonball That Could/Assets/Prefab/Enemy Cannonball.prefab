@@ -163,3 +163,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2d: {fileID: 7910845069063740807}
   ExplosionHolder: {fileID: 1969416164025969326, guid: e5cd43eab76ef684486c72fce2291bb9, type: 3}
+  player: {fileID: 0}

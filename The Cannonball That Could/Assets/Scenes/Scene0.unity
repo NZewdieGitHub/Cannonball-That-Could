@@ -1799,6 +1799,7 @@ MonoBehaviour:
   deadZone: {fileID: 1173780546}
   enemyCannons:
   - {fileID: 440949679}
+  finalHit: 0
 --- !u!114 &519420036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5118,6 +5119,10 @@ PrefabInstance:
       propertyPath: collider
       value: 
       objectReference: {fileID: 1661353376}
+    - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 519420035}
     - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: trailRenderer
       value: 

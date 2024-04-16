@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     // Hold every enemy cannon gameobject in the scene
     [SerializeField]
     List<GameObject> enemyCannons;
+    // player ship death field
+    public bool finalHit = false;
     // Start is called before the first frame update
     void Start()
     { 

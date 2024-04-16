@@ -6,17 +6,20 @@ public class EnemyBullet : MonoBehaviour
 {
     public static float enemySpeed = 20f;
     public Rigidbody2D rb2d;
-
+    
     // Animation holder fields
     [SerializeField]
     GameObject ExplosionHolder;
 
     // hud field
     HUD hud = new HUD();
+    GameManager gameManager = new GameManager();
+   
     // Start is called before the first frame update
     void Start()
     {
        hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
+        gameManager = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -32,10 +35,23 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayerPiece"))
         {
-            Destroy(gameObject);
-            Destroy(collision.gameObject);
-            SpawnExplosion();
-            hud.SubtractPlayerPoints(1);
+            if (hud.playerScore > 1)
+            {
+                Destroy(gameObject);
+                Destroy(collision.gameObject);
+                SpawnExplosion();
+                hud.SubtractPlayerPoints(1);
+            }
+            // check if player's health is 0 or lower
+            else if (hud.playerScore <= 1)
+            {
+                gameManager.finalHit = true;
+                Destroy(gameObject);
+                Destroy(collision.gameObject);
+                SpawnExplosion();
+                hud.SubtractPlayerPoints(1);
+                
+            }
         }
     }
     public void SpawnExplosion()
