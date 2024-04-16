@@ -478,12 +478,19 @@ public class Player : MonoBehaviour
     {
         DestroyImmediate(explosion, true);
     }
+    /// <summary>
+    /// Used for when player loses
+    /// </summary>
     public void SelfDestruct()
     {
         gameObject.SetActive(false);
         SpawnExplosion();
         playerLost = true;
         hud.SpawnLoseMenu();
+        cf.cameraAccelleration = 0f;
+        vc.transform.Translate(Vector2.right * cf.cameraAccelleration * Time.deltaTime);
+        hud.TimeHolder.SetActive(false);
+        hud.RespawnTimeHolder.SetActive(false);
     }
     /// <summary>
     /// Adds listener to the points added event

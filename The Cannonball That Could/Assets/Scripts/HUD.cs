@@ -53,9 +53,9 @@ public class HUD : MonoBehaviour
 
     // Timer parent object holder
     [SerializeField]
-    GameObject TimeHolder;
+    public GameObject TimeHolder;
     [SerializeField]
-    GameObject RespawnTimeHolder;
+    public GameObject RespawnTimeHolder;
     // Respawn timer fields
     [SerializeField]
     TextMeshProUGUI RespawnText;
