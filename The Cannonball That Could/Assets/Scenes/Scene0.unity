@@ -5101,7 +5101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2890473703657718527, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
       propertyPath: cf
@@ -7585,6 +7585,10 @@ PrefabInstance:
     - target: {fileID: 4080912931543710770, guid: 0c216d5c7eb6bd24592435e2ded2a18e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548550419577351580, guid: 0c216d5c7eb6bd24592435e2ded2a18e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
