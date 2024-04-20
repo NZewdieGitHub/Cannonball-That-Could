@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     HUD hudScript;
 
     // Game Over timer 
-    public float gameOverTime = 2f;
+    public float gameOverTime = 2.5f;
     public bool gameOverTimeRunning = false;
     // Start is called before the first frame update
     void Start()
@@ -60,7 +60,28 @@ public class GameManager : MonoBehaviour
             //}
             
         }
-        
+        // Check if time is running
+        if (gameOverTimeRunning == true)
+        {
+            // check if ball is destroyed
+            if (player.ballDestroyed == true)
+            {
+
+                if (gameOverTime >= 0)
+                {
+                    // have count down match the frame count
+                    gameOverTime -= Time.deltaTime;
+                    StartGameOverTimer(gameOverTime);
+                }
+                else
+                {
+                    Time.timeScale = 0;
+
+                }
+
+            }
+
+        }
     }
 
     /// <summary>

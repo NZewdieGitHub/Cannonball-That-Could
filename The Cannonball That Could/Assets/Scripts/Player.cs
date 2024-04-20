@@ -465,7 +465,7 @@ public class Player : MonoBehaviour
             particleManager.SpawnPlayerRubble(gameObject);
             if (hud.playerScore <= 0)
             {
-                Time.timeScale = 0;
+                gameManager.gameOverTimeRunning = true;
                 hud.SpawnLoseMenu();
             }
         }
