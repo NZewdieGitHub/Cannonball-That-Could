@@ -322,7 +322,7 @@ public class Player : MonoBehaviour
             // If enemy's defeated
             if (hud.enemyScore <= 0)
             {
-                playerWon = true;
+                gameManager.gameOverTimeRunning = true;
                 hud.SpawnWinMenu();
             }
         }
@@ -358,7 +358,7 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
             if (hud.enemyScore <= 0)
             {
-                playerWon = true;
+                gameManager.gameOverTimeRunning = true;
                 hud.SpawnWinMenu();
             }
         }
