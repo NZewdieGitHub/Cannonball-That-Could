@@ -85,6 +85,8 @@ public class Player : MonoBehaviour
     public bool playerWon = false;
     public bool playerLost = false;
 
+    // respawn limitation bool 
+    public bool lastPlayerHit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -189,6 +191,10 @@ public class Player : MonoBehaviour
             }
         }
         if (playerWon == true)
+        {
+            transform.position = cannon.transform.position;
+        }
+        if (playerLost == true)
         {
             transform.position = cannon.transform.position;
         }
@@ -457,7 +463,7 @@ public class Player : MonoBehaviour
             SpawnExplosion();
             particleManager.SpawnAngelBall(gameObject);
             particleManager.SpawnPlayerRubble(gameObject);
-            if (hud.playerScore <= 0)
+            if (hud.playerScore <= 1)
             {
                 playerLost = true;
                 hud.SpawnLoseMenu();
