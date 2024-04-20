@@ -35,6 +35,10 @@ public class GameManager : MonoBehaviour
     public bool finalHit = false;
     // Hud field
     HUD hudScript;
+
+    // Game Over timer 
+    public float gameOverTime = 2f;
+    public bool gameOverTimeRunning = false;
     // Start is called before the first frame update
     void Start()
     { 
@@ -124,5 +128,14 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         PausePanel.SetActive(false);
+    }
+    /// <summary>
+    /// Start timer
+    /// </summary>
+    private void StartGameOverTimer(float currentTime)
+    {
+        // increment the current time by one second
+        currentTime += 1;
+        float seconds = Mathf.FloorToInt(currentTime / 60f);
     }
 }

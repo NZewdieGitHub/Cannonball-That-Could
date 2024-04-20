@@ -7287,6 +7287,10 @@ PrefabInstance:
       propertyPath: RespawnTimeHolder
       value: 
       objectReference: {fileID: 4411475041619454373}
+    - target: {fileID: 4429555377534714156, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4766829149723687681, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: m_Value
       value: 5
@@ -7435,6 +7439,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 519420036}
+    - target: {fileID: 7374999017756411067, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7794115248205104413, guid: 75cc7474444620743be3c22152fbf7cb, type: 3}
       propertyPath: m_IsActive
       value: 1
