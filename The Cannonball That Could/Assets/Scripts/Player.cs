@@ -463,7 +463,7 @@ public class Player : MonoBehaviour
             SpawnExplosion();
             particleManager.SpawnAngelBall(gameObject);
             particleManager.SpawnPlayerRubble(gameObject);
-            if (hud.playerScore <= 1)
+            if (hud.playerScore <= 0)
             {
                 playerLost = true;
                 hud.SpawnLoseMenu();
