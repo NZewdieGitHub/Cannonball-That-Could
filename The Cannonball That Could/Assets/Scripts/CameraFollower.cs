@@ -66,9 +66,16 @@ public class CameraFollower : MonoBehaviour
                 cameraAccelleration = 20f * 2f;
                 // move camera along the x-axis
                 transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
-                Debug.Log("Camera's bossted");
+                Debug.Log("Camera's boosted");
             }
-
+            // check if player destroyed enemy ship
+            else if (player.ballDestroyed == true && player.lastPlayerHit == true)
+            {
+                cameraAccelleration = 0f;
+                // move camera along the x-axis
+                transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
+                Debug.Log("Camera's stopped");
+            }
         }
 
     }

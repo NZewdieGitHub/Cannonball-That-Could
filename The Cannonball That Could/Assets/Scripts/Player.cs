@@ -306,8 +306,6 @@ public class Player : MonoBehaviour
                 // Do damage to ship
                 healthReducedEvent.Invoke(normalDamage);
             }
-            // Turn invisible
-            ballDestroyed = true;
             gameObject.SetActive(false);
             Destroy(collision.gameObject);
             particleManager.SpawnEnemyRubble(gameObject);
@@ -320,10 +318,23 @@ public class Player : MonoBehaviour
             //hasFired = false;
             //vc.transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f);
             // If enemy's defeated
-            if (hud.enemyScore <= 0)
+            if (hud.enemyScore > 0)
             {
+                // Turn invisible
+                ballDestroyed = true;
+                hud.timeRunning = false;
+                hud.TextObject.SetActive(false);
+                hud.TimeHolder.SetActive(false);
+            }
+            else if (hud.enemyScore <= 0)
+            {
+                ballDestroyed = true;
+                lastPlayerHit = true;
                 gameManager.gameOverTimeRunning = true;
                 hud.SpawnWinMenu();
+                hud.timeRunning = false;
+                hud.TextObject.SetActive(false);
+                hud.TimeHolder.SetActive(false);
             }
         }
         if (collision.gameObject.CompareTag("Blockage"))
@@ -347,8 +358,7 @@ public class Player : MonoBehaviour
                 // update score
                 healthReducedEvent.Invoke(5);
             }
-            // Turn invisible
-            ballDestroyed = true;
+            
             gameObject.SetActive(false);
             // spawn animation
             particleManager.SpawnAngelBall(gameObject);
@@ -356,7 +366,15 @@ public class Player : MonoBehaviour
             // Create Explosion Radius
             collision.gameObject.GetComponent<TNT>().Explode();
             Destroy(collision.gameObject);
-            if (hud.enemyScore <= 0)
+            if (hud.enemyScore > 0)
+            {
+                // Turn invisible
+                ballDestroyed = true;
+                hud.timeRunning = false;
+                hud.TextObject.SetActive(false);
+                hud.TimeHolder.SetActive(false);
+            }
+            else if (hud.enemyScore <= 0)
             {
                 gameManager.gameOverTimeRunning = true;
                 hud.SpawnWinMenu();
