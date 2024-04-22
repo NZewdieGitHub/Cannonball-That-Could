@@ -481,8 +481,6 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("PiratePiece"))
         {
-            // Turn invisible
-            ballDestroyed = true;
             gameObject.SetActive(false);
             // Do damage to ship
             healthReducedEvent.Invoke(4);
@@ -490,10 +488,23 @@ public class Player : MonoBehaviour
             particleManager.SpawnAngelBall(gameObject);
             SpawnExplosion();
             collision.gameObject.GetComponent<EnemyParts>().pirateBlownUp = true;
-            if (hud.enemyScore <= 0)
+            
+            if (hud.enemyScore > 0)
             {
-                playerWon = true;
+                // Turn invisible
+                ballDestroyed = true;
+                hud.timeRunning = false;
+                hud.TextObject.SetActive(false);
+                hud.TimeHolder.SetActive(false);
+            }
+            else if (hud.enemyScore <= 0)
+            {
+                ballDestroyed = true;
+                lastPlayerHit = true;
                 hud.SpawnWinMenu();
+                hud.timeRunning = false;
+                hud.TextObject.SetActive(false);
+                hud.TimeHolder.SetActive(false);
             }
         }
         // check for collision with player ship

@@ -131,6 +131,10 @@ public class GameManager : MonoBehaviour
                 eC.GetComponent<EnemyCannon>().enemyCannonShot = false;
             }
         }
+        if (hudScript.respawnedAfterLoss == true)
+        {
+            Time.timeScale = 0;
+        }
         player.slowDownPressed = false;
         player.canMoveHoriz = false;
     }

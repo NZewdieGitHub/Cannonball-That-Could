@@ -64,6 +64,9 @@ public class HUD : MonoBehaviour
     public float respawnTime = 3f;
     public bool respawnTimeRunning = false;
 
+    // respawn after losing fields
+    public bool respawnedAfterLoss = false;
+
     // Event Fields 
     RespawnEvent respawnEvent = new RespawnEvent();
     #endregion
@@ -113,9 +116,14 @@ public class HUD : MonoBehaviour
                         player.playerLost = true;
                         SubtractPlayerPoints(1);
                         respawnEvent.Invoke();
+                        respawnTimeRunning = false;
+                        RespawnTextObject.SetActive(false);
+                        RespawnTimeHolder.SetActive(false);
                         if (player.playerWon == false)
                         {
                             SpawnLoseMenu();
+                            player.canFire = false;
+                            respawnedAfterLoss = true;
                         }
                     }
                     
