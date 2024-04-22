@@ -376,8 +376,13 @@ public class Player : MonoBehaviour
             }
             else if (hud.enemyScore <= 0)
             {
+                ballDestroyed = true;
+                lastPlayerHit = true;
                 gameManager.gameOverTimeRunning = true;
                 hud.SpawnWinMenu();
+                hud.timeRunning = false;
+                hud.TextObject.SetActive(false);
+                hud.TimeHolder.SetActive(false);
             }
         }
         if (collision.gameObject.CompareTag("MastPiece"))
