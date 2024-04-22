@@ -146,28 +146,31 @@ public class HUD : MonoBehaviour
         // Check if respawn time is running
         if (respawnTimeRunning == true)
         {
-            if (respawnTime >= 0)
+            if (player.lastPlayerHit == false)
             {
-                // check enemy health
-                RespawnTextObject.SetActive(true);
-                SpawnRespawnTimer();
-                // have count down match the frame count
-                respawnTime -= Time.deltaTime;
-                StartRespawnTimer(respawnTime);
-            }
-            else
-            {
-                // check if time reaches 0
-                respawnTimeRunning = false;
-                // move cannon ball and camera back to starting position
-                respawnEvent.Invoke();
-                // reset timer
-                RespawnTextObject.SetActive(false);
-                MoveRespawnTimer();
-                respawnTime = 3f;
-                // Make player visible again
-                player.gameObject.SetActive(true);
-                player.ballDestroyed = false;
+                if (respawnTime >= 0)
+                {
+                    // check enemy health
+                    RespawnTextObject.SetActive(true);
+                    SpawnRespawnTimer();
+                    // have count down match the frame count
+                    respawnTime -= Time.deltaTime;
+                    StartRespawnTimer(respawnTime);
+                }
+                else
+                {
+                    // check if time reaches 0
+                    respawnTimeRunning = false;
+                    // move cannon ball and camera back to starting position
+                    respawnEvent.Invoke();
+                    // reset timer
+                    RespawnTextObject.SetActive(false);
+                    MoveRespawnTimer();
+                    respawnTime = 3f;
+                    // Make player visible again
+                    player.gameObject.SetActive(true);
+                    player.ballDestroyed = false;
+                }
             }
         }
         // Spawn lose menu if player score is below 0
@@ -194,6 +197,14 @@ public class HUD : MonoBehaviour
             SpawnWinMenu();
             // deactivate timer
             player.playerWon = true;
+        }
+
+        // check if the final hit was landed
+        if (player.lastPlayerHit == true)
+        {
+            // don't start the timer
+            timeRunning = false;
+            respawnTimeRunning = false;
         }
     }
     /// <summary>

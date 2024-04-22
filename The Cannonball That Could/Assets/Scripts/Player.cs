@@ -383,12 +383,12 @@ public class Player : MonoBehaviour
                 hud.timeRunning = false;
                 hud.TextObject.SetActive(false);
                 hud.TimeHolder.SetActive(false);
+
             }
         }
         if (collision.gameObject.CompareTag("MastPiece"))
         {
-            // Turn invisible
-            ballDestroyed = true;
+            
             gameObject.SetActive(false);
             // Do damage to ship
             healthReducedEvent.Invoke(4);
@@ -399,16 +399,27 @@ public class Player : MonoBehaviour
             enemyMastDamaged = true;
             // Make Player Phase through layers
             collision.gameObject.GetComponent<EnemyParts>().isSteady = false;
-            if (hud.enemyScore <= 0)
+            if (hud.enemyScore > 0)
             {
-                playerWon = true;
+                // Turn invisible
+                ballDestroyed = true;
+                hud.timeRunning = false;
+                hud.TextObject.SetActive(false);
+                hud.TimeHolder.SetActive(false);
+            }
+            else if (hud.enemyScore <= 0)
+            {
+                ballDestroyed = true;
+                lastPlayerHit = true;
                 hud.SpawnWinMenu();
+                hud.timeRunning = false;
+                hud.TextObject.SetActive(false);
+                hud.TimeHolder.SetActive(false);
+             
             }
         }
         if (collision.gameObject.CompareTag("FlagPiece"))
         {
-            // Turn invisible
-            ballDestroyed = true;
             gameObject.SetActive(false);
             // Do damage to ship
             healthReducedEvent.Invoke(4);
@@ -419,10 +430,23 @@ public class Player : MonoBehaviour
             enemyFlagDamaged = true;
             // Make Player Phase through layers
             collision.gameObject.GetComponent<EnemyParts>().isSteady = false;
-            if (hud.enemyScore <= 0)
+            if (hud.enemyScore > 0)
             {
-                playerWon = true;
+                // Turn invisible
+                ballDestroyed = true;
+                hud.timeRunning = false;
+                hud.TextObject.SetActive(false);
+                hud.TimeHolder.SetActive(false);
+            }
+            else if (hud.enemyScore <= 0)
+            {
+                ballDestroyed = true;
+                lastPlayerHit = true;
                 hud.SpawnWinMenu();
+                hud.timeRunning = false;
+                hud.TextObject.SetActive(false);
+                hud.TimeHolder.SetActive(false);
+
             }
 
         }
