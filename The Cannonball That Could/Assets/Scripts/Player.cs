@@ -444,6 +444,15 @@ public class Player : MonoBehaviour
                 hud.TimeHolder.SetActive(false);
              
             }
+            // make regular timer invisible
+            if (hud.TimeHolder.active == true)
+            {
+                // make timer invisible
+                hud.TextObject.SetActive(false);
+                hud.TimeHolder.SetActive(false);
+                // shut down timer
+                hud.timeRunning = false;
+            }
         }
         if (collision.gameObject.CompareTag("FlagPiece"))
         {
@@ -475,6 +484,15 @@ public class Player : MonoBehaviour
                 hud.TimeHolder.SetActive(false);
 
             }
+            // make regular timer invisible
+            if (hud.TimeHolder.active == true)
+            {
+                // make timer invisible
+                hud.TextObject.SetActive(false);
+                hud.TimeHolder.SetActive(false);
+                // shut down timer
+                hud.timeRunning = false;
+            }
 
         }
         if (collision.gameObject.CompareTag("EnemyPiece"))
@@ -505,6 +523,15 @@ public class Player : MonoBehaviour
                 playerWon = true;
                 hud.SpawnWinMenu();
             }
+            // make regular timer invisible
+            if (hud.TimeHolder.active == true)
+            {
+                // make timer invisible
+                hud.TextObject.SetActive(false);
+                hud.TimeHolder.SetActive(false);
+                // shut down timer
+                hud.timeRunning = false;
+            }
         }
         if (collision.gameObject.CompareTag("PiratePiece"))
         {
@@ -533,6 +560,15 @@ public class Player : MonoBehaviour
                 hud.TextObject.SetActive(false);
                 hud.TimeHolder.SetActive(false);
             }
+            // make regular timer invisible
+            if (hud.TimeHolder.active == true)
+            {
+                // make timer invisible
+                hud.TextObject.SetActive(false);
+                hud.TimeHolder.SetActive(false);
+                // shut down timer
+                hud.timeRunning = false;
+            }
         }
         // check for collision with player ship
         if (collision.gameObject.CompareTag("PlayerPiece"))
@@ -552,6 +588,15 @@ public class Player : MonoBehaviour
             {
                 gameManager.gameOverTimeRunning = true;
                 hud.SpawnLoseMenu();
+            }
+            // make regular timer invisible
+            if (hud.TimeHolder.active == true)
+            {
+                // make timer invisible
+                hud.TextObject.SetActive(false);
+                hud.TimeHolder.SetActive(false);
+                // shut down timer
+                hud.timeRunning = false;
             }
         }
 
