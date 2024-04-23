@@ -188,6 +188,7 @@ public class Player : MonoBehaviour
                 if (cannonShot == false)
                 {
                     cannonShot = true;
+                    hud.AddShotCount(1);
                 }
 
             }

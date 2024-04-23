@@ -75,8 +75,8 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI ShotCount;
     [SerializeField]
     public Image CountHolder;
-    string shotText = "Shot Count: ";
-    int numShots = 0;
+    public string shotText = "Shot Count: ";
+    public int numShots = 0;
 
     [SerializeField]
     Image GoldTrophy;
@@ -97,6 +97,8 @@ public class HUD : MonoBehaviour
         // Setup initial text
         TimeText.SetText("Get back in: " + exitTime.ToString());
         RespawnText.SetText("Respawning in: " + respawnTime.ToString());
+        // Shot Count Setup
+        ShotCount.SetText("Shot Count: " + numShots.ToString());
         // Add self as health reduced event listener
         EventManager.AddHealthReducedEventListener(SubtractEnemyPoints);
     }
@@ -412,6 +414,12 @@ public class HUD : MonoBehaviour
         }
         // Reset player's position
         // gameManager.Respawn();
+    }
+    public void AddShotCount(int count)
+    {
+        numShots += count;
+        // Shot Count Setup
+        ShotCount.SetText("Shot Count: " + numShots.ToString());
     }
     #endregion
     #region Eventlisteners
