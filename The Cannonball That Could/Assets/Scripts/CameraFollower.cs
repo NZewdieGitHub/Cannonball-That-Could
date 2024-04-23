@@ -94,12 +94,11 @@ public class CameraFollower : MonoBehaviour
                 // Make timer visible 
                 hud.SpawnTimer();
                 hud.TextObject.SetActive(true);
-                
 
                 // count down timer
                 hud.timeRunning = true;
             }
-
+       
         }
     }
     /// <summary>

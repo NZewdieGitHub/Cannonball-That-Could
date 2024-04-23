@@ -336,6 +336,15 @@ public class Player : MonoBehaviour
                 hud.TextObject.SetActive(false);
                 hud.TimeHolder.SetActive(false);
             }
+            // make regular timer invisible
+            if (hud.TimeHolder.active == true)
+            {
+                // make timer invisible
+                hud.TextObject.SetActive(false);
+                hud.TimeHolder.SetActive(false);
+                // shut down timer
+                hud.timeRunning = false;
+            }
         }
         if (collision.gameObject.CompareTag("Blockage"))
         {
@@ -343,6 +352,15 @@ public class Player : MonoBehaviour
             ballDestroyed = true;
             gameObject.SetActive(false);
             SpawnExplosion();
+            // make regular timer invisible
+            if (hud.TimeHolder.active == true)
+            {
+                // make timer invisible
+                hud.TextObject.SetActive(false);
+                hud.TimeHolder.SetActive(false);
+                // shut down timer
+                hud.timeRunning = false;
+            }
         }
         // if player collides with TNT
         if (collision.gameObject.CompareTag("TNT"))
@@ -384,6 +402,15 @@ public class Player : MonoBehaviour
                 hud.TextObject.SetActive(false);
                 hud.TimeHolder.SetActive(false);
 
+            }
+            // make regular timer invisible
+            if (hud.TimeHolder.active == true)
+            {
+                // make timer invisible
+                hud.TextObject.SetActive(false);
+                hud.TimeHolder.SetActive(false);
+                // shut down timer
+                hud.timeRunning = false;
             }
         }
         if (collision.gameObject.CompareTag("MastPiece"))
