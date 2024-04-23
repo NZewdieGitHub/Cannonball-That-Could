@@ -75,16 +75,21 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI ShotCount;
     [SerializeField]
     public Image CountHolder;
+    [SerializeField]
+    public TextMeshProUGUI shotResults;
     public string shotText = "Shot Count: ";
     public int numShots = 0;
 
     [SerializeField]
-    Image GoldTrophy;
+    GameObject GoldTrophy;
     [SerializeField]
-    Image SilverTrophy;
+    GameObject SilverTrophy;
     [SerializeField]
-    Image BronzeTrophy;
+    GameObject BronzeTrophy;
 
+    public bool goldAchieved = false;
+    public bool silverAchieved = false;
+    public bool bronzeAchieved = false;
     #endregion
     #region Methods
     // Start is called before the first frame update
@@ -231,6 +236,12 @@ public class HUD : MonoBehaviour
             // don't start the timer
             timeRunning = false;
             respawnTimeRunning = false;
+        }
+
+        // Check if gold was achieved
+        if (goldAchieved == true)
+        {
+            GoldTrophy.SetActive(true);
         }
     }
     /// <summary>
@@ -401,6 +412,13 @@ public class HUD : MonoBehaviour
         respawnTimeRunning = false;
         // Make Pause Button Invisible
         PauseButton.SetActive(false);
+        // determine player score
+        if (numShots <= 5)
+        {
+            goldAchieved = true;
+            shotResults.SetText("You beat the enemy with: " + numShots.ToString() + " shots!");
+        }
+        //else if ( numShots < 10)
         if (WinPanel != null) 
         {
             Animator animator = WinPanel.GetComponent<Animator>();
