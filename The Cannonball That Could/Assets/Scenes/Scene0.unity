@@ -1800,6 +1800,8 @@ MonoBehaviour:
   enemyCannons:
   - {fileID: 440949679}
   finalHit: 0
+  gameOverTime: 2.5
+  gameOverTimeRunning: 0
 --- !u!114 &519420036
 MonoBehaviour:
   m_ObjectHideFlags: 0
