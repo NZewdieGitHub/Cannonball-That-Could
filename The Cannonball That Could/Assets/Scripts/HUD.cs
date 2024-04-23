@@ -69,6 +69,22 @@ public class HUD : MonoBehaviour
 
     // Event Fields 
     RespawnEvent respawnEvent = new RespawnEvent();
+
+    // Cannon fire count
+    [SerializeField]
+    public TextMeshProUGUI ShotCount;
+    [SerializeField]
+    public Image CountHolder;
+    string shotText = "Shot Count: ";
+    int numShots = 0;
+
+    [SerializeField]
+    Image GoldTrophy;
+    [SerializeField]
+    Image SilverTrophy;
+    [SerializeField]
+    Image BronzeTrophy;
+
     #endregion
     #region Methods
     // Start is called before the first frame update

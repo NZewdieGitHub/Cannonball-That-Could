@@ -87,6 +87,8 @@ public class Player : MonoBehaviour
 
     // respawn limitation bool 
     public bool lastPlayerHit = false;
+
+    
     // Start is called before the first frame update
     void Start()
     {
