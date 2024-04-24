@@ -243,6 +243,16 @@ public class HUD : MonoBehaviour
         {
             GoldTrophy.SetActive(true);
         }
+        // Check if silver was achieved
+        if (silverAchieved == true)
+        {
+            SilverTrophy.SetActive(true);
+        }
+        // Check if silver was achieved
+        if (bronzeAchieved == true)
+        {
+            BronzeTrophy.SetActive(true);
+        }
     }
     /// <summary>
     /// Move the regular timer to the screen
@@ -416,6 +426,16 @@ public class HUD : MonoBehaviour
         if (numShots <= 5)
         {
             goldAchieved = true;
+            shotResults.SetText("You beat the enemy with: " + numShots.ToString() + " shots!");
+        }
+        else if (numShots >= 5 && numShots <= 10) 
+        {
+            silverAchieved = true;
+            shotResults.SetText("You beat the enemy with: " + numShots.ToString() + " shots!");
+        }
+        else
+        {
+            bronzeAchieved = true;
             shotResults.SetText("You beat the enemy with: " + numShots.ToString() + " shots!");
         }
         //else if ( numShots < 10)
