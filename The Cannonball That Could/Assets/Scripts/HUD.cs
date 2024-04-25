@@ -44,7 +44,7 @@ public class HUD : MonoBehaviour
 
     // Text Field
     [SerializeField]
-    TextMeshProUGUI TimeText;
+    public TextMeshProUGUI TimeText;
     [SerializeField]
     public GameObject TextObject;
     public float exitTime = 3f;

@@ -135,6 +135,10 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0;
         }
+        if (player.selfDestructed == true)
+        {
+            hudScript.TimeHolder.SetActive(false);
+        }
         player.slowDownPressed = false;
         player.canMoveHoriz = false;
     }

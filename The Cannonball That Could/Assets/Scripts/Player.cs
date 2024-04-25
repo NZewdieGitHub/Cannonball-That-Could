@@ -88,6 +88,8 @@ public class Player : MonoBehaviour
     // respawn limitation bool 
     public bool lastPlayerHit = false;
 
+    // tells if player is self destructed
+    public bool selfDestructed = false;
     
     // Start is called before the first frame update
     void Start()
@@ -659,7 +661,7 @@ public class Player : MonoBehaviour
         }
         cf.cameraAccelleration = 0f;
         vc.transform.Translate(Vector2.right * cf.cameraAccelleration * Time.deltaTime);
-        hud.TimeHolder.SetActive(false);
+        selfDestructed = true;
         hud.RespawnTimeHolder.SetActive(false);
     }
     /// <summary>
