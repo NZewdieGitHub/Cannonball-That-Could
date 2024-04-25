@@ -422,7 +422,7 @@ public class Player : MonoBehaviour
             
             gameObject.SetActive(false);
             // Do damage to ship
-            healthReducedEvent.Invoke(4);
+            healthReducedEvent.Invoke(6);
             // spawn animation
             particleManager.SpawnAngelBall(gameObject);
             SpawnExplosion();
@@ -462,7 +462,7 @@ public class Player : MonoBehaviour
         {
             gameObject.SetActive(false);
             // Do damage to ship
-            healthReducedEvent.Invoke(4);
+            healthReducedEvent.Invoke(6);
             // spawn animation
             particleManager.SpawnAngelBall(gameObject);
             SpawnExplosion();
@@ -541,7 +541,7 @@ public class Player : MonoBehaviour
         {
             gameObject.SetActive(false);
             // Do damage to ship
-            healthReducedEvent.Invoke(4);
+            healthReducedEvent.Invoke(5);
             // spawn animation
             particleManager.SpawnAngelBall(gameObject);
             SpawnExplosion();
@@ -563,6 +563,7 @@ public class Player : MonoBehaviour
                 hud.timeRunning = false;
                 hud.TextObject.SetActive(false);
                 hud.TimeHolder.SetActive(false);
+                collision.gameObject.GetComponent<EnemyParts>().pirateBlownUp = true;
             }
             // make regular timer invisible
             if (hud.TimeHolder.active == true)
