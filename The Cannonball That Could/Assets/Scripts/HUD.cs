@@ -223,7 +223,7 @@ public class HUD : MonoBehaviour
             // make sure the health stays 0
             enemyScore = 0;
             // score setup
-            EnemyUI.SetText("Enemy Health: " + enemyScore.ToString() + "/ 10");
+            EnemyUI.SetText("Enemy Health: " + enemyScore.ToString() + "/ 20");
             // Display the win screen
             SpawnWinMenu();
             // deactivate timer
@@ -358,7 +358,7 @@ public class HUD : MonoBehaviour
     {
         // updated score
         enemyScore -= points;
-        EnemyUI.SetText("Enemy Health: " + enemyScore.ToString() + "/ 10");
+        EnemyUI.SetText("Enemy Health: " + enemyScore.ToString() + "/ 20");
         enemyHealthSlider.SetBar(enemyScore);
     }
 

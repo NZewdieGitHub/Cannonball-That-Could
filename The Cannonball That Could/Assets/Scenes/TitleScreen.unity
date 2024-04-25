@@ -3041,7 +3041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6320120407400302184, guid: f7bcdcfa91f511044891bedbd6fc9cd4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7547148659122636454, guid: f7bcdcfa91f511044891bedbd6fc9cd4, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3403,11 +3403,11 @@ MonoBehaviour:
   m_Content: {fileID: 1677066502}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 0
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 40
   m_Viewport: {fileID: 1623151787}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 100920556}
@@ -4394,6 +4394,10 @@ PrefabInstance:
     - target: {fileID: 4994859547951356151, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_MovementType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994859547951356151, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
+      propertyPath: m_ScrollSensitivity
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4994859547951356151, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_HorizontalScrollbar
