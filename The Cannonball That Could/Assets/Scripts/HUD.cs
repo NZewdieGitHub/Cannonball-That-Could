@@ -15,7 +15,7 @@ public class HUD : MonoBehaviour
     // Text Updating fields (Enemy)
     [SerializeField]
     public TextMeshProUGUI EnemyUI;
-    public int enemyScore = 10;
+    public int enemyScore = 20;
 
     // Text Updating fields (Player)
     [SerializeField]
@@ -96,7 +96,7 @@ public class HUD : MonoBehaviour
     void Start()
     {
         // score setup
-        EnemyUI.SetText("Enemy Health: " + enemyScore.ToString() + "/ 10");
+        EnemyUI.SetText("Enemy Health: " + enemyScore.ToString() + "/ 20");
         // score setup
         PlayerUI.SetText("Player Health: " + playerScore.ToString() + "/ 5");
         // Setup initial text
