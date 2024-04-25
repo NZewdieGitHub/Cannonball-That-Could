@@ -20,7 +20,7 @@ public class HUD : MonoBehaviour
     // Text Updating fields (Player)
     [SerializeField]
     public TextMeshProUGUI PlayerUI;
-    public int playerScore = 5;
+    public int playerScore = 15;
 
     // Slider Fields
     public HealthBar enemyHealthSlider;
@@ -98,7 +98,7 @@ public class HUD : MonoBehaviour
         // score setup
         EnemyUI.SetText("Enemy Health: " + enemyScore.ToString() + "/ 20");
         // score setup
-        PlayerUI.SetText("Player Health: " + playerScore.ToString() + "/ 5");
+        PlayerUI.SetText("Player Health: " + playerScore.ToString() + "/ 15");
         // Setup initial text
         TimeText.SetText("Get back in: " + exitTime.ToString());
         RespawnText.SetText("Respawning in: " + respawnTime.ToString());
@@ -210,7 +210,7 @@ public class HUD : MonoBehaviour
             // make sure the health stays 0
             playerScore = 0;
             // score setup
-            PlayerUI.SetText("Player Health: " + playerScore.ToString() + "/ 5");
+            PlayerUI.SetText("Player Health: " + playerScore.ToString() + "/ 15");
             if (player.playerWon == false)
             {
                 SpawnLoseMenu();
@@ -369,7 +369,7 @@ public class HUD : MonoBehaviour
     {
         // updated score
         playerScore -= points;
-        PlayerUI.SetText("Player Health: " + playerScore.ToString() + "/ 5");
+        PlayerUI.SetText("Player Health: " + playerScore.ToString() + "/ 15");
         playerHealthSlider.SetBar(playerScore);
 
         // check if player score is empty
