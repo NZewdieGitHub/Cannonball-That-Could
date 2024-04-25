@@ -381,7 +381,6 @@ public class Player : MonoBehaviour
                 // update score
                 healthReducedEvent.Invoke(5);
             }
-            
             gameObject.SetActive(false);
             // spawn animation
             particleManager.SpawnAngelBall(gameObject);

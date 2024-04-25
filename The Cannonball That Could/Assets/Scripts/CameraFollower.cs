@@ -42,14 +42,22 @@ public class CameraFollower : MonoBehaviour
         if (player.slowDownPressed == true && player.hasFired == true)
         {
             // check if the ball hasn't been destroyed
-            if (player.ballDestroyed == false)
+            if (player.ballDestroyed == false && player.isBoosted == false)
             {
                 // move camera along the x-axis at slower speed
                 cameraAccelleration = 2f;
                 transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
                 Debug.Log("Camera's slowed down");
             }
-
+            else if (player.ballDestroyed == false && player.isBoosted == true)
+            {
+                cameraAccelleration = 20f * 2f;
+                // move camera along the x-axis
+                transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
+                Debug.Log("Camera's boosted");
+                // take away player's abillity to slow down
+                player.canSlowDown = false;
+            }
         }
         else if (player.slowDownPressed == false && player.hasFired == true)
         {
