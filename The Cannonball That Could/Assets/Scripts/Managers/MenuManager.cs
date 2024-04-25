@@ -13,9 +13,13 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField]
     public GameObject CreditsPanel;
+
+    [SerializeField]
+    public GameObject ScorePanel;
     // Animator fields
     Animator animator;
     bool isActivated = false;
+
     /// <summary>
     /// Restart Game
     /// </summary>
@@ -91,6 +95,24 @@ public class MenuManager : MonoBehaviour
         }
     }
     /// <summary>
+    /// Opens Score panel
+    /// </summary>
+    public void OpenScore()
+    {
+        // check if component has animation
+        if (ScorePanel != null)
+        {
+            animator = ScorePanel.GetComponent<Animator>();
+            // make sure componenet is assigned to panel
+            if (animator != null)
+            {
+                isActivated = animator.GetBool("ScoreOpened");
+                // inverse animation's current state
+                animator.SetBool("ScoreOpened", true);
+            }
+        }
+    }
+    /// <summary>
     /// Closes the instructions menu
     /// </summary>
     public void CloseInstructions()
@@ -125,5 +147,23 @@ public class MenuManager : MonoBehaviour
             }
         }
 
+    }
+    /// <summary>
+    /// Opens Score panel
+    /// </summary>
+    public void CloseScore()
+    {
+        // check if component has animation
+        if (ScorePanel != null)
+        {
+            animator = ScorePanel.GetComponent<Animator>();
+            // make sure componenet is assigned to panel
+            if (animator != null)
+            {
+                isActivated = animator.GetBool("ScoreOpened");
+                // inverse animation's current state
+                animator.SetBool("ScoreOpened", false);
+            }
+        }
     }
 }
