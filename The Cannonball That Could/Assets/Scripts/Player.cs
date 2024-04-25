@@ -379,7 +379,7 @@ public class Player : MonoBehaviour
             else
             {
                 // update score
-                healthReducedEvent.Invoke(5);
+                healthReducedEvent.Invoke(8);
             }
             gameObject.SetActive(false);
             // spawn animation
