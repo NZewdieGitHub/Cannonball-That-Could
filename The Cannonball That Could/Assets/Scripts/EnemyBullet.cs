@@ -14,12 +14,13 @@ public class EnemyBullet : MonoBehaviour
     // hud field
     HUD hud = new HUD();
     GameManager gameManager = new GameManager();
-   
+    ParticleManager particleManager = new ParticleManager();
     // Start is called before the first frame update
     void Start()
     {
        hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
         gameManager = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameManager>();
+        particleManager = GameObject.FindGameObjectWithTag("ParticleManager").GetComponent<ParticleManager>();
     }
 
     // Update is called once per frame
@@ -40,6 +41,7 @@ public class EnemyBullet : MonoBehaviour
                 Destroy(gameObject);
                 Destroy(collision.gameObject);
                 SpawnExplosion();
+                particleManager.SpawnPlayerRubble(gameObject);
                 hud.SubtractPlayerPoints(1);
             }
             // check if player's health is 0 or lower
@@ -49,6 +51,7 @@ public class EnemyBullet : MonoBehaviour
                 Destroy(gameObject);
                 Destroy(collision.gameObject);
                 SpawnExplosion();
+                particleManager.SpawnPlayerRubble(gameObject);
                 hud.SubtractPlayerPoints(1);
                 
             }
@@ -60,6 +63,7 @@ public class EnemyBullet : MonoBehaviour
         Instantiate(ExplosionHolder, transform.position, Quaternion.identity);
         // Play Sound 
         FindObjectOfType<AudioManager>().Play("Explosion");
+
       
     }
 }
