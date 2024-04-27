@@ -137,7 +137,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -163,4 +163,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2d: {fileID: 7910845069063740807}
   ExplosionHolder: {fileID: 1969416164025969326, guid: e5cd43eab76ef684486c72fce2291bb9, type: 3}
-  player: {fileID: 0}

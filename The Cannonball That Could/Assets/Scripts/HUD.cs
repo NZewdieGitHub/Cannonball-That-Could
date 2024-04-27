@@ -69,7 +69,7 @@ public class HUD : MonoBehaviour
 
     // Event Fields 
     RespawnEvent respawnEvent = new RespawnEvent();
-
+    public bool timerAnimatorFinished = false;
     // Cannon fire count
     [SerializeField]
     public TextMeshProUGUI ShotCount;
@@ -253,6 +253,10 @@ public class HUD : MonoBehaviour
         {
             BronzeTrophy.SetActive(true);
         }
+        if (timerAnimatorFinished == true)
+        {
+            TimeHolder.SetActive(false);
+        }
     }
     /// <summary>
     /// Move the regular timer to the screen
@@ -270,6 +274,7 @@ public class HUD : MonoBehaviour
                 bool timerActivated = animator.GetBool("TimerStarted");
                 // inverse animation's current state
                 animator.SetBool("TimerStarted", true);
+                timerAnimatorFinished = false;
             }
         }
     }
@@ -288,6 +293,7 @@ public class HUD : MonoBehaviour
                 // inverse animation's current state
                 animator.SetBool("TimerStarted", false);
             }
+            timerAnimatorFinished = true;
         }
     }
     /// <summary>
