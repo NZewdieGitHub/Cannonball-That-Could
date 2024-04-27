@@ -232,7 +232,7 @@ public class Player : MonoBehaviour
             {
                 if (canMoveHoriz == true)
                 {
-                    accelleration = 20f;
+                    accelleration = 10f;
                     // move cannon ball freely
                     rb2d.MovePosition(rb2d.position + movement * accelleration * Time.fixedDeltaTime);
                 }
@@ -243,6 +243,7 @@ public class Player : MonoBehaviour
                     // move cannon ball only vertically
                     rb2d.MovePosition(rb2d.position + (Vector2.right + vertMovement) * accelleration * Time.fixedDeltaTime);
                 }
+
 
                 // check if player lost after going out of bounds
                 if (playerLost == true)
@@ -634,6 +635,7 @@ public class Player : MonoBehaviour
     /// </summary>
     public void SpeedUpCannonBall()
     {
+        canMoveHoriz = false;
         // move cannon speed 2x faster
         accelleration *= 2;
         rb2d.MovePosition(rb2d.position + (Vector2.right + vertMovement) * accelleration * Time.fixedDeltaTime);
