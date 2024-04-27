@@ -89,6 +89,7 @@ public class EnemyParts : MonoBehaviour
                 if (isSteady == false)
                 {
                     Physics2D.IgnoreLayerCollision(9, 10, true);
+                    Physics2D.IgnoreLayerCollision(14, 10, true);
                 }
                 
             }
@@ -112,6 +113,7 @@ public class EnemyParts : MonoBehaviour
                 {
                     // Exclude enemy layer from flag layer
                     Physics2D.IgnoreLayerCollision(9, 11, true);
+                    Physics2D.IgnoreLayerCollision(14, 11, true);
                 }
             }
         }

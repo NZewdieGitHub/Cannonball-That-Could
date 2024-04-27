@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7897840453406805131}
   - component: {fileID: 7784906051165983263}
   - component: {fileID: 9016934290418474783}
-  m_Layer: 9
+  m_Layer: 14
   m_Name: Blockage
   m_TagString: Blockage
   m_Icon: {fileID: 0}
