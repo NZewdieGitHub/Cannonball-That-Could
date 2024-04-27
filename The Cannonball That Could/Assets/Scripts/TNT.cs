@@ -31,11 +31,21 @@ public class TNT : MonoBehaviour
     public void Explode()
     {
         Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, areaOfEffect, layerToHit);
+        LayerMask blockLayer = LayerMask.GetMask("Blockage");
         foreach (Collider2D obj in objects) 
         {
             //Vector2 direction = obj.transform.position - transform.position;
             pM.SpawnEnemyRubble(obj.gameObject);
+            // chack to ht blockages from all directions
+            if (Physics2D.Raycast(transform.position, transform.right, areaOfEffect, blockLayer) || 
+                Physics2D.Raycast(transform.position, transform.up, areaOfEffect, blockLayer) 
+                || Physics2D.Raycast(transform.position, -transform.right, areaOfEffect, blockLayer) 
+                || Physics2D.Raycast(transform.position, -transform.up, areaOfEffect, blockLayer))
+            {
+                pM.SpawnblockagesRubble(obj.gameObject);
+            }
             Destroy(obj.gameObject);
+            
         }
     }
     /// <summary>
