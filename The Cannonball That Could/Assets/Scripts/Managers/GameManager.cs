@@ -149,6 +149,8 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
         PausePanel.SetActive(false);
+        player.canFire = false;
+        player.isFiring = false;
     }
     /// <summary>
     /// Resumes game
@@ -157,6 +159,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         PausePanel.SetActive(false);
+        player.canFire = true;
     }
     /// <summary>
     /// Start timer
