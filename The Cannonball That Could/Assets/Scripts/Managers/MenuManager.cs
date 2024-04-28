@@ -24,11 +24,7 @@ public class MenuManager : MonoBehaviour
     Animator animator;
     bool isActivated = false;
 
-    // Audio Source fields
-    [SerializeField]
-    public AudioSource audioSource;
 
-    
     // Update is called once per frame
     void Update()
     {
