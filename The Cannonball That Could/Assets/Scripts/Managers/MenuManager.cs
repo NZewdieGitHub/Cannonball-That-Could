@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
@@ -16,10 +17,30 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField]
     public GameObject ScorePanel;
+
+    [SerializeField]
+    public GameObject SoundPanel;
     // Animator fields
     Animator animator;
     bool isActivated = false;
 
+    // Audio Source fields
+    [SerializeField]
+    public AudioSource audioSource;
+
+    [SerializeField]
+    public Slider volumeSlider;
+    AudioManager audioManager;
+    public bool musicMuted = false;
+    [SerializeField]
+    public AudioSource musicAudio;
+    
+    // Update is called once per frame
+    void Update()
+    {
+        ChangeVolume();
+       
+    }
     /// <summary>
     /// Restart Game
     /// </summary>
@@ -57,6 +78,22 @@ public class MenuManager : MonoBehaviour
     public void ReturnToMenu()
     {
         SceneManager.LoadScene("TitleScreen");
+    }
+    /// <summary>
+    /// Change volume
+    /// </summary>
+    public void ChangeVolume()
+    {
+        audioSource.volume = volumeSlider.value;
+        if (audioSource.volume == 0)
+        {
+            if (musicAudio != null)
+            {
+                musicAudio.volume = 0;
+            }
+            
+        }
+        
     }
     /// <summary>
     /// Opens instructions panel
@@ -113,6 +150,24 @@ public class MenuManager : MonoBehaviour
         }
     }
     /// <summary>
+    /// Open Sound Menu
+    /// </summary>
+    public void OpenSoundMenu()
+    {
+        // check if component has animation
+        if (SoundPanel != null)
+        {
+            animator = SoundPanel.GetComponent<Animator>();
+            // make sure componenet is assigned to panel
+            if (animator != null)
+            {
+                isActivated = animator.GetBool("SoundOpened");
+                // inverse animation's current state
+                animator.SetBool("SoundOpened", true);
+            }
+        }
+    }
+    /// <summary>
     /// Closes the instructions menu
     /// </summary>
     public void CloseInstructions()
@@ -163,6 +218,24 @@ public class MenuManager : MonoBehaviour
                 isActivated = animator.GetBool("ScoreOpened");
                 // inverse animation's current state
                 animator.SetBool("ScoreOpened", false);
+            }
+        }
+    }
+    /// <summary>
+    /// Open Sound Menu
+    /// </summary>
+    public void CloseSoundMenu()
+    {
+        // check if component has animation
+        if (SoundPanel != null)
+        {
+            animator = SoundPanel.GetComponent<Animator>();
+            // make sure componenet is assigned to panel
+            if (animator != null)
+            {
+                isActivated = animator.GetBool("SoundOpened");
+                // inverse animation's current state
+                animator.SetBool("SoundOpened", false);
             }
         }
     }

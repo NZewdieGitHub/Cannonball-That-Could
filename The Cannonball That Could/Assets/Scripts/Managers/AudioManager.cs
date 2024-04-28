@@ -8,12 +8,18 @@ using UnityEngine.UI;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
-    [SerializeField]
-    Slider volumeSlider;
+    
     // arrays for music and sound effects
     [SerializeField]
     public Sound[] sounds;
- 
+
+    
+    [SerializeField]
+    public Slider volumeSlider;
+
+    [SerializeField]
+    MenuManager menuManager;
+    AudioSource oceanSource;
     void Awake()
     {
         foreach (Sound s in sounds)
@@ -36,6 +42,7 @@ public class AudioManager : MonoBehaviour
     void Update()
     {
         
+
     }
     /// <summary>
     /// Play sound
@@ -46,10 +53,13 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
     }
-    public void ChangeVolume()
+    /// <summary>
+    /// Change volume
+    /// </summary>
+    public void ChangeOceanVolume()
     {
-        AudioListener.volume = volumeSlider.value;
+        oceanSource.volume = volumeSlider.value;
+        
     }
-  
 }
 
