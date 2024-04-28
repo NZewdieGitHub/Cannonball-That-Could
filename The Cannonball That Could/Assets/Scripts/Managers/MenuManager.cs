@@ -24,7 +24,7 @@ public class MenuManager : MonoBehaviour
     Animator animator;
     bool isActivated = false;
 
-
+   
     // Update is called once per frame
     void Update()
     {

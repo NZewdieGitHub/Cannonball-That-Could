@@ -39,6 +39,19 @@ public class GameManager : MonoBehaviour
     // Game Over timer 
     public float gameOverTime = 2.5f;
     public bool gameOverTimeRunning = false;
+
+    // Health fields
+    [SerializeField]
+    public GameObject PlayerHealth;
+    // Health fields
+    [SerializeField]
+    public GameObject EnemyHealth;
+    // Health fields
+    [SerializeField]
+    public GameObject PlayerHealthText;
+    // Health fields
+    [SerializeField]
+    public GameObject EnemyHealthText;
     // Start is called before the first frame update
     void Start()
     { 
@@ -151,6 +164,10 @@ public class GameManager : MonoBehaviour
         PausePanel.SetActive(false);
         player.canFire = false;
         player.isFiring = false;
+        PlayerHealth.SetActive(false);
+        EnemyHealth.SetActive(false);
+        PlayerHealthText.SetActive(false);
+        EnemyHealthText.SetActive(false);
     }
     /// <summary>
     /// Resumes game
@@ -160,6 +177,10 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         PausePanel.SetActive(false);
         player.canFire = true;
+        PlayerHealth.SetActive(true);
+        EnemyHealth.SetActive(true);
+        PlayerHealthText.SetActive(true);
+        EnemyHealthText.SetActive(true);
     }
     /// <summary>
     /// Start timer
