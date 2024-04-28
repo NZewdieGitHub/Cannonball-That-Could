@@ -8,18 +8,28 @@ using UnityEngine.UI;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
-    
+
+    private static readonly string FirstPlay = "FirstPlay";
+
     // arrays for music and sound effects
     [SerializeField]
     public Sound[] sounds;
 
     
     [SerializeField]
-    public Slider volumeSlider;
+    public Slider volumeSlider, oceanSlider;
 
     [SerializeField]
     MenuManager menuManager;
     AudioSource oceanSource;
+    // Volume fields
+    
+    AudioManager audioManager;
+    public bool musicMuted = false;
+    [SerializeField]
+    public AudioSource musicAudio;
+    [SerializeField]
+    public AudioSource oceanAudio;
     void Awake()
     {
         foreach (Sound s in sounds)
@@ -35,7 +45,10 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Play("Waves");
+        if (sounds != null)
+        {
+            Play("Waves");
+        }
     }
 
     // Update is called once per frame
@@ -56,10 +69,18 @@ public class AudioManager : MonoBehaviour
     /// <summary>
     /// Change volume
     /// </summary>
+    public void ChangeVolume()
+    {
+        musicAudio.volume = volumeSlider.value;
+        
+    }
+    /// <summary>
+    /// Change volume
+    /// </summary>
     public void ChangeOceanVolume()
     {
-        oceanSource.volume = volumeSlider.value;
-        
+        oceanAudio.volume = oceanSlider.value;
+
     }
 }
 

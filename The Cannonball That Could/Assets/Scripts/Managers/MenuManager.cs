@@ -28,17 +28,11 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     public AudioSource audioSource;
 
-    [SerializeField]
-    public Slider volumeSlider;
-    AudioManager audioManager;
-    public bool musicMuted = false;
-    [SerializeField]
-    public AudioSource musicAudio;
     
     // Update is called once per frame
     void Update()
     {
-        ChangeVolume();
+        
        
     }
     /// <summary>
@@ -79,22 +73,7 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("TitleScreen");
     }
-    /// <summary>
-    /// Change volume
-    /// </summary>
-    public void ChangeVolume()
-    {
-        audioSource.volume = volumeSlider.value;
-        if (audioSource.volume == 0)
-        {
-            if (musicAudio != null)
-            {
-                musicAudio.volume = 0;
-            }
-            
-        }
-        
-    }
+    
     /// <summary>
     /// Opens instructions panel
     /// </summary>
