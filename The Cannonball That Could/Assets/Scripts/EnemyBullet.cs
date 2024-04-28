@@ -15,18 +15,39 @@ public class EnemyBullet : MonoBehaviour
     HUD hud = new HUD();
     GameManager gameManager = new GameManager();
     ParticleManager particleManager = new ParticleManager();
+    
+    Player player;
     // Start is called before the first frame update
     void Start()
     {
-       hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
+        hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
         gameManager = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameManager>();
         particleManager = GameObject.FindGameObjectWithTag("ParticleManager").GetComponent<ParticleManager>();
+        player = FindAnyObjectByType<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb2d.velocity = Vector3.left * enemySpeed;
+        if (player != null) 
+        {
+            if (player.enemySlowedDown == true)
+            {
+                enemySpeed = 10f;
+                rb2d.velocity = Vector3.left * enemySpeed;
+                Debug.Log("Enemy Ball is slowed down");
+            }
+            else
+            {
+                enemySpeed = 20f;
+                rb2d.velocity = Vector3.left * enemySpeed;
+                Debug.Log("Enemy Ball's speed is normal");
+            }
+        }
+
+        
+
+
     }
     /// <summary>
     /// Handle enemy bullet collision

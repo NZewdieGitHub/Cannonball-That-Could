@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
 
     // Movement limitation field
     public bool canMoveHoriz = false;
-
+    public bool enemySlowedDown = false;
     // To see if player won/lost the game
     public bool playerWon = false;
     public bool playerLost = false;
@@ -166,11 +166,13 @@ public class Player : MonoBehaviour
                 {
                     slowDownPressed = true;
                     canMoveHoriz = true;
+                    enemySlowedDown = true;
                 }
                 else if (Input.GetKeyUp(KeyCode.LeftControl))
                 {
                     slowDownPressed = false;
                     canMoveHoriz = false;
+                    enemySlowedDown = false;
                 }
             }
         }
