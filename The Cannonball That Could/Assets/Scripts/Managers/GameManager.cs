@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     //Pause Panel Fields 
     [SerializeField]
-    GameObject PausePanel;
+    public GameObject PausePanel;
 
     // Dead Zone Field
     [SerializeField]

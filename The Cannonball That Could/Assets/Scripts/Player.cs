@@ -152,7 +152,8 @@ public class Player : MonoBehaviour
         // restart functionality (for testing purposes)
         if (Input.GetKey(KeyCode.Escape))
         {
-            RestartLevel();
+            gameManager.PauseGame();
+            gameManager.PausePanel.SetActive(true);
         }
 
         // check if the cannon has fired or not
