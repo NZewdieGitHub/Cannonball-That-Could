@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
     // arrays for music and sound effects
     [SerializeField]
     public Sound[] sounds;
-
+    public AudioSource[] audioSources;
     
     [SerializeField]
     public Slider volumeSlider, oceanSlider;
@@ -63,7 +63,11 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-
+            // set slider to player prefs
+            musicFloat = PlayerPrefs.GetFloat(musicPref);
+            volumeSlider.value = musicFloat;
+            oceanFloat = PlayerPrefs.GetFloat(oceanPref);
+            oceanSlider.value = oceanFloat;
         }
 
     }
@@ -117,6 +121,15 @@ public class AudioManager : MonoBehaviour
         if (!inFocus)
         {
             SaveSoundSettings();
+        }
+    }
+    public void UpdateSound()
+    {
+        musicAudio.volume = volumeSlider.value;
+
+        for (int i = 0; i < audioSources.Length; i++)
+        {
+            audioSources[i].volume = oceanSlider.value;
         }
     }
 }
