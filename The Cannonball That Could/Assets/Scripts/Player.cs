@@ -216,6 +216,7 @@ public class Player : MonoBehaviour
         {
             SelfDestruct();
         }
+       
     }
     /// <summary>
     /// Make player move automatically
@@ -608,6 +609,11 @@ public class Player : MonoBehaviour
             }
         }
 
+        // check if player's slowed down
+        if (enemySlowedDown == true)
+        {
+            enemySlowedDown = false;
+        }
     }
     /// <summary>
     /// Instantiate Explosion prefab
