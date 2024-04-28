@@ -10,7 +10,10 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
 
     private static readonly string FirstPlay = "FirstPlay";
-
+    private static readonly string musicPref = "musicPref";
+    private static readonly string oceanPref = "oceanPref";
+    private int firstPlayInt;
+    private float musicFloat, oceanFloat;
     // arrays for music and sound effects
     [SerializeField]
     public Sound[] sounds;
@@ -45,10 +48,24 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (sounds != null)
+        firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
+        if (firstPlayInt == 0)
         {
-            Play("Waves");
+            musicFloat = 0.5f;
+            oceanFloat = 0.5f;
+            volumeSlider.value = musicFloat;
+            oceanSlider.value = oceanFloat;
+            // save music
+            PlayerPrefs.SetFloat(musicPref, musicFloat);
+            PlayerPrefs.SetFloat(oceanPref, oceanFloat);
+            // make sure first time happens only once
+            PlayerPrefs.SetInt(FirstPlay, -1);
         }
+        else
+        {
+
+        }
+
     }
 
     // Update is called once per frame
@@ -81,6 +98,26 @@ public class AudioManager : MonoBehaviour
     {
         oceanAudio.volume = oceanSlider.value;
 
+    }
+    /// <summary>
+    /// Save music settings
+    /// </summary>
+    public void SaveSoundSettings() 
+    {
+        // save music
+        PlayerPrefs.SetFloat(musicPref, musicFloat);
+        PlayerPrefs.SetFloat(oceanPref, oceanFloat);
+    }
+    /// <summary>
+    /// Save the volume values if window loses focus
+    /// </summary>
+    /// <param name="inFocus"></param>
+    void OnApplicationFocus(bool inFocus)
+    {
+        if (!inFocus)
+        {
+            SaveSoundSettings();
+        }
     }
 }
 
