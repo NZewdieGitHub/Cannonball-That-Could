@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
-
+    [SerializeField]
+    Slider volumeSlider;
     // arrays for music and sound effects
     [SerializeField]
     public Sound[] sounds;
@@ -44,5 +46,10 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
     }
+    public void ChangeVolume()
+    {
+        AudioListener.volume = volumeSlider.value;
+    }
+  
 }
 
