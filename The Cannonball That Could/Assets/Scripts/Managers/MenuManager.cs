@@ -9,6 +9,10 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField]
     public string SceneName;
+    [SerializeField] 
+    public string Scene1Name;
+    //[SerializeField]
+    //public string Scene2Name;
     [SerializeField]
     public GameObject InstructionsPanel;
 
@@ -50,10 +54,18 @@ public class MenuManager : MonoBehaviour
     /// <summary>
     /// Starts game through scene 0
     /// </summary>
-    public void StartGame()
+    public void StartGame0()
     {
         
         SceneManager.LoadScene(SceneName);
+    }
+    /// <summary>
+    /// Starts game through scene 1
+    /// </summary>
+    public void StartGame1()
+    {
+
+        SceneManager.LoadScene(Scene1Name);
     }
     /// <summary>
     /// Quits application
