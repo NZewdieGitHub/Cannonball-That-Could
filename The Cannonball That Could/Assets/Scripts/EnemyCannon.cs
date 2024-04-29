@@ -29,7 +29,7 @@ public class EnemyCannon : MonoBehaviour
         // fire only when the player fires
         if (player.cannonShot == true)
         {
-            if (deadZone.enemyCannonDestroyed == false) 
+            if (enemyCannonShot == false) 
             {
                 ShootEnemy();
             }
