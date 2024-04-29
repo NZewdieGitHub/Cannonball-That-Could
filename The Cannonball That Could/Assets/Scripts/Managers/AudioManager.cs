@@ -48,11 +48,12 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
+        //firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
+
         if (firstPlayInt == 0)
         {
-            musicFloat = 0.5f;
-            oceanFloat = 0.5f;
+            musicFloat = 1f;
+            oceanFloat = 1f;
             volumeSlider.value = musicFloat;
             oceanSlider.value = oceanFloat;
             // save music
@@ -127,10 +128,7 @@ public class AudioManager : MonoBehaviour
     {
         musicAudio.volume = volumeSlider.value;
 
-        for (int i = 0; i < audioSources.Length; i++)
-        {
-            audioSources[i].volume = oceanSlider.value;
-        }
+        oceanAudio.volume = oceanSlider.value;
     }
 }
 
