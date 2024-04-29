@@ -13,6 +13,9 @@ public class LevelBoundsCheck : MonoBehaviour
 
     [SerializeField]
     GameObject TextObject;
+    // Timer parent object holder
+    [SerializeField]
+    public GameObject TimeHolder;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,10 +56,10 @@ public class LevelBoundsCheck : MonoBehaviour
         {
             // Make Object invisible 
             TextObject.SetActive(false);
-
+            TimeHolder.SetActive(false);
             // deactivate timer
             hud.timeRunning = false;
-            hud.MoveTimer();
+            
             // reset timer count
             hud.exitTime = 3f;
 

@@ -102,7 +102,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16384
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -163,4 +163,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2d: {fileID: 7910845069063740807}
   ExplosionHolder: {fileID: 1969416164025969326, guid: e5cd43eab76ef684486c72fce2291bb9, type: 3}
-  player: {fileID: 8796383017201632024, guid: c66729cba06a35847a55d5bec5f78119, type: 3}
