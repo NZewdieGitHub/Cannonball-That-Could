@@ -2016,7 +2016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6245538931110649421, guid: a15dfaf919c0e9f4f94917e69a216fd1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6245538931110649421, guid: a15dfaf919c0e9f4f94917e69a216fd1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2024,7 +2024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6245538931110649421, guid: a15dfaf919c0e9f4f94917e69a216fd1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6245538931110649421, guid: a15dfaf919c0e9f4f94917e69a216fd1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2037,7 +2037,7 @@ PrefabInstance:
     - target: {fileID: 6245538931110649421, guid: a15dfaf919c0e9f4f94917e69a216fd1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 406608335}
+      objectReference: {fileID: 2046543859}
     - target: {fileID: 6245538931110649421, guid: a15dfaf919c0e9f4f94917e69a216fd1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
@@ -2048,11 +2048,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6245538931110649421, guid: a15dfaf919c0e9f4f94917e69a216fd1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetActive
+      value: SaveSoundSettings
       objectReference: {fileID: 0}
     - target: {fileID: 6245538931110649421, guid: a15dfaf919c0e9f4f94917e69a216fd1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245538931110649421, guid: a15dfaf919c0e9f4f94917e69a216fd1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6245538931110649421, guid: a15dfaf919c0e9f4f94917e69a216fd1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
@@ -11676,9 +11680,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2046543858}
   - component: {fileID: 2046543859}
+  - component: {fileID: 2046543862}
   - component: {fileID: 2046543861}
   - component: {fileID: 2046543860}
-  - component: {fileID: 2046543862}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -11739,7 +11743,6 @@ MonoBehaviour:
   - {fileID: 0}
   volumeSlider: {fileID: 1145585651}
   oceanSlider: {fileID: 150670964}
-  menuManager: {fileID: 0}
   musicMuted: 0
   musicAudio: {fileID: 2046543861}
   oceanAudio: {fileID: 2046543860}
@@ -11757,7 +11760,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -11853,7 +11856,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -11947,6 +11950,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce659790dc5cc6043bca858236d5fa55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicAudio: {fileID: 2046543861}
+  oceanAudio: {fileID: 2046543860}
 --- !u!1001 &2062063792
 PrefabInstance:
   m_ObjectHideFlags: 0

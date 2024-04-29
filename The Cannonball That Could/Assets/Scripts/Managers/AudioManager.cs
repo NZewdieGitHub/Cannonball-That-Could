@@ -13,7 +13,7 @@ public class AudioManager : MonoBehaviour
     private static readonly string musicPref = "musicPref";
     private static readonly string oceanPref = "oceanPref";
     private int firstPlayInt;
-    private float musicFloat, oceanFloat;
+    private float musicFloat = 1f, oceanFloat = 1f;
     // arrays for music and sound effects
     [SerializeField]
     public Sound[] sounds;
@@ -22,8 +22,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     public Slider volumeSlider, oceanSlider;
 
-    [SerializeField]
-    MenuManager menuManager;
+   
     AudioSource oceanSource;
     // Volume fields
     
@@ -48,28 +47,51 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
+        // firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
 
-        if (firstPlayInt == 0)
-        {
-            musicFloat = 1f;
-            oceanFloat = 1f;
-            volumeSlider.value = musicFloat;
-            oceanSlider.value = oceanFloat;
+        // If player plays for the first time
+        //if (firstPlayInt == 0)
+        //{
+            //musicFloat = 0.5f;
+            //oceanFloat = 0.5f;
+
+            // Check if scenes have Player Prefs
+            if (!PlayerPrefs.HasKey(musicPref))
+            {
+            
+                PlayerPrefs.SetFloat(musicPref, musicFloat);
+            }
+            else
+            {
+                 // pull from player prefs
+                musicFloat = PlayerPrefs.GetFloat(musicPref);
+                volumeSlider.value = musicFloat;
+            }
+            if (!PlayerPrefs.HasKey(oceanPref)) 
+            {
+                PlayerPrefs.SetFloat(oceanPref, oceanFloat);
+            }
+            else
+            {
+                // pull from player prefs
+                oceanFloat = PlayerPrefs.GetFloat(oceanPref);
+                oceanSlider.value = oceanFloat;
+            }
+            
             // save music
-            PlayerPrefs.SetFloat(musicPref, musicFloat);
-            PlayerPrefs.SetFloat(oceanPref, oceanFloat);
+            
+            
             // make sure first time happens only once
-            PlayerPrefs.SetInt(FirstPlay, -1);
-        }
-        else
-        {
-            // set slider to player prefs
-            musicFloat = PlayerPrefs.GetFloat(musicPref);
-            volumeSlider.value = musicFloat;
-            oceanFloat = PlayerPrefs.GetFloat(oceanPref);
-            oceanSlider.value = oceanFloat;
-        }
+            // PlayerPrefs.SetInt(FirstPlay, -1);
+        //}
+        //else
+        //{
+            //// set slider to player prefs
+            //musicFloat = PlayerPrefs.GetFloat(musicPref);
+            //volumeSlider.value = musicFloat;
+            //oceanFloat = PlayerPrefs.GetFloat(oceanPref);
+            //oceanSlider.value = oceanFloat;
+        //}
 
     }
 
@@ -110,8 +132,9 @@ public class AudioManager : MonoBehaviour
     public void SaveSoundSettings() 
     {
         // save music
-        PlayerPrefs.SetFloat(musicPref, musicFloat);
-        PlayerPrefs.SetFloat(oceanPref, oceanFloat);
+        PlayerPrefs.SetFloat(musicPref, volumeSlider.value);
+        PlayerPrefs.SetFloat(oceanPref, oceanSlider.value);
+        PlayerPrefs.Save();
     }
     /// <summary>
     /// Save the volume values if window loses focus
