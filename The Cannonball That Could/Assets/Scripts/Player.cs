@@ -177,11 +177,7 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        // Exit Functionality
-        if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            Application.Quit();
-        }
+       
         if (isFiring == false && canFire == true)
         {
             // fire cannon
