@@ -137,11 +137,15 @@ public class GameManager : MonoBehaviour
             player.canSlowDown = true;
         }
         player.cannonShot = false;
+        deadZone.enemyCannonDestroyed = false;
         if (deadZone.enemyCannonDestroyed == false)
         {
             foreach (GameObject eC in enemyCannons)
             {
-                eC.GetComponent<EnemyCannon>().enemyCannonShot = false;
+                if (eC != null)
+                {
+                    eC.GetComponent<EnemyCannon>().enemyCannonShot = false;
+                }
             }
         }
         if (hudScript.respawnedAfterLoss == true)
