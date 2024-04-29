@@ -12,7 +12,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] 
     public string Scene1Name;
     //[SerializeField]
-    //public string Scene2Name;
+    public string Scene2Name;
     [SerializeField]
     public GameObject InstructionsPanel;
 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7031988870031074711}
   - component: {fileID: 8529290606896856186}
   - component: {fileID: 8570641173902411013}
+  - component: {fileID: 3915056697591784271}
   m_Layer: 0
   m_Name: SpeedCircle
   m_TagString: Untagged
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 725608ba5c623b4469af3e10302e0752, type: 3}
-  m_Color: {r: 1, g: 0.4880956, b: 0, a: 1}
+  m_Sprite: {fileID: -318518766, guid: 3791737a32098044394f70dada489bf1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -134,3 +135,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  particleManager: {fileID: 0}
+--- !u!95 &3915056697591784271
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8379937779265142628}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d3cf16f4d656fde4598e491a453748b5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
