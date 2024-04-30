@@ -68,6 +68,13 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(Scene1Name);
     }
     /// <summary>
+    /// Starts game through scene 2
+    /// </summary>
+    public void StartGame2()
+    {
+        SceneManager.LoadScene(Scene2Name);
+    }
+    /// <summary>
     /// Quits application
     /// </summary>
     public void QuitGame()

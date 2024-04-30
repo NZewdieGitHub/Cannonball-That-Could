@@ -47,10 +47,12 @@ public class EnemyParts : MonoBehaviour
         // Make sure items are steady at start of the game
         isSteady = true;
         Physics2D.IgnoreLayerCollision(9, 10, false);
-        // Exclude enemy layer from flag layer
+        // Exclude enemy layer from mast layer
         Physics2D.IgnoreLayerCollision(9, 11, false);
+        Physics2D.IgnoreLayerCollision(14, 10, false);
         // Exclude enemy layer from flag layer
         Physics2D.IgnoreLayerCollision(9, 12, false);
+        Physics2D.IgnoreLayerCollision(14, 11, false);
     }
 
     // Update is called once per frame
