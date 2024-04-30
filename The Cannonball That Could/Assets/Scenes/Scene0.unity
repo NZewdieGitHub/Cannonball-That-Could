@@ -11527,7 +11527,7 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: Explosion
-    audioClip: {fileID: 8300000, guid: 772cbf8f2b06d0d4aa5005d545bb0473, type: 3}
+    audioClip: {fileID: 8300000, guid: 55d70afe0c0f31f4299cda964cc32d95, type: 3}
     volume: 0.281
     pitch: 1
     source: {fileID: 0}
