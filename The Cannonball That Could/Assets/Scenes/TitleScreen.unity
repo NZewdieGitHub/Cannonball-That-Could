@@ -6278,11 +6278,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 463665835104072917, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 803534553286869301, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 803534553286869301, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_Direction
@@ -6316,13 +6316,25 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: -17
       objectReference: {fileID: 0}
+    - target: {fileID: 2546312520094087491, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2546312520094087491, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2907494402642028506, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 327
+      objectReference: {fileID: 0}
     - target: {fileID: 3016138171922506053, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3016138171922506053, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3016138171922506053, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_AnchorMin.y
@@ -6346,7 +6358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3915011155599459833, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_margin.z
-      value: -118.80439
+      value: -263.7818
       objectReference: {fileID: 0}
     - target: {fileID: 4136379515784375168, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_Pivot.x
@@ -6374,7 +6386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4136379515784375168, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -359.4104
+      value: -3.6456
       objectReference: {fileID: 0}
     - target: {fileID: 4136379515784375168, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_SizeDelta.y
@@ -6410,7 +6422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4136379515784375168, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5.5411987
+      value: 1.822815
       objectReference: {fileID: 0}
     - target: {fileID: 4136379515784375168, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6427,6 +6439,14 @@ PrefabInstance:
     - target: {fileID: 4136379515784375168, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538439274208965283, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 589.9562
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538439274208965283, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 7.7219
       objectReference: {fileID: 0}
     - target: {fileID: 4750829915272781354, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_Pivot.x
@@ -6491,14 +6511,38 @@ PrefabInstance:
     - target: {fileID: 5591582537786940206, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_text
       value: "Directed By Nahum Zewdie \n\nArtists: \nNahum Zewdie, \nChannel Peak,
-        \nSophia Rogers\n\nProgrammer:\nNahum Zewdie\n\nSound Effects:\nWaves by
-        aninananiana\nExplosion sound by Sansterbirdies\nCannon Sound by Issac2000\nMenuMusic
-        by skibkamusic\nBattle Music by clivew\nBoost Sound by CogFireStudios\nSplash
-        Sound by Ploor"
+        \nSophia Rogers\n\nProgrammer:\nNahum Zewdie\n\nSound Effects:\n\nWaves by
+        aninananiana:\nsmall waves crash on beach wind noise.wav by\naninaninanina\n
+        -- https://freesound.org/s/610298/\n -- License: Creative Commons 0\r\n\nExplosion
+        sound: by Sansterbirdies:\nExplosion / Gun - 2 by SamsterBirdies \n-- https://freesound.org/s/587444/
+        \n-- License: Creative Commons 0\n\nCannon Sound by Issac2000:\nCannon5.wav
+        by Isaac200000 \n-- https://freesound.org/s/184651/ \n-- License: Creative
+        Commons 0\r\n\nBattle Music by skibkamusic:\nMusic_Pop_6.wav by SkibkaMusic\n--
+        https://freesound.org/s/478988/\n-- License: Creative Commons 0\n\nMenu Music
+        by clivew:\nbad beach band boardwalk loop.wav \nby clivew \n-- https://freesound.org/s/264836/
+        \n-- License: Creative Commons 0\n\nBoost Sound by CogFireStudios:\nBoost.wav
+        by CogFireStudios\n-- https://freesound.org/s/420998/ \n-- License: Creative
+        Commons 0\r\n\nSplash Rock in a Lake Sound by Ploor\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5591582537786940206, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
+      propertyPath: m_margin.w
+      value: 13.719437
+      objectReference: {fileID: 0}
+    - target: {fileID: 5591582537786940206, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
+      propertyPath: m_margin.z
+      value: -2.4962463
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744789411659761527, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -131
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513682639609764912, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 528.0724
       objectReference: {fileID: 0}
     - target: {fileID: 7513682639609764912, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -13
+      value: 79.009575
       objectReference: {fileID: 0}
     - target: {fileID: 7513682639609764912, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6514,27 +6558,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7901729758158534459, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -327.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7901729758158534459, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -387.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7901729758158534459, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 186.649
+      value: 193
       objectReference: {fileID: 0}
     - target: {fileID: 7901729758158534459, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.00012207031
       objectReference: {fileID: 0}
+    - target: {fileID: 8703276230434613367, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3625822707731695241, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4152862214005337103, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1931219133}
+    - targetCorrespondingSourceObject: {fileID: 4152862214005337103, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: b14c1da521b62ad47a2bc8ae4654f115, type: 3}
 --- !u!224 &5869995976061508034 stripped
 RectTransform:
