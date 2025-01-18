@@ -7,12 +7,16 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    // Scene Names
     [SerializeField]
     public string SceneName;
+
     [SerializeField] 
     public string Scene1Name;
-    //[SerializeField]
+
+    [SerializeField]
     public string Scene2Name;
+
     [SerializeField]
     public GameObject InstructionsPanel;
 

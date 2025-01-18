@@ -77,30 +77,9 @@ public class AudioManager : MonoBehaviour
                 oceanFloat = PlayerPrefs.GetFloat(oceanPref);
                 oceanSlider.value = oceanFloat;
             }
-            
-            // save music
-            
-            
-            // make sure first time happens only once
-            // PlayerPrefs.SetInt(FirstPlay, -1);
-        //}
-        //else
-        //{
-            //// set slider to player prefs
-            //musicFloat = PlayerPrefs.GetFloat(musicPref);
-            //volumeSlider.value = musicFloat;
-            //oceanFloat = PlayerPrefs.GetFloat(oceanPref);
-            //oceanSlider.value = oceanFloat;
-        //}
-
+          
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-
-    }
     /// <summary>
     /// Play sound
     /// </summary>
@@ -110,14 +89,15 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
     }
+
     /// <summary>
     /// Change volume
     /// </summary>
     public void ChangeVolume()
     {
         musicAudio.volume = volumeSlider.value;
-        
     }
+
     /// <summary>
     /// Change volume
     /// </summary>
@@ -126,6 +106,7 @@ public class AudioManager : MonoBehaviour
         oceanAudio.volume = oceanSlider.value;
 
     }
+
     /// <summary>
     /// Save music settings
     /// </summary>
@@ -136,21 +117,27 @@ public class AudioManager : MonoBehaviour
         PlayerPrefs.SetFloat(oceanPref, oceanSlider.value);
         PlayerPrefs.Save();
     }
+
     /// <summary>
     /// Save the volume values if window loses focus
     /// </summary>
     /// <param name="inFocus"></param>
     void OnApplicationFocus(bool inFocus)
     {
+        // if the user is interacting with the window
         if (!inFocus)
         {
+            // save sound settings
             SaveSoundSettings();
         }
     }
+    /// <summary>
+    /// Updates the sound
+    /// </summary>
     public void UpdateSound()
     {
+        // Have the slider match the volume level
         musicAudio.volume = volumeSlider.value;
-
         oceanAudio.volume = oceanSlider.value;
     }
 }
