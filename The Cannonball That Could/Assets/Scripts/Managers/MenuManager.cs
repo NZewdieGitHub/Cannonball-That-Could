@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    // Scene Names
+    // Scene fields
     [SerializeField]
     public string SceneName;
 
@@ -17,6 +17,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     public string Scene2Name;
 
+    // Panel fields
     [SerializeField]
     public GameObject InstructionsPanel;
 
@@ -28,6 +29,7 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField]
     public GameObject SoundPanel;
+
     // Animator fields
     Animator animator;
     bool isActivated = false;
@@ -60,7 +62,6 @@ public class MenuManager : MonoBehaviour
     /// </summary>
     public void StartGame0()
     {
-        
         SceneManager.LoadScene(SceneName);
     }
     /// <summary>
