@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
+    // Player Fields
+    [SerializeField]
+    GameObject CannonballPrefab;
+    [SerializeField]
+    Player playerScript;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +21,9 @@ public class Cannon : MonoBehaviour
     void Update()
     {
         
+    }
+    public void LoadCannon()
+    {
+
     }
 }

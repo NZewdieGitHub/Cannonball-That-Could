@@ -7,22 +7,33 @@ TagManager:
   - Enemy
   - Text
   - TNT
+  - HUD
+  - VC
+  - EnemyPiece
+  - FlagPiece
+  - MastPiece
+  - PlayerPiece
+  - CannonPiece
+  - EnemyCannonPiece
+  - PiratePiece
+  - Blockage
+  - ParticleManager
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Collider
+  - Trigger
+  - PlayerCannon
+  - Enemy
+  - MastPieceLayer
+  - FlagPieceLayer
+  - PirateLayer
+  - PlayerPiece
+  - Blockage
   - 
   - 
   - 

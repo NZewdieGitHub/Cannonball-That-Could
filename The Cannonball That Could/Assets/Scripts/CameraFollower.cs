@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using Unity.VisualScripting;
 
 public class CameraFollower : MonoBehaviour
 {
@@ -16,77 +18,74 @@ public class CameraFollower : MonoBehaviour
     [SerializeField]
     GameObject cannon;
 
-    // Text Field
+    // Game Manager Script
     [SerializeField]
-    TextMeshProUGUI TimeText;
-    [SerializeField]
-    GameObject TextObject;
-    public float exitTime = 3f;
-    public bool timeRunning = false;
-    public bool frozenScreen = false;
+    GameManager gameManager;
 
-    // Text Updating fields
-    [SerializeField]
-    public TextMeshProUGUI PlayerUI;
-    public int playerScore = 3;
+    // HUD fields
+    HUD hud = new HUD();
 
-    // Panel Setup
-    [SerializeField]
-    GameObject LosePanel;
-  
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1;
-        // Setup initial text
-        TimeText.SetText("Get back in: " + exitTime.ToString());
+       
+        // Save reference to HUD Script
+        hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         // if player presses and holds space
-        if (player.slowDownPressed == true)
+        if (player.slowDownPressed == true && player.hasFired == true)
         {
-            // move camera along the x-axis at slower speed
-            cameraAccelleration = 2f;
-            transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
-            Debug.Log("Camera's slowed down");
-        }
-        else if (player.slowDownPressed == false) 
-        {
-            cameraAccelleration = 8f;
-            // move camera along the x-axis
-            transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
-            Debug.Log("Camera's sped up");
-        }
-        
-        // Check if time is running
-        if (timeRunning == true) 
-        {
-            // have count down match the frame count
-            exitTime -= Time.deltaTime;
-            StartTimer(exitTime);
-
-            // check if time reaches 0
-            if (exitTime <= 0)
+            // check if the ball hasn't been destroyed
+            if (player.ballDestroyed == false && player.isBoosted == false)
             {
-                // updated score
-                playerScore -= 1;
-                PlayerUI.SetText("Player Health: " + playerScore.ToString());
-                // move cannon ball and camera back to starting position
-                player.transform.position = new Vector3(-8.4989f, 0.37f, 0);
-                transform.position = new Vector3(-8.4989f, 0.37f, -21.64309f); 
+                // move camera along the x-axis at slower speed
+                cameraAccelleration = 2f;
+                transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
+                Debug.Log("Camera's slowed down");
             }
-
-            if (playerScore <= 0)
+            else if (player.ballDestroyed == false && player.isBoosted == true)
             {
-                playerScore = 0;
-                PlayerUI.SetText("Player Health: " + playerScore.ToString());
-                SpawnLoseMenu();
+                cameraAccelleration = 20f * 2f;
+                // move camera along the x-axis
+                transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
+                Debug.Log("Camera's boosted");
+                // take away player's abillity to slow down
+                player.canSlowDown = false;
             }
-
         }
+        else if (player.slowDownPressed == false && player.hasFired == true)
+        {
+            // check if the ball hasn't been destroyed or boosted
+            if (player.ballDestroyed == false && player.isBoosted == false)
+            {
+                cameraAccelleration = 20f;
+                // move camera along the x-axis
+                transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
+                Debug.Log("Camera's sped up");
+            }
+            else if (player.ballDestroyed == false && player.isBoosted == true)
+            {
+                cameraAccelleration = 20f * 2f;
+                // move camera along the x-axis
+                transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
+                Debug.Log("Camera's boosted");
+            }
+            // check if player destroyed enemy ship
+            else if (player.ballDestroyed == true && player.lastPlayerHit == true)
+            {
+                cameraAccelleration = 0f;
+                // move camera along the x-axis
+                transform.Translate(Vector2.right * cameraAccelleration * Time.deltaTime);
+                Debug.Log("Camera's stopped");
+            }
+        }
+
     }
     /// <summary>
     /// Used to determine if player left camera view
@@ -97,11 +96,17 @@ public class CameraFollower : MonoBehaviour
         // make sure only the player exits
         if (collision == player.collider)
         {
-            // Make timer visible 
-            TextObject.SetActive(true);
+            // check if ball hasn't been destroyed or not
+            if (player.ballDestroyed == false)
+            {
+                // Make timer visible 
+                hud.SpawnTimer();
+                hud.TextObject.SetActive(true);
 
-            // count down timer
-            timeRunning = true;
+                // count down timer
+                hud.timeRunning = true;
+            }
+       
         }
     }
     /// <summary>
@@ -110,38 +115,20 @@ public class CameraFollower : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         // make sure only the player exits
         if (collision == player.collider)
         {
             // Make Object invisible 
-            TextObject.SetActive(false);
-
+            hud.TextObject.SetActive(false);
+            hud.MoveTimer();
             // deactivate timer
-            timeRunning = false;
+            hud.timeRunning = false;
 
             // reset timer count
-            exitTime = 3f;
+            hud.exitTime = 3f;
         }
-    }
-    /// <summary>
-    /// Start timer
-    /// </summary>
-    private void StartTimer(float currentTime)
-    {
-        // increment the current time by one second
-        currentTime += 1;
-        // update timer
-        TimeText.SetText("Get back in: " + exitTime.ToString("0"));
-    }
-    /// <summary>
-    /// Instantiate Lose Menu
-    /// </summary>
-    public void SpawnLoseMenu()
-    {
-       
-        LosePanel.SetActive(true);
-        Time.timeScale = 0;
-        frozenScreen = true;
+        
     }
     
 }
