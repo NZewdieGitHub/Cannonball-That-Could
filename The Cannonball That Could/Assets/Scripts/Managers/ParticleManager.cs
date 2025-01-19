@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class ParticleManager : MonoBehaviour
 {
+    // Particle effect fields
     public ParticleSystem enemyRubbleParticleEffect;
     public ParticleSystem playerRubbleParticleEffect;
     public ParticleSystem cloudDustParticleEffect;
     public ParticleSystem speedRingParticleEffect;
     public ParticleSystem angelBallParticleEffect;
     public ParticleSystem blockageParticleEffect;
+
+    // Serialize field for player
     [SerializeField]
     Player player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +23,6 @@ public class ParticleManager : MonoBehaviour
         //EventManager.AddEnemyRubbleEventListener(SpawnEnemyRubble);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     /// <summary>
     /// Spawn Enemy rubble when piece of ship is destroyed
     /// </summary>
