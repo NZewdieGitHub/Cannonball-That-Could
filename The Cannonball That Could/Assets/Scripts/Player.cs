@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     Vector2 vertMovement;
     public string levelName;
 
-    // Camera field
+    // Camera fields
     [SerializeField]
     GameObject vc;
     [SerializeField]
