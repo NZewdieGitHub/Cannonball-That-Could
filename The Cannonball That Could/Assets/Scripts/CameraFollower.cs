@@ -94,7 +94,7 @@ public class CameraFollower : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         // make sure only the player exits
-        if (collision == player.collider)
+        if (collision == player.cC2D)
         {
             // check if ball hasn't been destroyed or not
             if (player.ballDestroyed == false)
@@ -117,7 +117,7 @@ public class CameraFollower : MonoBehaviour
     {
         
         // make sure only the player exits
-        if (collision == player.collider)
+        if (collision == player.cC2D)
         {
             // Make Object invisible 
             hud.TextObject.SetActive(false);

@@ -29,13 +29,16 @@ public class Player : MonoBehaviour
     public bool cannonShot = false;
     private float firingPower = 16f;
     private float fireTime = 2f;
+
+    // Particle Field when cannonball is fired
     [SerializeField]
     private TrailRenderer trailRenderer;
+
     // HUD fields
     HUD hud = new HUD();
 
     // collider fields
-    public CircleCollider2D collider;
+    public CircleCollider2D cC2D;
     public bool ballDestroyed = false;
 
     // Enemy Field
@@ -50,11 +53,14 @@ public class Player : MonoBehaviour
     HealthReducedEvent healthReducedEvent = new HealthReducedEvent();
     EnemyRubbleEvent enemyRubbleEvent = new EnemyRubbleEvent();
     PlayerCannonFiredEvent playerCannonFiredEvent = new PlayerCannonFiredEvent();
+
     // Animation holder fields
     [SerializeField]
     GameObject ExplosionHolder;
+
     //GM field
     public GameManager gameManager;
+
     // Damage field
     public int normalDamage = 1;
 
@@ -78,10 +84,11 @@ public class Player : MonoBehaviour
     public bool enemyFlagDamaged = false;
     public bool enemyPirateDamaged = false;
 
-    // Movement limitation field
+    // Movement limitation fields
     public bool canMoveHoriz = false;
     public bool enemySlowedDown = false;
-    // To see if player won/lost the game
+
+    // Player win/loss conditions
     public bool playerWon = false;
     public bool playerLost = false;
 
@@ -96,11 +103,12 @@ public class Player : MonoBehaviour
     {
         // get the rigidbody2D component
         rb2d = GetComponent<Rigidbody2D>();
+
         // get camera component
         cf = GetComponent<CameraFollower>();
 
         // collision setup
-        collider = gameObject.GetComponent<CircleCollider2D>();
+        cC2D = gameObject.GetComponent<CircleCollider2D>();
         ballDestroyed = false;
 
         // Save reference to HUD Script
@@ -115,7 +123,9 @@ public class Player : MonoBehaviour
         // Set up animator for explosion
         explosionAnimator = ExplosionHolder.GetComponent<Animator>();
 
+        // resume game
         Time.timeScale = 1;
+
         // Firing setup
         canFire = true;
         hasFired = false;
@@ -149,6 +159,7 @@ public class Player : MonoBehaviour
         }
         movement.y = Input.GetAxis("Vertical");
         vertMovement.y = Input.GetAxis("Vertical");
+
         // restart functionality (for testing purposes)
         if (Input.GetKey(KeyCode.Escape))
         {
@@ -162,22 +173,27 @@ public class Player : MonoBehaviour
             // Check if player can slow down
             if (canSlowDown == true)
             {
-                // Slowdown funtion
+                // Slowdown funtion (if player presses the left control key)
                 if (Input.GetKeyDown(KeyCode.LeftControl))
                 {
+                    // Player and enemy slow down and player can move
+                    // horizontally
                     slowDownPressed = true;
                     canMoveHoriz = true;
                     enemySlowedDown = true;
                 }
                 else if (Input.GetKeyUp(KeyCode.LeftControl))
                 {
+                    // Player and enemy speed up and player can't move
+                    // horizontally anymore
                     slowDownPressed = false;
                     canMoveHoriz = false;
                     enemySlowedDown = false;
                 }
             }
         }
-       
+
+        // check if player cannon is firing or not
         if (isFiring == false && canFire == true)
         {
             // fire cannon

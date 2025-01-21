@@ -19,7 +19,7 @@ public class SpeedRing : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // make sure only the player exits
-        if (collision == player.collider)
+        if (collision == player.cC2D)
         {
             if (player.isBoosted == false)
             {
